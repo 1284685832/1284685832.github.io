@@ -115,7 +115,7 @@ body p {
     font-family: 'Latin Modern Roman 10', 'LM Roman 10', 'Times New Roman',
         /**/
         Arial, '方正新书宋_GBK', 'Source Han Serif SC', 'simsun', '仿宋', '方正清刻本悦宋 简繁', sans-serif;
-    font-size: 11.6pt;
+    font-size: 12pt;
 }
 
 /* 仅在浏览时使用（打印时无效） */
@@ -162,7 +162,7 @@ body p {
 /* 自用note注释块 */
 div.note {
     font-family: 'Latin Modern Roman 10', 'LM Roman 10', 'Times New Roman', Arial, '方正新书宋_GBK', 'Source Han Serif SC', 'simsun', '仿宋', '方正清刻本悦宋 简繁', sans-serif;
-    font-size: 10.5pt;
+    font-size: 11pt;
     float: right;
     clear: both;
     text-align: left;
@@ -221,7 +221,7 @@ h5 {
 /* 列表内容*/
 li {
     position: outside;
-    font-size: 11.6pt;
+    font-size: 12pt;
     /*列表字号*/
 }
 
@@ -271,7 +271,7 @@ blockquote {
 blockquote p {
     padding: 1px 20px 1px 20px;
     font-family: 'Latin Modern Roman 10', 'LM Roman 10', 'Times New Roman', Arial, '方正新书宋_GBK', 'Source Han Serif SC', 'simsun', '仿宋', '方正清刻本悦宋 简繁', sans-serif;
-    font-size: 11.6pt;
+    font-size: 12pt;
 }
 
 /* 链接 */
@@ -297,7 +297,7 @@ hr {
 
 /* 折叠文字 */
 details {
-    font-size: 11pt;
+    font-size: 12pt;
     font-family: 'Latin Modern Roman 10', 'LM Roman 10', 'Times New Roman', Arial, '方正新书宋_GBK', 'Source Han Serif SC', 'simsun', '仿宋', '方正清刻本悦宋 简繁', sans-serif;
     box-sizing: border-box;
     margin: 12px;
@@ -344,8 +344,6 @@ table {
     overflow: auto;
     border-spacing: 6px;
     /*单元格横向间距*/
-    border-left: 0px;
-    border-right: 0px;
     border-collapse: collapse;
     /* 取消表格边框 */
     white-space: nowrap;
@@ -353,18 +351,21 @@ table {
 }
 
 table td {
+    padding: 6px;
     font-family: 'Latin Modern Roman 10', 'LM Roman 10', "Times New Roman", Arial, "Source Han Serif SC", 'simsun', sans-serif;
     border: 0px;
-    font-size: 9pt;
-}
-
-table thead {
-    border-bottom: 0.5pt solid;
+    font-size: 11pt;
 }
 
 table th {
+    padding: 6px;
+    background: none;
+    border-bottom: 0.5pt solid;
     font-family: 'Latin Modern Roman 10', 'LM Roman 10', "Times New Roman", Arial, "Source Han Serif SC", 'simsun', sans-serif;
-    font-size: 9pt;
+    font-size: 11pt;
+    border-collapse: collapse;
+    border-left: 0px;
+    border-right: 0px;
 }
 
 
