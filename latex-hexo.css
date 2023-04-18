@@ -61,7 +61,7 @@
     src: url("./latex/SourceHanSerifSC-Bold.otf");
 }
 
-/* 宋体 */
+/* 中文正文字体 */
 @font-face {
     font-family: simsun;
     src: url("./latex/simsun.ttc");
@@ -72,6 +72,13 @@
     font-style: italic;
     font-weight: normal;
     src: url("./latex/simfang.ttf");
+}
+
+@font-face {
+    font-family: '楷体';
+    font-style: italic;
+    font-weight: normal;
+    src: url("./latex/simkai.ttf");
 }
 
 @font-face {
@@ -182,7 +189,7 @@ body h1 {
     page-break-after: avoid !important;
     text-align: center;
     font-size: 18pt;
-    font-family: 'Latin Modern Mono 10', 'LM Mono 10', 'Times New Roman', Arial, 'FZYouSongS 509R', '方正悠宋 GBK 508R', Sarasa Mono SC, 黑体, sans-serief;
+    font-family: 'Latin Modern Mono 10', 'LM Mono 10', 'Times New Roman', Arial, 'FZYouSongS 509R', '方正悠宋 GBK 508R', Sarasa Mono SC, 黑体, sans-serif;
     font-weight: bold;
 }
 
@@ -190,7 +197,7 @@ body h1 {
 body h2 {
     page-break-after: avoid !important;
     font-size: 16pt;
-    font-family: 'Latin Modern Mono 10', 'LM Mono 10', 'Times New Roman', Arial, 'FZYouSongS 509R', '方正悠宋 GBK 508R', Sarasa Mono SC, 黑体;
+    font-family: 'Latin Modern Mono 10', 'LM Mono 10', 'Times New Roman', Arial, 'FZYouSongS 509R', '方正悠宋 GBK 508R', Sarasa Mono SC, 黑体, sans-serif;
     font-weight: bold;
 }
 
@@ -199,7 +206,7 @@ body h2 {
 h3 {
     page-break-after: avoid !important;
     font-size: 14pt;
-    font-family: 'Latin Modern Mono 10', 'LM Mono 10', 'Times New Roman', Arial, 'FZYouSongS 509R', '方正悠宋 GBK 508R', Sarasa Mono SC, 黑体;
+    font-family: 'Latin Modern Mono 10', 'LM Mono 10', 'Times New Roman', Arial, 'FZYouSongS 509R', '方正悠宋 GBK 508R', Sarasa Mono SC, 黑体, sans-serif;
     font-weight: bold;
 }
 
@@ -207,7 +214,7 @@ h3 {
 h4 {
     page-break-after: avoid !important;
     font-size: 13pt;
-    font-family: 'Latin Modern Mono 10', 'LM Mono 10', 'Times New Roman', Arial, 'FZYouSongS 509R', '方正悠宋 GBK 508R', Sarasa Mono SC, 黑体;
+    font-family: 'Latin Modern Mono 10', 'LM Mono 10', 'Times New Roman', Arial, 'FZYouSongS 509R', '方正悠宋 GBK 508R', Sarasa Mono SC, 黑体, sans-serif;
     font-weight: bold;
 }
 
@@ -215,7 +222,8 @@ h4 {
 h5 {
     page-break-after: avoid !important;
     font-size: 13pt;
-    font-family: 'Latin Modern Mono 10', 'LM Mono 10', 'Times New Roman', Arial, 'FZYouSongS 509R', '方正悠宋 GBK 508R', Sarasa Mono SC, 黑体;
+    font-family: 'Latin Modern Mono 10', 'LM Mono 10', 'Times New Roman', Arial, 'FZYouSongS 509R', '方正悠宋 GBK 508R', Sarasa Mono SC, 黑体,
+        sans-serif;
 }
 
 /* 列表内容*/
@@ -230,15 +238,16 @@ em {
     margin-left: .20em;
     margin-right: .25em;
     font-style: italic;
+    font-weight: lighter;
     font-family: 'Latin Modern Roman 10',
         'LM Roman 10',
         'Times New Roman',
         Arial,
+        '仿宋',
         '方正清刻本悦宋 简繁',
         '方正新书宋_GBK',
         'Source Han Serif SC',
         'simsun',
-        cursive,
         serif;
 }
 
@@ -270,7 +279,8 @@ blockquote {
 /* 引用文字 */
 blockquote p {
     padding: 1px 20px 1px 20px;
-    font-family: 'Latin Modern Roman 10', 'LM Roman 10', 'Times New Roman', Arial, '方正新书宋_GBK', 'Source Han Serif SC', 'simsun', '仿宋', '方正清刻本悦宋 简繁', serif;
+    font-style: italic;
+    font-family: 'Latin Modern Roman 10', 'LM Roman 10', 'Times New Roman', Arial, '楷体', '方正新书宋_GBK', 'Source Han Serif SC', 'simsun', '方正清刻本悦宋 简繁', serif;
     font-size: 12pt;
 }
 
