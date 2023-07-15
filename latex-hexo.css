@@ -168,7 +168,7 @@ body p {
 
 /* 自用note注释块 */
 div.note {
-    font-family: 'Latin Modern Roman 10', 'LM Roman 10', 'Times New Roman', Arial, '方正新书宋_GBK', 'Source Han Serif SC', 'simsun', '仿宋', '方正清刻本悦宋 简繁', serif;
+    font-family: '方正新书宋_GBK', 'Latin Modern Roman 10', 'LM Roman 10', 'Times New Roman', Arial, 'Source Han Serif SC', 'simsun', '仿宋', '方正清刻本悦宋 简繁', serif;
     font-size: 11pt;
     float: right;
     clear: both;
@@ -231,6 +231,7 @@ li {
     position: outside;
     font-size: 12pt;
     /*列表字号*/
+    margin: 1em;
 }
 
 /* 斜体(专有名词) */
@@ -261,7 +262,7 @@ body strong {
 body code,
 p code,
 li code {
-    font-family: 'Latin Modern Mono 10', "LM Mono 10", 'Latin Modern Mono 10', 'LM Mono 10', 'Times New Roman', Arial, 'FZYouSongS 509R', '方正悠宋 GBK 508R', 'Source Han Serif SC', 'simsun', '仿宋', '方正清刻本悦宋 简繁', monospace, sans-serif;
+    font-family: 'Sarasa Mono SC', 'Latin Modern Mono 10', "LM Mono 10", 'Latin Modern Mono 10', 'LM Mono 10', 'Times New Roman', Arial, 'FZYouSongS 509R', '方正悠宋 GBK 508R', 'Source Han Serif SC', 'simsun', '仿宋', '方正清刻本悦宋 简繁', monospace, sans-serif;
     box-sizing: border-box;
     border-right: 0px;
     margin: 0 2px 0 2px;
