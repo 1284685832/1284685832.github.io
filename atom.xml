@@ -6,7 +6,7 @@
   <link href="https://1284685832.github.io/atom.xml" rel="self"/>
   
   <link href="https://1284685832.github.io/"/>
-  <updated>2023-07-15T13:37:10.548Z</updated>
+  <updated>2023-08-03T03:17:56.962Z</updated>
   <id>https://1284685832.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>样式测试</title>
-    <link href="https://1284685832.github.io/test/"/>
-    <id>https://1284685832.github.io/test/</id>
-    <published>2023-01-09T03:26:19.000Z</published>
-    <updated>2023-07-15T13:37:10.548Z</updated>
+    <title></title>
+    <link href="https://1284685832.github.io/%E9%9B%AA%E7%94%B1%E4%B9%83/%E6%96%B0%E5%BB%BA%20Markdown/"/>
+    <id>https://1284685832.github.io/%E9%9B%AA%E7%94%B1%E4%B9%83/%E6%96%B0%E5%BB%BA%20Markdown/</id>
+    <published>2023-08-03T03:17:52.824Z</published>
+    <updated>2023-08-03T03:17:56.962Z</updated>
     
     
       
@@ -34,10 +34,6 @@
     
     
     
-    <category term="其他" scheme="https://1284685832.github.io/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-    <category term="测试用" scheme="https://1284685832.github.io/tags/%E6%B5%8B%E8%AF%95%E7%94%A8/"/>
     
   </entry>
   
@@ -117,11 +113,107 @@
   </entry>
   
   <entry>
+    <title>剑胄</title>
+    <link href="https://1284685832.github.io/%E5%89%91%E8%83%84/%E5%89%91%E8%83%84/"/>
+    <id>https://1284685832.github.io/%E5%89%91%E8%83%84/%E5%89%91%E8%83%84/</id>
+    <published>2022-11-25T11:34:18.000Z</published>
+    <updated>2023-03-05T12:12:35.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="小说" scheme="https://1284685832.github.io/categories/%E5%B0%8F%E8%AF%B4/"/>
+    
+    
+    <category term="原创" scheme="https://1284685832.github.io/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://1284685832.github.io/%E7%82%B9%E5%AD%90%E9%9B%86%E5%90%88/"/>
+    <id>https://1284685832.github.io/%E7%82%B9%E5%AD%90%E9%9B%86%E5%90%88/</id>
+    <published>2022-11-19T11:20:47.032Z</published>
+    <updated>2023-08-03T03:19:18.706Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>关于格式与内容</title>
+    <link href="https://1284685832.github.io/%E6%A0%BC%E5%BC%8F%E4%B8%8E%E5%86%85%E5%AE%B9/"/>
+    <id>https://1284685832.github.io/%E6%A0%BC%E5%BC%8F%E4%B8%8E%E5%86%85%E5%AE%B9/</id>
+    <published>2022-11-16T11:34:18.000Z</published>
+    <updated>2023-07-14T14:26:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="随笔" scheme="https://1284685832.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="排版" scheme="https://1284685832.github.io/tags/%E6%8E%92%E7%89%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于现实复杂度</title>
+    <link href="https://1284685832.github.io/%E5%85%B3%E4%BA%8E%E7%8E%B0%E5%AE%9E%E5%A4%8D%E6%9D%82%E5%BA%A6/"/>
+    <id>https://1284685832.github.io/%E5%85%B3%E4%BA%8E%E7%8E%B0%E5%AE%9E%E5%A4%8D%E6%9D%82%E5%BA%A6/</id>
+    <published>2022-11-06T11:34:18.000Z</published>
+    <updated>2023-07-14T14:26:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="随笔" scheme="https://1284685832.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="游戏设计" scheme="https://1284685832.github.io/tags/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
     <title>老婆环</title>
-    <link href="https://1284685832.github.io/%E8%80%81%E5%A9%86%E7%8E%AF/"/>
-    <id>https://1284685832.github.io/%E8%80%81%E5%A9%86%E7%8E%AF/</id>
-    <published>2023-01-09T03:26:19.000Z</published>
-    <updated>2023-01-10T11:30:25.000Z</updated>
+    <link href="https://1284685832.github.io/%E8%80%81%E5%A9%86%E7%8E%AF/%E8%80%81%E5%A9%86%E7%8E%AF/"/>
+    <id>https://1284685832.github.io/%E8%80%81%E5%A9%86%E7%8E%AF/%E8%80%81%E5%A9%86%E7%8E%AF/</id>
+    <published>2022-04-08T03:26:19.000Z</published>
+    <updated>2023-01-09T03:26:19.000Z</updated>
     
     
       
@@ -142,11 +234,61 @@
   </entry>
   
   <entry>
+    <title>今天我要炼派蒙</title>
+    <link href="https://1284685832.github.io/%E6%B4%BE%E8%92%99/%E4%BB%8A%E5%A4%A9%E6%88%91%E8%A6%81%E7%82%BC%E6%B4%BE%E8%92%99/"/>
+    <id>https://1284685832.github.io/%E6%B4%BE%E8%92%99/%E4%BB%8A%E5%A4%A9%E6%88%91%E8%A6%81%E7%82%BC%E6%B4%BE%E8%92%99/</id>
+    <published>2022-03-07T03:26:19.000Z</published>
+    <updated>2023-03-05T12:12:35.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="小说" scheme="https://1284685832.github.io/categories/%E5%B0%8F%E8%AF%B4/"/>
+    
+    
+    <category term="原神同人" scheme="https://1284685832.github.io/tags/%E5%8E%9F%E7%A5%9E%E5%90%8C%E4%BA%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>金枝下的妖精</title>
+    <link href="https://1284685832.github.io/%E7%B2%BE%E7%81%B5/%E7%B2%BE%E7%81%B5/"/>
+    <id>https://1284685832.github.io/%E7%B2%BE%E7%81%B5/%E7%B2%BE%E7%81%B5/</id>
+    <published>2022-03-05T03:26:19.000Z</published>
+    <updated>2023-03-05T12:12:35.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="小说" scheme="https://1284685832.github.io/categories/%E5%B0%8F%E8%AF%B4/"/>
+    
+    
+    <category term="原创" scheme="https://1284685832.github.io/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>雪由乃</title>
-    <link href="https://1284685832.github.io/%E9%9B%AA%E7%94%B1%E4%B9%83/"/>
-    <id>https://1284685832.github.io/%E9%9B%AA%E7%94%B1%E4%B9%83/</id>
-    <published>2023-01-09T03:26:19.000Z</published>
-    <updated>2023-01-10T04:25:47.000Z</updated>
+    <link href="https://1284685832.github.io/%E9%9B%AA%E7%94%B1%E4%B9%83/%E9%9B%AA%E7%94%B1%E4%B9%83/"/>
+    <id>https://1284685832.github.io/%E9%9B%AA%E7%94%B1%E4%B9%83/%E9%9B%AA%E7%94%B1%E4%B9%83/</id>
+    <published>2022-02-22T07:27:20.000Z</published>
+    <updated>2023-01-09T03:26:19.000Z</updated>
     
     
       
@@ -188,6 +330,56 @@
     
     
     <category term="游戏设计" scheme="https://1284685832.github.io/tags/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>排眼刀</title>
+    <link href="https://1284685832.github.io/nga/"/>
+    <id>https://1284685832.github.io/nga/</id>
+    <published>2021-01-06T11:34:18.000Z</published>
+    <updated>2023-03-13T00:18:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="短篇" scheme="https://1284685832.github.io/categories/%E7%9F%AD%E7%AF%87/"/>
+    
+    
+    <category term="原创" scheme="https://1284685832.github.io/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>重填词</title>
+    <link href="https://1284685832.github.io/%E9%87%8D%E5%A1%AB%E8%AF%8D/"/>
+    <id>https://1284685832.github.io/%E9%87%8D%E5%A1%AB%E8%AF%8D/</id>
+    <published>2021-01-06T11:34:18.000Z</published>
+    <updated>2023-07-14T14:26:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="短篇" scheme="https://1284685832.github.io/categories/%E7%9F%AD%E7%AF%87/"/>
+    
+    
+    <category term="中文填词" scheme="https://1284685832.github.io/tags/%E4%B8%AD%E6%96%87%E5%A1%AB%E8%AF%8D/"/>
     
   </entry>
   
