@@ -68,6 +68,12 @@
 }
 
 @font-face {
+    font-family: 'Iosevka';
+    font-style: normal;
+    font-weight: normal;
+    src: url("./latex/Iosevka-Regular.ttc");
+}
+@font-face {
     font-family: '仿宋';
     font-style: italic;
     font-weight: normal;
@@ -76,7 +82,7 @@
 
 @font-face {
     font-family: '楷体';
-    font-style: italic;
+    font-style: normal;
     font-weight: normal;
     src: url("./latex/simkai.ttf");
 }
@@ -113,15 +119,20 @@
 /* 注意嵌套关系为body>markdown_preview */
 
 body {
-    font-synthesis: none;
+    /* font-synthesis: none; */
 }
 
 body p {
     line-height: 1.37rem;
     /*行距*/
-    font-family: 'Latin Modern Roman 10', 'LM Roman 10', 'Times New Roman',
+    font-family: 'Latin Modern Roman 10', 'LM Roman 10', 'Times New Roman', '方正新书宋_GBK',
         /**/
-        Arial, '方正新书宋_GBK', 'Source Han Serif SC', 'simsun', '仿宋', '方正清刻本悦宋 简繁', serif;
+        Arial,
+            'Source Han Serif SC',
+            'simsun',
+            '仿宋',
+            '方正清刻本悦宋 简繁',
+            serif;
     font-size: 12pt;
 }
 
@@ -255,7 +266,7 @@ em {
 /* 粗体(强调) */
 body strong {
     font-weight: bold;
-    font-family: Sarasa Mono SC, 黑体, sans-serif;
+    font-family: '方正悠宋 GBK 508R', Sarasa Mono SC, 黑体, sans-serif;
 }
 
 /* 行内代码 */
@@ -280,7 +291,7 @@ blockquote {
 /* 引用文字 */
 blockquote p {
     padding: 1px 20px 1px 20px;
-    font-style: italic;
+    font-style: normal;
     font-family: 'Latin Modern Roman 10', 'LM Roman 10', 'Times New Roman', Arial, '楷体', '方正新书宋_GBK', 'Source Han Serif SC', 'simsun', '方正清刻本悦宋 简繁', serif;
     font-size: 12pt;
 }
@@ -363,6 +374,7 @@ table {
 
 table td {
     padding: 6px;
+    text-align: center;
     font-family: 'Latin Modern Roman 10', 'LM Roman 10', "Times New Roman", Arial, "Source Han Serif SC", 'simsun', serif;
     border: 0px;
     font-size: 11pt;
@@ -370,6 +382,7 @@ table td {
 
 table th {
     padding: 6px;
+    text-align: center;
     background: none;
     border-bottom: 0.5pt solid;
     font-family: 'Latin Modern Roman 10', 'LM Roman 10', "Times New Roman", Arial, "Source Han Serif SC", 'simsun', serif;
