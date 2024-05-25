@@ -73,6 +73,7 @@
     font-weight: normal;
     src: url("./latex/Iosevka-Regular.ttc");
 }
+
 @font-face {
     font-family: '仿宋';
     font-style: italic;
@@ -126,9 +127,8 @@ body p {
     line-height: 1.37rem;
     /*行距*/
     font-family: 'Latin Modern Roman 10', 'LM Roman 10', 'Times New Roman', '方正新书宋_GBK',
-        /**/
-            'Source Han Serif SC',
-                serif;
+        'Source Han Serif SC',
+        serif;
     font-size: 12pt;
 }
 
@@ -283,7 +283,7 @@ blockquote {
 blockquote p {
     padding: 1px 20px 1px 20px;
     font-style: normal;
-        font-family: 'Latin Modern Roman 10', 'LM Roman 10', 'Times New Roman', '楷体', '方正新书宋_GBK', 'Source Han Serif SC', '方正清刻本悦宋 简繁', serif;
+    font-family: 'Latin Modern Roman 10', 'LM Roman 10', 'Times New Roman', '楷体', '方正新书宋_GBK', 'Source Han Serif SC', '方正清刻本悦宋 简繁', serif;
     font-size: 12pt;
 }
 
@@ -366,7 +366,7 @@ table {
 table td {
     padding: 6px;
     text-align: center;
-        font-family: 'Latin Modern Roman 10', 'LM Roman 10', "Times New Roman", "Source Han Serif SC", serif;
+    font-family: 'Latin Modern Roman 10', 'LM Roman 10', "Times New Roman", "Source Han Serif SC", serif;
     border: 0px;
     font-size: 11pt;
 }
