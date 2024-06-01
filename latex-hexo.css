@@ -399,53 +399,6 @@ body ol {
 }
 
 /**** 多级列表样式 ****/
-ol {
-    /* 有序列表第一级：数字 */
-    list-style: decimal;
-}
-
-ol ol {
-    counter-reset: liist;
-    list-style: none;
-}
-
-ol ol li {
-    counter-increment: liist;
-    position: relative;
-}
-
-ol ol li::before {
-    /* 有序列表第二级：括号加小写字母 */
-    content: "(" counter(liist, lower-alpha) ")　　";
-    position: absolute;
-    margin-right: 2rem;
-    left: -2.4rem;
-}
-
-ol ol ol {
-    counter-reset: liiist;
-    list-style: none;
-    margin: 0;
-}
-
-ol ol ol li {
-    counter-increment: liiist;
-    position: relative;
-}
-
-ol ol ol li::before {
-    /* 有序列表第三级：小写罗马数字 */
-    content: counter(liiist, lower-roman) ".　　";
-    align-self: flex-end;
-    position: absolute;
-    left: -3rem;
-    /* -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;*/
-    /* 为了让项目编号是重新用句点对齐而不是左对齐 */
-    width: 4.2rem;
-    text-align: right;
-}
 
 /***** 注意bug:有序列表后的无序列表将编号 *****/
 
