@@ -1,0 +1,639 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>关于格式与内容 | 莫名</title><meta name="author" content="啪栏杆"><meta name="copyright" content="啪栏杆"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="格式与排版 好了，正式归纳一下之前关于排版的想法。 首先，排版要解决什么问题？让内容满足形式的要求，在此基础上尽可能美观。 简而言之，排版是一种格式化。 让我们参考一下编辑器中的代码格式化工具是怎样设计的，它们做了什么？简而言之，合理地安排行、缩进与空格。 现在考虑一下，面对一篇排版非常糟糕的文档，你应该做什么？首先就是删除所有空行与多余的空格。 再想一想，空格与换行符的本质是什么？是单词与单词之">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于格式与内容">
+<meta property="og:url" content="https://1284685832.github.io/%E6%A0%BC%E5%BC%8F%E4%B8%8E%E5%86%85%E5%AE%B9/index.html">
+<meta property="og:site_name" content="莫名">
+<meta property="og:description" content="格式与排版 好了，正式归纳一下之前关于排版的想法。 首先，排版要解决什么问题？让内容满足形式的要求，在此基础上尽可能美观。 简而言之，排版是一种格式化。 让我们参考一下编辑器中的代码格式化工具是怎样设计的，它们做了什么？简而言之，合理地安排行、缩进与空格。 现在考虑一下，面对一篇排版非常糟糕的文档，你应该做什么？首先就是删除所有空行与多余的空格。 再想一想，空格与换行符的本质是什么？是单词与单词之">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://1284685832.github.io/img/avatar.png">
+<meta property="article:published_time" content="2022-11-16T11:34:18.000Z">
+<meta property="article:modified_time" content="2023-07-14T14:26:00.000Z">
+<meta property="article:author" content="啪栏杆">
+<meta property="article:tag" content="排版">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://1284685832.github.io/img/avatar.png"><link rel="shortcut icon" href="/fa%20fa-solid%20fa-pen-nib"><link rel="canonical" href="https://1284685832.github.io/%E6%A0%BC%E5%BC%8F%E4%B8%8E%E5%86%85%E5%AE%B9/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '关于格式与内容',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-14 22:26:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#1e1e1e')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/latex-hexo.css"><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="莫名" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="莫名"><span class="site-name">莫名</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">关于格式与内容</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon fas fa-history"></i><span class="post-meta-label">更新于</span><time datetime="2023-07-14T14:26:00.000Z" title="更新于 2023-07-14 22:26:00">2023-07-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">13.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>38分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="关于格式与内容"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="格式与排版">格式与排版</h1>
+<p>好了，正式归纳一下之前关于排版的想法。</p>
+<p>首先，排版要解决什么问题？让内容满足形式的要求，在此基础上尽可能美观。</p>
+<p>简而言之，排版是一种格式化。</p>
+<p>让我们参考一下编辑器中的代码格式化工具是怎样设计的，它们做了什么？简而言之，合理地安排行、缩进与空格。</p>
+<p>现在考虑一下，面对一篇排版非常糟糕的文档，你应该做什么？首先就是删除所有空行与多余的空格。</p>
+<p>再想一想，<em>空格</em>与<em>换行符</em>的本质是什么？是单词与单词之间，段与段之间的<em>空隙</em>。</p>
+<p>往往，通过对<em>空隙</em>的安排，字体排印实现了美观的版面与良好的可读性。</p>
+<h2 id="空隙">空隙</h2>
+<p>空隙有不同的种类，从小到大可分为以下几类：</p>
+<ul>
+<li><em>字距微调</em>：字符被装进盒子里，而排版系统负责安放这些盒子，即使盒子紧密地排在一起，也无法保证字符之间看上去是均匀的。如果考虑字形间的疏密，就应当允许盒子间有一定的重叠，这就是 kerning。</li>
+<li><em>字间距</em>：盒子与盒子之间的距离。</li>
+<li><em>词间距</em>：即我们插在单词后的空格子。</li>
+<li><em>行距</em>：行与行之间的距离。对于行，我们有一些额外的要求。为了实现数学公式的排版，需要对行进行纵向的分割与合并。</li>
+<li><em>栏距</em>：在一般的文本格式中不需要多栏。不过在排版中，栏的概念是需要的，比如 Word 的分栏功能。</li>
+<li><em>段间距</em>：段与段之间的距离。</li>
+<li><em>页间距</em>：指分页符后的空白。</li>
+<li><em>边距</em>文本与外框的距离。</li>
+</ul>
+<p>我们可以看到，由于<em>盒子</em>模型，使得字体设计师必须为每个字符设计 kerning，这对于中文字体设计来说几乎是不可能完成的任务，就算是英文字体也很难说照顾到了每一个字符(比如标点符号)。以上是表面现象，根本上来说，这是由于盒子内的情况对排版软件而言是一个黑箱，才导致我们必须寄希望于千千万万种字体调整，而且是人工的调整。</p>
+<p>我设想了一种新的模型，为每个字符设计若干条横向与纵向的参考线，以参考线的交点为基础进行排版。</p>
+<p>也就是说，排版软件要考虑的是怎么将这些成组的点阵均匀地排进网格中去。</p>
+<p>举个例子，m 纵向有三条参考线，横向有两条参考线，这就形成了六个点。</p>
+<ul>
+<li>
+<p>实际上，这是更细化的盒子模型，m 的六个点，实际上组成了两个粘在一起的盒子。那么只要在这些盒子组之间放上一个宽高相同的空白盒子，就可以实现视觉上的均匀。</p>
+<p>我们暂且将这个空白盒子命名为<em>字距</em>。</p>
+</li>
+<li>
+<p>然后，<em>字间距</em>这个概念可以继续使用，它实际上是插在未黏连的盒子间的空白盒子，宽度可调。不过，排版师们向来不推荐人工调节<em>字间距</em>，会破坏连笔，通常也不会使版面更美观。</p>
+</li>
+<li>
+<p>然后是<em>词距</em>，这实际上是插在盒子之间的另一种空白盒子，为的是分开不同的单词。不妨把它叫做<em>分词符</em>。与字距不同，词距是可以且应该调整的。</p>
+</li>
+<li>
+<p><em>行距</em>，应当将其看做纵向的字距。为了避免误会，将<em>行距</em>称为<em>纵字距</em>。这里应当引入基线的概念，即某个盒子的底边 (对g这种字母是从上到下的第二条边，对h这类则是第三条)。英文字母按基线对齐，应当看做在字母上方或下方粘了一个单位盒子。<em>纵字距</em>应为单位高，那么基线间的距离应当为 4。对于合并的行与分割的行，情况会复杂起来，请参考 TeX 的实现方式。</p>
+</li>
+<li>
+<p><em>行间距</em>，同上，实际上是高度可调、长度等于行长的一个扁盒子，放在一行下面。</p>
+</li>
+<li>
+<p><em>段间距</em>，这个就有意思了，在 Word 中，它显然是两个自然段的文本之间的空隙。但在程序员的圈子里，这容易被视为行距。为什么？因为这是插在<em>换行符</em>后面的空隙！我们知道，在开启了自动换行功能后，一行代码可能看上去不止一行，因此为了避免误解，最好还是将<em>换行符</em>称作<em>分段符</em>。另外还有个<em>换行</em>与<em>回车</em>的公案，属于历史遗留问题。</p>
+<p>这是一个版面的空隙种类，如果涉及到多个版面，那么还需要在<em>分页符</em>后面插入空隙，同样高度可调。另外，就像<em>换行符</em>实际上用来分段，<em>分页符</em>实际上是用来分章节的。</p>
+</li>
+</ul>
+<p>好了，以上是所有的空隙内容。</p>
+<h2 id="排版">排版</h2>
+<p>接下来我们终于可以谈谈排版了，排版需要做到实用(可读性强)、美观(整齐、匀称)，实用高于美观。</p>
+<h3 id="实用性">实用性</h3>
+<p>关于实用性的要求有两个：</p>
+<ol>
+<li>
+<p>对于有必要分词的语言，词不能断开，至少在音节中间不能断开。否则将很难读。</p>
+</li>
+<li>
+<p>对于有标点符号的语言，应当遵循标点避头尾的原则。</p>
+<p>具体来说，成对符号的左符号避尾、右符号避头，点号避头，单位避头，货币符号等前置符号避尾，起连接作用的符号避头尾。上下标、注释记号避头。另外，省略号与破折号中间不能断开。</p>
+<p>不过，具体到其中某个符号，因为汉语标点符号喜欢身兼数职，不考虑语义很难判断是哪种用法，有时也应当宽泛些。比如，在实操中省略号与破折号一般不避头尾。——对汉语的标点符号我是“积怨已久”，也经历了长期的实践，这些以后再谈。</p>
+<p>再提一下古籍中常见的下划线与波浪线，这些符号指示了专有名词，不能从中断开。但网址下的下划线就很难这样处理，否则实在难以排版，一般控制其在*.*后断开即可，甚至随意断也并不影响什么，网址本就不是用来读的，尤其现代的网址又长乱码又多。</p>
+</li>
+</ol>
+<h3 id="美观">美观</h3>
+<p>对于美观的要求也有两个：</p>
+<ol>
+<li>
+<p>整齐。</p>
+<p>通过对齐功能来实现。这牵扯到标点挤压、标点悬挂、两端对齐等等问题。不过我们不妨把问题看得简单些，按新的模型，整齐的意思就是文本块的左右边缘没有空隙。</p>
+</li>
+<li>
+<p>匀称。</p>
+<p>通过调节空隙来实现。</p>
+</li>
+</ol>
+<p>好了，问题归结为空隙的安排，这下就简单多了。我们按照空隙的大小来看看空隙安排的优先级。</p>
+<ul>
+<li>
+<p>首先是最大的空隙，孤行。如果出现了孤行，意味着有将近一页的多余空白，这是无法容忍的。</p>
+</li>
+<li>
+<p>其次是避头尾造成的空隙，视语言的不同会产生一个字到一个词的空档，很不美观，尤其在中文。</p>
+</li>
+<li>
+<p>再次是<em>词距</em>带来的空隙，在中英文混排或有断词的情况下，行首会不整齐。在换行算法中将行首尾的<em>词距</em>设为0即可。</p>
+</li>
+<li>
+<p>然后是标点本身带来的空隙，如果是中文标点(粘了一个空格来使得标点变成全宽)，需要将盒子切成两个处理，这样就与英文标点一致了。对于需要在后边输入一个空格的英文标点，将其看做前面单词的一个字母比较合理。对此可以参考<em>词距</em>的做法。</p>
+</li>
+<li>
+<p>最后是标点悬挂的问题。标点是否需要悬挂出去呢？这是一个类似于 kerning 的做法，但产生的效果要小得多，可能还会有反效果(这是由于调整得太厉害了，超过了微调应有的幅度)。理想情况下，应该根据不同字母、符号的外形特点不同做微调，以期实现视觉上的整齐。但简单粗暴的标点悬挂应当说只是一种风格，不是必须做的调整。</p>
+</li>
+</ul>
+<p>我们能调节什么呢？我们以<em>字距</em>的宽度为单位宽度，<em>纵字距</em>的高度为单位高度，一个个看哪些空隙可以调。</p>
+<ul>
+<li><em>字距</em>是最不宜改动的。</li>
+<li><em>字间距</em>应当为 0，不要动。</li>
+<li><em>词距</em>可以动，大约 1 到 2 (两个单词间的距离实际上是<em>字距</em>×2+<em>词距</em>)。</li>
+<li><em>纵字距</em>和<em>字距</em>一样，不宜改动。</li>
+<li><em>行间距</em>可以动，调节范围相当大。</li>
+<li><em>段间距</em>同样可以动。</li>
+<li><em>页边距</em>完全可以动。</li>
+<li><em>栏距</em>与<em>页边距</em>一样，可以动。</li>
+</ul>
+<p>调整的幅度应当以空隙本身的大小为基准，比如 20%。显然调整的限度取决于空隙的大小与数量。对英文来说，词距很多，调整的余地会很大。而如果是中文，词距只出现在标点附近，就比较困难了。</p>
+<p>调整策略上，是应当优先调整某种空隙，还是同时调整所有空隙，这不是一个简单的问题。考虑到避头尾造成的空隙只能通过调整该行的空隙来弥补，也许应当优先调整边距才是。</p>
+<p>另一个问题是，对空隙的调整是增大还是挤压，这显然应该根据情况单独设计。例如，在下一页内容太少时，挤压容易造成孤行；反之同理。要是一个个问题分别解决，难免摁下葫芦起了瓢。TeX 中使用动态规划，综合地得出最佳的排版，这也许是值得借鉴的思路。</p>
+<p>这种技术细节在排版系统中不胜枚举，其实不用过分纠结。重要的是我们希望实现的效果：尽量减少突兀的空隙，使文本变得更匀称。</p>
+<p>最后还要提一提对齐的话题，对于中文，由于方块字的特点，分散对齐应当是最理想的，而且最好在纵横两个方向都严格对齐。但是，设计师偏爱的分散对齐实际上是牺牲了文本中腹的纵向对齐来实现最大限度的边缘对齐，是一种权衡而非天然完美的方案。英文排版时尤其应当考虑这一点，在执行严格的换行策略时(不分词、专名不断、数字不断、网址不断)，不宜采用这种策略。这时推荐英文排版的传统做法，即左对齐。其实，右侧不对齐的边缘如同波浪一般，效果并不差。</p>
+<p>注意到，在上文这种情况下，实际上右侧边距是浮动的。因此，虽然一般的排版流程中外框是最先确定的，但有时也不是这样。对于中文，专家提到：“在中式做法里，由于有「栏宽必须是字号的整数倍」的要求，必须先计算栏宽（比如每行25个字）定下版心之后，再把版心摆放到页面上。页边距里的天头、地脚、切口、订口的数值，是「页面」减去「版心」计算出来的。”因此外框同样不是最先确定的。应当说，最先确定的只是一个大概的边距。这样，前文所说的“边距可调整”就不难理解了。</p>
+<h2 id="文本与编码">文本与编码</h2>
+<p>接下来是有关字符的部分。</p>
+<p>文本格式是通用的交换格式，这不错，但是文本格式应当是现在这个样子的吗？我们知道，美国早期的计算机字符编码有着鲜明的电传打字机特色，是有着沉重的历史包袱的。比如请求、响铃、拒绝接收等用处不大又不可见的控制字符，比如回车与换行符之争，比如<em>退格</em>这类难以理解的名字、比如数量众多的制表符……这些都完整地继承到了 Unicode 当中。当然，时至今日无用的符号已被人遗忘，造不成什么后果了，Unicode 也不缺这点编码空间，但有个设计缺陷至今没有解决，遗毒后世：没有将格式与内容分开。</p>
+<p>打字机不可能将格式与内容分开，因为输入直接打印在纸上，没办法另行排版，但计算机编码根本没必要继承这个设计。实际上，我们的按下的按键与输入的字符本身就不完全一致，输入的字符与显示的内容也不完全一致，显示的内容与输出的格式更是可以天差地别，这有什么不可以呢？文本格式很好，但文本格式的显示方式很不好。</p>
+<p>先回过头来，谈谈这一缺陷的外在表现吧！首先就是<em>空格</em>。</p>
+<h3 id="空格">空格</h3>
+<p>就像我在关于排版的部分反复强调的那样，<em>空格</em>本质上是，而不仅仅是一段固定长的空隙，，而不应当。我们在排版一段文本时，首先要做的就是删去所有多余的空白字符。任何一个正经的 Word 教程，都会强调初学者不要用空格缩进、不要用空行分段、不要用空行分页、不要用空格实现居中……以上例子说明空格是排版从业者的大敌。最明显的问题，<em>空格</em>字符的宽度是固定的，这引起了很多问题。我还记得自己第一次接触 Word，试图打两个空格来实现“段首空两格”，发现结果不太对。格式糟糕的 Word 文档，有的段首是两个空格、有的是三个、有的是五个……<em>空格</em>在视觉上不过是一段空隙，空隙的大小不是固定的，而是根据需要变动。而空格是定长的，满足不了多样的需要，结果人们便打更多空格来获取更大的空隙，产生了无数格式问题。</p>
+<p>另一些问题与宽度无关，却同样令人头痛，比如说，人们常常忽略“英文输入时，标点后面要空一格，前面不要空”与“中英文混排时，英文前后都要空一格”这样的规则，使得文本表现不一致。本质上这是由于<em>空格</em>身兼二职，既充当<em>分词符</em>，也是提供空隙的空白字符，两种职责相互干扰才造成了问题。</p>
+<p>解决方法是一个约定俗称的原则：内容与格式要分开。</p>
+<p>为何可以分开？首先，空隙在格式的层面，<em>分词符</em>是内容的一部分，层次不同。其次，<em>分词符</em>是在写作时输入的，空隙的宽度则在排版时决定，次序有先后。最后，它们功能上的联系并不紧密。</p>
+<p>一旦将内容与格式分开了，他们就正交了，相互没有影响。在对内容进行排版之前，编辑器将无法自动处理错误的空格。这是显然的，因为编辑器还包括聊天软件的输入框、搜索引擎的搜索框这些最简陋的实现——它们不可能对内容作丝毫的改动。因此，问题必须在输入之前解决：在编码、键盘布局、按键映射、输入法、编辑器的层面上保证写作者能输入正确的内容。</p>
+<ul>
+<li>编码层。加入不定长空白字符<em>分词符</em>，并取消空格。由于 Unicode 是向后兼容的，因此很难去除某个字符，但可以不建议使用。</li>
+<li>键盘布局。去除空格键，加上分词键。</li>
+<li>键盘固件。将空格键设计为多功能按键，在单词后按下空格插入<em>分词符</em>。</li>
+<li>按键映射。将空格键重映射为分词键。</li>
+<li>输入法。在按空格或回车选词的同时自动插入分词键。</li>
+<li>编辑器。不再用空格缩进；取消 tab 键功能与空格的关系；不再允许输入连续的空格，无论你按几下空格键，输入的也只是一个<em>分词符</em>。</li>
+</ul>
+<p>有人说，在最简陋的编辑器里<em>分词符</em>可能显示为*\c<code> </code>&amp;f<code> </code>^h*之类的形式，很丑。不过，那都是其他格式的文件在文本模式下的表现，我希望改变的是纯文本格式本身，理想状态下，这个问题不会存在。</p>
+<p>对换行符(分段符)、分页符等空白字符可以照此处理。</p>
+<p>下一个，TAB 键。</p>
+<h3 id="TAB">TAB</h3>
+<p>程序员们用这个键配合制表符、*|*键来实现简陋的表格，这大概是新世纪以前的事。在之前的年代人们不得不忍受它糟糕的体验：</p>
+<ul>
+<li>制表符的输入十分麻烦。</li>
+<li>格式一旦变化表格立马<em>不成人形</em>。</li>
+<li>无法实现公式计算。</li>
+<li>没有排序等高级功能。</li>
+<li>很难解析与读取。</li>
+<li>不能高亮、突出标题、设置行高列宽——总而言之，无法处理格式。</li>
+</ul>
+<p>再补充一些我使用过程中的糟糕体验：</p>
+<ul>
+<li>TAB 实际上是对齐到制表位(一般每四个字符一个)，因此上下内容长短不一时容易对不齐，需要额外按几次 TAB 键。</li>
+<li>另外，开启自动换行后，上一行的内容会换到下一行行首而不是对应的制表位上。</li>
+</ul>
+<p>总之，只是看起来像表，实际上根本不是。</p>
+<p>让我们考虑一下表格的本质，不考虑那些 Excel 高级功能，表格本质上是行与列。行，文本文档是具备的，但列呢？有人可能会说，列当然是存在的，编辑器不是有<em>列选择模式</em>吗？但这并不是真正的列，没有<em>换列符</em>，没有列间距，甚至在字体不等宽的情况下都对不齐。实际上，我们并没有在文本文档中分列的办法。如果 TAB 键能够在当前行插入一个新列，就像横向的回车，那么一张表就产生了。最好，能像显示行号那样，在当前行顶部显示列号。</p>
+<p>由于文本实际上还是线性排列的字符串，我们得回答两个问题，分列从哪里开始？到哪里结束？</p>
+<ul>
+<li>
+<p>一个自然的想法是从当第一行开始，到最后一行结束。</p>
+<p>这实质上相当于杂志、报纸上分栏的效果。但由于文本编辑器没有预先存在的<em>页</em>概念，<em>最后一行</em>是哪一行就成了问题，需要在打印时考虑。至于<em>第一行</em>，其实应当是<em>当前行</em>才对。</p>
+<p>其本质是，字符在填满第一列的所有行后，才会轮到第二列。</p>
+<p>这也提醒我们，在进行此类分列时，必须设置结束行，否则字符永远到不了另一列。</p>
+</li>
+<li>
+<p>另一个自然的想法是从当前行开始，在当前行结束。</p>
+<p>这比较类似于表格的效果。</p>
+<p>其光标移动的逻辑，也就是字符的排列顺序，与上一种想法不同。在这种分列模式下，字符是在填满第一行的所有列后，才会轮到第二行。</p>
+</li>
+</ul>
+<p>尽管看起来是同样的形式，但内在逻辑完全不同，这其实提醒我们思考<em>列</em>的本质。这一点我会在下一篇文章展开说。</p>
+<p>至少有一个概念得搞明白，第一种<em>列</em>只是一种显示效果，并没有实际的结构功能。也就是说，于内容无涉，应当交给排版系统来处理。而第二种列是有结构功能的，不同列的内容是对同一事物的不同描述。</p>
+<p>列的宽度如何设置呢？是按行长均分，是按内容设置列宽，亦或者像行那样固定一个字符宽？这些只是风格的区别罢了，大可以根据编辑器是否自动换行的设置灵活地运用。考虑到注释的特征，我推荐第一列的宽度以<em>分列符</em>到行首的字符宽度为准，后面同一行的字符自动折行。不过，注释往往并不需要那么长的宽度，并且这种形式在注释比较密集之时非常之丑。也许，在右侧的列上用*编号：<em>或</em>名称：*的格式与左侧要注释的对象联系起来会比较方便，如果不作说明，就是注释整行。</p>
+<p>至于公式、排序与其他高级功能，可以期待插件。</p>
+<p>接下来是缩进。</p>
+<h3 id="缩进">缩进</h3>
+<p>VsCode 有一个很好的功能，可以用 TAB 键或空格实现缩进。缩进重新设定了行的开头，让接下来的内容能够对齐在缩进线上，形成了层次分明的结构。在选中一行时，按 TAB 缩进而并不删除选中内容。并且缩进的内容还可以折叠起来，这时，展现在我们面前的就是一个有层次的目录。</p>
+<p>缩进功能的实现来源于程序员对代码可读性的需求，形成了一个个代码块，层次清晰。即使是原则上不依赖缩进的Lisp、C 等语言，创始人也推荐大家写成有缩进的样式，他们称之为<em>美观打印</em>风格。</p>
+<p>这里有一个问题，缩进是算格式还是内容呢？我的回答是内容。因为文本的输入本质上是对思维的呈现，而不仅仅是对语言的再现。语言，受限于发声机制，只能将思维表达为一系列有先后的音节，将心中有结构的思维压平了，难以直观地表现结构层次。由于结构也是思维内容的一大部分，所以为了体现结构而产生的功能理所当然也属于内容。</p>
+<p>其实，语言中的停顿、文字中的点号、篇章中的换行与分段，都是结构的一种体现。而缩进则体现了更宏观的层次结构。另外，引用体现了网状思维有别于树状结构的特点。</p>
+<p>以前，书写介质十分珍贵，古人受不了空两格、换行、空一行这种浪费纸张的行为，于是使用一些记号来表示分段。后来阔绰了，就直接分段，不再用这些符号了。眼下的文本文档，空间十分充足，用缩进来体现结构并不过分。</p>
+<p>不过，VsCode 的缩进并不是完美的，我不满的点在于，复制时会把空格复制进去。</p>
+<p>明明看起来很像缩进，但在移动光标和删除时还会感觉到空格的存在。</p>
+<p>光标在文本中时，TAB 键只能在原地而不是行首输入 4 个空格。</p>
+<p>总之，这是用空格与 TAB 实现缩进的代价。</p>
+<p>改善方法和上面一样，在行首按空格输入<em>缩进符</em>，数量为上一行的缩进符数量加一，按回车换行时自动在行首插入和上一行等量的缩进符。而在屏幕显示上这看起来是缩进的效果。</p>
+<p>然后是上下标。</p>
+<h2 id="上下标">上下标</h2>
+<p>我一开始的想法是，<code>^</code> 应当是一个控制字符，效果是将下一个词变为上标形式，可显示为一个灰色的<code>^</code>，在输入一个词后隐藏。下标可以是<code>Shift+^</code>。</p>
+<p>不过在厘清<code>行</code>与<code>列</code>的关系后，我认为这个功能不必设计一个专门的符号来实现，实际上用<code>|</code> + <code>Shift</code> + <code>↓</code>也是一样的。</p>
+<p>最后一个，对于那些标注在字符上的<em>标号</em>，在按键时的行为应当是标注光标的前一个未标注的字符或词(被<code>·</code>围住的字符串)，而<em>标注</em>行为可以通过unicode组合字符功能实现的。这样，下划线终于可以摆脱扮演空格的兼职，从事它的本质工作了。而诸如音调、着重号、加粗、斜体这些字符与功能也可以照章办理。</p>
+<p>有人可能会说“一仍旧贯，何必改作”这样的话，我也承认上面的想法缺乏理论基础与可行性论证。不过，如果有一定的编码知识，就可以对这些零散的想法做一个统合，从而提高说法的科学性与说服力。</p>
+<p>目前，<em>纯文本格式</em>指的是用 Unicode 编码，用 utf-8 或其他格式传输的一种数据格式。关于unicode的理论比较复杂，之前研究过，苦于英文没能深入。不过，和我的想法有关的部分，我还是大概提一提。</p>
+<p>Unicode 编码是分层级的，从上至下为：</p>
+<ul>
+<li>
+<p>文本元素</p>
+<p>取决于程序的理解，比如<em>a</em>与<em>A</em>两个字符在搜索引擎中通常看做同一个文本元素。unicode 对文本元素不作定义。</p>
+</li>
+<li>
+<p>字素簇</p>
+<p>譬如：捷克斯洛伐克语中<em>ch</em>是一个字母，整个被视为一个字素簇。</p>
+</li>
+<li>
+<p>编码字</p>
+<p>譬如：<em>ch</em>通过按<code>c</code>与<code>h</code>输入，<em>c</em>与<em>h</em>是编码字。</p>
+</li>
+<li>
+<p>码点(码位)</p>
+<p>有七种类型：</p>
+<ul>
+<li>
+<p>Graphic：分为字母 (L，letter)，标记 (M，combining mark)，数组 (N，number)，标点 (P，punctuation)，符号 (S，symbol)，空格 (Zs，space separator) 六类。</p>
+</li>
+<li>
+<p>Format：一些不可见但对相邻字符起作用的字符，如零宽连字 (zerowidthjoiner，ZWJ)，零宽不连字 (zerowidthnon joiner，ZWNJ) 等，包括行和段分隔符。有Cf(format)，Zl (line separators)，Zp (paragraph separators) 三类。</p>
+</li>
+<li>
+<p>Control(Cc) ：控制字符，没有明确作用，常用于格式化字符，如异体字选择器 (variation selector，VS) 等。</p>
+</li>
+<li>
+<p>Private-use (Co) ：私人使用区，未在规范中指定，合作用户之间可根据自定义协定决定其用途。</p>
+</li>
+</ul>
+<p>以上四类码点被称为分配字 (assigned character)，用于表示抽象字。而接下来的三类则被Unicode用于一些特殊用途。</p>
+<ul>
+<li>Surrogate(Cs) ：为 UTF-16 保留。</li>
+<li>Noncharacter(Cn) ：Unicode 规范内部使用。</li>
+<li>Reserved(Cn) ：为未来可能的需要保留。</li>
+</ul>
+</li>
+</ul>
+<p>因此，我们见到的一个个字符并不是它最底层的样子；由于兼容的需要，也不是最高层的抽象。</p>
+<p>一般来说，我们谈<em>Unicode字符</em>指的往往是码位，有时指编码字；而程序应该将<em>文本元素</em>理解为<em>字素簇</em>，但一般会理解成<em>编码字</em>，有时还会理解为<em>码点</em>。如果程序没有正确处理 Unicode 字符，直接显示了码点，就会发生错误。比如将<em>Å</em>显示为<em>A◌̊</em>。如果显示了编码字，一般情况下看起来就正常了，但是程序对<em>文本元素</em>的识别仍可能是错误的，例如将<em>ch</em>理解为两个字符。如果到<em>字素簇</em>级别，那么至少排版上是绝不会出错了。</p>
+<p>字符的显示还有其他坑，比如：</p>
+<ul>
+<li>由于各种字体都只能涉及可见字符，许多字符对我们是<em>隐形</em>的。在<em>字素簇</em>层面，控制字符的隐形并不带来问题，但空白字符的隐形就会造成困扰。因此，在各种专业的编辑器软件中，对空白字符有额外的提示，比如将空格显示为灰色圆点，将换行符显示为灰色回车。没有这种提示多少会造成一些困扰，尤其在专业排版中会造成不少麻烦。</li>
+</ul>
+<p>又比如：</p>
+<ul>
+<li><em>空格</em>被归类为 Graphic 的一种，这是不合理的。从功能上看，<em>空格</em>应该属于 Format。而且像<em>空格</em>、<em>换行符</em>、<em>分页符</em>这类其结构作用的字符(也包括<code>、</code>、<code>，</code>、<code>；</code>、<code>。</code>)，应该从一开始就禁止重复，错误应该在造成损失之前解决。</li>
+</ul>
+<p>由于用户需要输入的字符(文本元素)依赖于所使用的语言，但由于键盘的限制，<em>按键</em>与<em>字符</em>有时不能一一对应，这就需要输入法来做转换。但目前各种输入法都很难拍胸脯说自己能输入所有 Unicode 字符(很多 Unicode 字符甚至由于没有字体而根本不可能显示)，而且输入方式十分别扭。</p>
+<p>我很多次想，如果输入<em>c</em>就能在候选框中找到<em>℃</em>该多好，如果输入汉字能在候选框中找到甲金简文字形该多好。这需要极大地扩充 Unicode，并根据字符间的拓扑关系与源流关系制作一个大型数据库。我之前在硬皮本子上详细说过这个输入法应当如何设计，不再详述，简而言之便是做好分类、平面选字。</p>
+<p>如果 Unicode 能在编码中携带关系信息，使得<em>字素簇</em>之间的有机联系更明显就好了，比如说，将各种<em>书写系统</em>按树形结构统合起来，就像把中日韩港澳台越的汉字字符统合到 CJKV 中一样。意义在于，能够提供更好的接口，方便输入法软件的研发，从而提高所有纯文本的表达能力。道理和基建惠及所有下游产业是一样的。</p>
+<p>我总的想法是，根据具体功能对按键做适当的处理，而不是粗暴视为输入一个字符。另外，应当能够通过键盘方便地输入所有 Unicode 字符，无论是通过按键映射，还是在输入法的层面上实现。Unicode 应当加入更多控制字符来实现对语言的忠实还原——这个我会在下一篇展开讲。</p>
+<p>如果能用键盘输入简单地实现层次结构，谁还会用*#<em>来设置标题层级呢？我希望实现的，是让纯文本看起来能够有富文本的效果，成为 Markdown 格式</em>所见即所得*的平替。</p>
+<h2 id="内容与标点">内容与标点</h2>
+<p>接下来讲标点，我将说明，良好的标点将发挥与标签语言、Markdown 语法相类似的作用，无需额外的设计就能写解释器解析，无损输出为富文本格式。同时，我将借此厘清<em>内容</em>与<em>格式</em>的本质。</p>
+<p>标点符号的本质是什么？为什么需要标点符号？</p>
+<p>我们知道，古文实际上并不一定需要标点符号，依靠离经辨志的功夫，古人不需要标点也能阅读。但为什么到了近代，新文化运动的干将们要提倡使用标点符号呢？</p>
+<p>因为文体不一样，换句话说，是文言文与白话文的需求不同。</p>
+<p>我们知道，文言文是先秦口语，但到了春秋战国时期，其实言文分离已经产生了。比如像《尚书》这种西周以前的作品，语言非常古奥，难以理解。但诸子百家的作品已经和后世的文章比较相近，相对很好读了。文言文在历史上基本是脱离口语的书面语，因此其语法也就适应于阅读的要求：句式相对整齐，停顿比较明显，有各种助词与语气词帮助断句。可以说，文言文在漫长的发展过程中长成了适应无标点的模样。</p>
+<p>当鲁迅等人提倡白话文时，问题产生了，白话文来自于口语，而口语是不依赖笔墨的。如果将口语中的内容如实转化为书面语，光靠文字就会丢失信息。</p>
+<p>不是说文言文就不面临这种损失，而是说文言文用不同的思路来避免这些损失。其采取的策略是将口语<em>转写</em>为文言，对<em>言文形式一致</em>不作要求。</p>
+<p><em>言文分离</em>是口语与书面语的分离，不是语言与文字的分离，这个概念要澄清。</p>
+<p>题外话，现代语言学的范式基本上是“思维 &lt;-&gt; 语言 &lt;-&gt; 口语与书面语”的链条。有人可能会把<em>语言</em>理解为口语，这是误会。实际上这里的语言指的是<em>心声</em>，是成型的思维，是完成了整理与组织的意识活动。这是在话语说出口之前需要完成的预备工作。</p>
+<p>除了口语到书面语，语言到口语的过程中也会损失信息，这是需要注意的。</p>
+<p>总的来说，需要补足的信息有：停顿、语气、重音、句调等超音段信息，引用、专称、术语等语义信息，以及结构信息。</p>
+<ul>
+<li>停顿需要用<code>、</code> <code>，</code> <code>。</code> <code>？</code> <code>！</code> <code>……</code> <code>——</code>表示。</li>
+<li>语气需要用<code>。</code> <code>？</code> <code>！</code> <code>……</code>表示。</li>
+<li>重音需要用<em>着重号</em>表示。</li>
+<li>句调用<code>；</code> <code>。</code> <code>？</code> <code>！</code> <code>……</code>。</li>
+</ul>
+<p>其他的标点符号都是用于表示结构与提示语义(比如提示序号、比如提示列表、比如标示专有名词)，意在补充丢失的语义信息与结构信息。</p>
+<p>我们可以看到，这些标点很多都是身兼数职，这往往是由于它们本质上是两种平行功能的组合。例如，问号实际上是句末点号与疑问语气符的组合。</p>
+<p>插一句，有人可能会问为什么反问语气会用问号，为什么反问属于疑问语气。我从前不能很好解释，不过最近看到一个段子，很有启发：</p>
+<blockquote>
+<p>当我打出<code>？</code>的时候，不是我有问题，而是觉得你有问题。</p>
+</blockquote>
+<p>另外，各种成对标点大致都有句末点号的功能，因此右标点前的点号可以省略。不过，如果成对标点围住的语段比较长而完整，一般还是需要句末点号的。</p>
+<p>另一种<em>身兼数职</em>是真正的多功能，无法归并为某种功能的多种表现。</p>
+<p>比如：引号具有标引、特指、强调三大功能，这三种功能并不在一个平面上。反过来说，某种功能往往可以有多种实现，在不同情况下必须用不同的标点，这其中许多规定过于繁琐而缺乏实际意义。例如：选择问句中分句加不加*？*就有多种做法；括不同的内容时使用不同的括号；引号里套引号要交替使用单双引号；列举作品名时，书名号之间有时可省略顿号有时不可以。</p>
+<p>标点符号的功能设计是<em>低内聚，高耦合</em>的，因此标点功能常常重复：破折号的前三种功能分别与括号、逗号、冒号完全等价；分隔号的第一个功能也能用逗号与分号表示；书名号与引号的界线不明；等等。还有上文提到过的<em>特别规定</em>，每个标点都有一堆特殊用法，无法用少量的规则转换生成而来。</p>
+<p>还有，由于标点符号的范围设计得过窄(因为只考虑了书写与印刷)，导致一些标号无法显示为纯文本，也导致缺乏对段落层次进行标示的手段。</p>
+<p>中文标点符号总的来说是过度设计的。这使得现行标点符号难以胜任<em>标签语言</em>的任务，很难写出一个解释器来进行渲染，反观 Markdown 语言，经过解析可以转换为 PDF、HTML、XML 等各种格式。</p>
+<p>有人可能奇怪，纸面上的标点符号是怎么和计算机语言扯上关系的呢？我为什么要以计算机语言的角度批评中文标点符号呢？</p>
+<p>1955年以来，语法学从结构主义转向，有个乔姆斯基写了一本书，叫<em>句法结构</em>，创造了生成语法。其最大的贡献是启发了程序设计语言，包括正则表达式、C 语言等等。语言学与计算机的关系，比很多人想像得更紧密。</p>
+<p>目前我们在自然语言处理与机器翻译上遇到的诸多困难，与标点不无关系，这里可以听一听沈家煊先生的讲座<em>实验研究呼唤汉语语法理论更新</em>。</p>
+<p>好了，现在看看我们最少需要几类标点符号：</p>
+<h3 id="结构符号">结构符号<code>()</code> <code>|</code></h3>
+<p>打开一本数理逻辑教科书，一开始引入基本符号的时候，为了便于阅读，使用了没有实际意义的辅助符号，括号。随后，例题使用波兰式消去了括号，表明括号实际上是可有可无的。括号有何特殊？为何使用括号能提高可读性？</p>
+<p>再看看有名的编程语言 lisp，它的代码看起来就是许多括号的相互嵌套，而实际上，这些括号表示了语法节点，你可以把它们还原为一棵<em>抽象语法树</em>。显然，这就是我们之前一直在谈的<em>结构</em>。</p>
+<p>让我们抽象出一个<em>括号</em>来：树形结构在线性字符串中的表现形式。我们知道，语言是将网状的思想，依据树形的语法，表现为线性的形式。而网状思维是组织成树形以后才<em>成型</em>。因此，任何语言的结构都是树状的，也就可以借助括号表示。在书面语中，这些括号要么是隐含的、要么变成了别的形式(<code>、</code> <code>，</code> <code>；</code> <code>。</code>之间的层次关系；分段、分章节；不同等级的标题；双音词、成语、短语(词组)的形成等等)。口语中，结构主要体现为停顿，并借助句调与语义来确定层次。</p>
+<p>括号同时也能起到分隔的作用。</p>
+<p>以唯一可读性考虑，这些括号大多数都可以省去，剩下的则根据情况不同改写为不同的标点：</p>
+<ul>
+<li><em>点号</em>：((甲是甲)(乙是乙))</li>
+<li><em>圆括号</em>：(甲(古称閼逢)为天干之首)</li>
+<li><em>缩进</em>：适用于文段的结构安排。</li>
+<li><em>冒号</em>：(天干包括(甲)(乙)…(癸))</li>
+<li><em>分割线</em>：适用于大文段的结构安排。</li>
+</ul>
+<h4 id="点号">点号</h4>
+<p>对于各种点号，我在长期实践后认为统一成<em>句号</em>、<em>逗号</em>两个就足够使用了，更多种类没有益处，徒增烦恼，只会提高误用的风险。</p>
+<p><em>逗号</em>、<em>句号</em>写成什么形式各地并不一致，我喜欢日本的方案(<code>、</code> <code>。</code>)，比较传统。</p>
+<p>出于美观，我习惯书写成<code>.</code> <code>..</code>(横排是<code>:</code>)。</p>
+<p>另，那些“一逗到底”的糟糕例子往往是该断句的地方用了逗号，如果正确断句，可读性并不会受影响。</p>
+<h4 id="圆括号">圆括号</h4>
+<p>对于<em>圆括号</em>，我认为一般情况下没必要使用，表示注释与补充说明时宜用注释格式。表示插入语时用两个逗号即可，提示插入语的<em>破折号</em>同理。</p>
+<h4 id="缩进-2">缩进</h4>
+<p>至于<em>缩进</em>，可以绑定在<em>空格键</em>上，此时冒号仍可以作为<em>缩进提示符</em>存在。另一种想法是，将<em>冒号键</em>作为<em>换行</em>与<em>缩进</em>的组合。</p>
+<h4 id="分割线">分割线</h4>
+<p>对分割线，如果能实现<em>缩进</em>，分割线将是不必要的，我们可以设置一个空的层级来实现分割线的功能，也可以给该层级命名或编号。比如上面这段文本，如果想正确地并列，可以改成：</p>
+<pre class="line-numbers language-none"><code class="language-none">*点号*：
+    ((甲是甲)(乙是乙))
+*圆括号*：
+    (甲(古称閼逢)为天干之首)
+*缩进*：
+    适用于文段的结构安排。
+*冒号*：
+    (天干包括(甲)(乙)…(癸))
+*分割线*：
+    适用于大文段的结构安排。
+：
+    对于各种*点号*，我在长期实践后认为统一成*句号* *逗号*两个就足够使用了，更多种类没有益处，徒增烦恼，只会提高误用的风险。
+        *逗号* *句号*写成什么形式各地并不一致，我喜欢日本的方案(*、**。*)，比较传统。
+        出于美观，我习惯书写成*.* *..*(横排是*:*)。
+        另，那些“一逗到底”的糟糕例子往往是该断句的地方用了逗号，如果正确断句，可读性并不会受影响。
+：
+    对于*圆括号*，我认为一般情况下没必要使用，表示注释与补充说明时宜用注释格式。表示插入语时用两个逗号即可，提示插入语的*破折号*同理。
+：
+    至于*缩进*，可以绑定在*空格键*上，此时冒号仍可以作为*缩进提示符*存在。另一种想法是，将*冒号键*作为*换行*与*缩进*的组合。
+：
+    对分割线，如果能实现*缩进*，内容上分割线将是不必要的，仅具有格式上的意义。不过，我们也可以设置一个空的层级来实现此功能，也可以给该层级命名或编号。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>不难发现，需要引入<code>:</code>的直接原因是，将层次结构表示为缩进时，换行会导致歧义。写代码时，程序员每写一句就换一次行，缩进相同的语句都是并列关系，但写文章的人划分自然段可不是按照这个规矩。在自然段中，<em>换行</em>和<em>句号</em> <em>逗号</em>一样，有两方面的作用：</p>
+<ul>
+<li>一是表示语言中比句号更大的停顿。</li>
+<li>二是表示意思连贯的几句话的结束。</li>
+</ul>
+<p>一般写作者会在认为需要舒缓节奏的地方换行(分段)，这往往也是句意结束的地方，不过有时候上下两段话的意思比较紧密，其实从结构上看不应该分段。只是，如果强行规定不准分段，损伤可读性的同时，也不符合一般习惯。而冒号的引入使得语义连贯的几段内容可以归到同一层。给这一层命个名，相当于我们平时说的小标题。这样，书写习惯与结构化需求都照顾到了，可以说是一种两全的方案。</p>
+<p>这种形式提醒我们，看似是同一缩进的内容实际上可能是两块并列的文本。按通常的做法，如果不想产生误会就应该起一个小标题来概括这一块内容，抑或使用序号或<code>&gt;</code>之类的符号加以提示。<code>:</code>支持这三种做法，你可以在空层级的<code>:</code>前输入文字、数字与符号。</p>
+<p>另一种解决问题的思路是改变对<em>行</em>的定义。在代码编辑器中，<em>行</em>实际上指的是一段话，如果开启了<em>自动折行</em>功能，其文段的本质就暴露得比较明显了。但另一方面，程序员们往往一行只写一句话，在 Python 这种依赖缩进的语言中，取消了句末的<code>;</code>，直接禁止一行写多句语句。那么这时候<em>行</em>实际上就是<em>句</em>了。恰巧，我也通过缩进来表示层次结构，那么直接将<em>换行符</em>映射到<em>句号键</em>，将<code>:</code>映射到<em>回车键</em>也是一种选择。</p>
+<p>第三种方案是前面否决的，即“规定在句意未尽时不允许换行”，这样缩进相同的行与行之间一定是并列的关系，也就不需要设计<code>:</code>了。不过，这个方案除了不符合习惯以外，还有一个缺点是不能设置标题格式。</p>
+<p>不过，文段之间的关系不止是包含与并列。之前说过，思维是网状的，这就是有向图的结构。语言没办法表示这种结构，但它又实际存在。子节点当然可以从属于不止一个父节点，随便找一张思维导图一看便知。</p>
+<p>有什么办法可以巧妙地表示一种包含<em>说明</em> <em>描述</em> <em>注释</em> <em>引用</em>等关系的结构呢？显然，各种文件系统所支持的<em>软链接</em>/<em>硬链接</em>功能就是这个问题的一个解法，但怎么用纯文本优雅地表示呢？</p>
+<p>也许可以利用<em>列</em>。</p>
+<p>数据库<em>字段</em> <em>主键</em> <em>表</em>的概念启发了我，如果将<em>列</em>不止视为简单的纵向对齐，还视为一种表示指向关系的模型，很多问题都能迎刃而解。前文提到的行的分割与合并问题就是一个例子。</p>
+<p>单行分割与多行合并，实际上是一回事，只是表现形式不同。由于我的设计中没有空行这种说法，这个效果实现起来很简单：</p>
+<ul>
+<li>在某一列换行，输入<code>Shift</code> + <code>↓</code>使换行符只作用于当前列，我们就使其他列的一行对应了该列的两行。</li>
+<li>接下来输入<code>↓</code>，对当前行的所有列换行，创建一个正常的新行。</li>
+<li>再接下来就是排版系统的工作了。</li>
+</ul>
+<p>其实，代码中用<code>//</code>与语句分隔开的注释，又何尝不是属于另一<em>列</em>呢？</p>
+<h3 id="语义符号">语义符号<code>_</code></h3>
+<p>我们从思维中提取出概念，形成词汇，以此组织成文。但我们无法保证所有这些词都是大众熟知的，也无法保证我们使用的专有名词会被正确理解，当这个专名有常用意义时尤其容易被误解；还有一种情况是我们根据语境临时赋予新的含义，使其成为<em>特称</em>，这也容易被误解。针对这些情况，有必要使用一种符号来指示这些特别的词。</p>
+<p>由于这些词往往还需要做注释，因此还需要设置注释格式。</p>
+<p>下划线在我国传统中作为专名号使用。在网页中，通过下划线与着色来提示<em>超链接</em>。利用超链接的功能实现注释是小菜一碟，epub 格式的电子书就是这样做的，效果非常理想。同时，我们注意到，<em>超链接</em>也可以实现引用。应该说，德特·纳尔逊(Ted Nelson)创造超链接的目的就是从参考文献跳转到引用的论文。</p>
+<p>那么，<em>引号</em> <em>专名号</em> <em>书名号</em> <em>六角括号</em> <em>方括号</em>都是同一种功能的不同实现，可以统一为下划线。</p>
+<p>如前文所述，注释关系可以体现为一种<em>列</em>结构。对一般的注释，分一列也就够了。而在我国传统中，注释往往放在正文后面，为了分清主次，遂将一行上下剖为两半，以更小的字体填充之。这与上下标的表现方式不谋而合。我们可以使用前文提到的行合并与分割功能实现。</p>
+<p>再谈谈<em>省略号</em>，省略是语言中常见的现象，是一种无声的词语。显式的省略一般表现为一段停顿。理论上说，这停顿该是比句子间的停顿要长的，不过也不尽然。目前<em>省略号</em>的用法中，有一些在口语中并不停顿，代之以拖长音、代之以重复、代之以补充说明；有一些尽管停顿，但并不明显，更明显的是语气的吞吐；有一些干脆是当分割线用了：要不要用省略号，是有必要仔细考虑，一个个厘清的。</p>
+<p>对于单纯表示省略的<em>省略号</em>，我认为应当和<em>重文符</em>一样，看做是一种特殊的汉字，现在一般叫<em>通配符</em>，以<code>*</code>表示。对于表示犹豫、吞吐、沉默的<em>省略号</em>，应当看成一种语调符号。</p>
+<p>对于一直习用的用引号括住<em>直接引语</em>的做法，我认为<em>直接引语</em>对说话者实际上是从属关系，用结构(符号<code>:</code>与缩进)表示较好，不宜使用专名号。另外，<em>标点符号用法</em>中，“标示语段中具有特殊含义而需要特别指出的成分，如别称、简称、反语等”这一用法的<em>反语</em>本质上是引用；“需要着重论述或强调的内容”本质是重音。</p>
+<h3 id="语调符号-·">语调符号<code>~</code> <code>·</code></h3>
+<p>一般人熟悉的语调符号是<code>？</code> <code>！</code> <code>。</code> <code>……</code>，都是加在句子末尾的，少数情况下也会加在句内点号处，这时对句子的划分就会变得暧昧不清，这是他们身兼了句末点号的缘故。</p>
+<p>如果把表示语调的功能单拎出来，情况会变得比较简单，这时我们注意到<em>着重号</em>是附加在字符上的，这样做可以吗？</p>
+<p>理论上来说，没问题，因为语调不是在句子完成后才产生，而是在说话的过程中不断地变化的。事实上也有语言这样处理：亚美尼亚语。</p>
+<p>亚美尼亚语的问号<code>՞</code>不是加在句子后面，而是加在有疑问的词的重读音节的元音后面。</p>
+<p>比如说：<code>Քանի՞ լեզու գիտեք:</code>(您懂几门语言？)问号是加在<code>Քանի</code>(多少)后面。句子最后的<code>:</code>是亚美尼亚语的句号。</p>
+<p><code>Հայերեն խոսո՞ւմ եք:</code>(您会不会说亚美尼亚语？)这里问号是加在<code>խոսում</code>(说)的重读音节处。但如果提问时强调的是“亚美尼亚语”而不是“说”，问号就会移到<code>Հայերեն</code>(亚美尼亚语)的重读音节处。感叹号<code>՜</code>和着重号<code>՛</code>的用法和问号类似，也是加在要强调的词的重读音节的元音后面。</p>
+<p>我建议使用<em>波浪线</em>(<code>~</code>)来表示疑问语调，用<em>着重号</em>(<code>·</code>)来表示强调与感叹语调。如果强调是整个句子的语气，就放在句子最后一个字下面。</p>
+<p>注意到，我设计这些符号的原则是：言语中的音段对应文本中的文字；言语中的停顿对应文本中有宽度的符号；言语中的超音段内容对应文本中无宽度的标示；言语中的结构内容对应文本中无形的结构符号。</p>
+<p>接下来，综合之前关于文本格式的想法，看看我们的标点符号系统是什么样的。</p>
+<ol>
+<li>
+<p>标注符</p>
+<ul>
+<li>
+<p>标注号<code>_</code>：用于链接引用与注释、标注专名与特称。</p>
+</li>
+<li>
+<p>疑问号<code>~</code>：用于表示设问、反问语气。</p>
+</li>
+<li>
+<p>着重号<code> ̣</code>：用于表示强调与情感激烈。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>结构符</p>
+<ul>
+<li>
+<p>提示符<code>:</code>：用于提示标题(本句内容处于更高层，接下来的内容处于更底层)。</p>
+</li>
+<li>
+<p>分列符<code>|</code>：用于分列(换列)。</p>
+</li>
+<li>
+<p>逗号<code>、</code>：用于表示句内的停顿。</p>
+</li>
+<li>
+<p>句号<code>。</code>：用于表示(结构、句调)完整的句子。</p>
+</li>
+<li>
+<p>分词符<code>·</code>：用于分词(空格)并插入词距。</p>
+</li>
+<li>
+<p>分段符<code>↓</code>：用于分段(换行)并插入段间距。</p>
+</li>
+<li>
+<p>缩进符<code>-&gt;</code>：用于实现缩进(插入行前边距)。</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>以上标点符号中，分列符、缩进符、分词符与分段符是不可见的空白字符。提示符(冒号)也许可以选择隐藏一部分，但我想还是显示好。</p>
+<p>这些符号应该进入 Unicode 并且能利用键盘直接输入。注意到，通过组合字符机制，标注符是可以在纯文本环境实现的。</p>
+<p>对于键盘输入问题，键盘上可以添加如下按键：</p>
+<ul>
+<li>
+<p>逗号与句号键 = <code>、</code>/<code>。</code>：相当于输入逗号/句号加一个分词符，以适应排版需求。</p>
+</li>
+<li>
+<p>制表键 = <code>|</code>：在当前行换列，相当于纵向的回车。分出来的列可以用于制表、对代码进行注释、做笔记等。</p>
+</li>
+<li>
+<p><code>Ctrl</code> + <code>|</code>：拆分当前窗口。</p>
+</li>
+<li>
+<p><code>Shift</code> + <code>|</code>：删除当前列(除了第一列)。</p>
+</li>
+<li>
+<p>空格键 = <code>-&gt;</code>(行首)/<code>·</code>(行中)：用于设置空隙。还可以定词。</p>
+</li>
+<li>
+<p><code>Shift</code> + <code>-&gt;</code>：缩进左移一格(层次提高一层)。</p>
+</li>
+<li>
+<p>回车键(句号后) = <code>↓</code> + n × <code>-&gt;</code>(取决于上一行缩进)：换行并自动缩进。</p>
+</li>
+<li>
+<p>列表键 = <code>:</code> + <code>Shift</code> + <code>-&gt;</code> + <code>↓</code> + n × <code>-&gt;</code>：用于实现并列结构。</p>
+</li>
+<li>
+<p>退格键 = <code>&lt;-</code>：向前删除，直到碰到分词符。</p>
+</li>
+<li>
+<p><code>Shift</code> + <code>&lt;-</code>：向前删除，直到碰到第二个分词符。</p>
+</li>
+<li>
+<p>下划线等标注键(分词符后)：标注在前一个词上。</p>
+</li>
+<li>
+<p>下划线等标注键(其他结构符后)：标注在接下来一个词上。</p>
+</li>
+</ul>
+<p>考虑到前文排版的需求，应该将连续的空白字符视为一个。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://1284685832.github.io">啪栏杆</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://1284685832.github.io/%E6%A0%BC%E5%BC%8F%E4%B8%8E%E5%86%85%E5%AE%B9/">https://1284685832.github.io/%E6%A0%BC%E5%BC%8F%E4%B8%8E%E5%86%85%E5%AE%B9/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://1284685832.github.io" target="_blank">莫名</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%8E%92%E7%89%88/">排版</a></div><div class="post_share"><div class="social-share" data-image="/img/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">啪栏杆</div><div class="author-info__description">所有文章都会于此处留档，欢迎订阅</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/1284685832"><i class="fab fa-github"></i><span>Github主页</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:fhbuyr@foxmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a><a class="social-icon" href="https://www.zhihu.com/people/pai-lan-gan" target="_blank" title="Zhihu"><i class="fa fa-solid fa-pen-nib"></i></a><a class="social-icon" href="https://nga.178.com/nuke.php?func=ucp&amp;uid=60180548" target="_blank" title="NGA"><i class="fa fa-pen"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F%E4%B8%8E%E6%8E%92%E7%89%88"><span class="toc-text">格式与排版</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E9%9A%99"><span class="toc-text">空隙</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%92%E7%89%88"><span class="toc-text">排版</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%94%A8%E6%80%A7"><span class="toc-text">实用性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BE%8E%E8%A7%82"><span class="toc-text">美观</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E4%B8%8E%E7%BC%96%E7%A0%81"><span class="toc-text">文本与编码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E6%A0%BC"><span class="toc-text">空格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TAB"><span class="toc-text">TAB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%A9%E8%BF%9B"><span class="toc-text">缩进</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8A%E4%B8%8B%E6%A0%87"><span class="toc-text">上下标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E4%B8%8E%E6%A0%87%E7%82%B9"><span class="toc-text">内容与标点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E7%AC%A6%E5%8F%B7"><span class="toc-text">结构符号() |</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%82%B9%E5%8F%B7"><span class="toc-text">点号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%86%E6%8B%AC%E5%8F%B7"><span class="toc-text">圆括号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%A9%E8%BF%9B-2"><span class="toc-text">缩进</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E5%89%B2%E7%BA%BF"><span class="toc-text">分割线</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E7%AC%A6%E5%8F%B7"><span class="toc-text">语义符号_</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E8%B0%83%E7%AC%A6%E5%8F%B7-%C2%B7"><span class="toc-text">语调符号~ ·</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2025 By 啪栏杆</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">姑妄言之姑听之 豆棚瓜架雨如丝 料应厌作人间语 爱听秋坟鬼唱诗</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

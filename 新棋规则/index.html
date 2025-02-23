@@ -1,0 +1,5348 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>新棋规则 | 莫名</title><meta name="author" content="啪栏杆"><meta name="copyright" content="啪栏杆"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="22:36 2021&#x2F;4&#x2F;1 像棋1.0  1.1 对局在11×11的棋盘上进行，落子在交叉点上，对战双方称为黑方和白方。 1.2 有棋子32个，分黑白两组，每组16个，各有将×1，弩×2，骑×2，砲×2，校×2，侍×2，卒×5。 1.3 对局前，摆放棋子如下：      A B C D E F G H I J K     11 砲 弩 骑 校 侍 将 侍 校 骑 弩 砲   10">
+<meta property="og:type" content="article">
+<meta property="og:title" content="新棋规则">
+<meta property="og:url" content="https://1284685832.github.io/%E6%96%B0%E6%A3%8B%E8%A7%84%E5%88%99/index.html">
+<meta property="og:site_name" content="莫名">
+<meta property="og:description" content="22:36 2021&#x2F;4&#x2F;1 像棋1.0  1.1 对局在11×11的棋盘上进行，落子在交叉点上，对战双方称为黑方和白方。 1.2 有棋子32个，分黑白两组，每组16个，各有将×1，弩×2，骑×2，砲×2，校×2，侍×2，卒×5。 1.3 对局前，摆放棋子如下：      A B C D E F G H I J K     11 砲 弩 骑 校 侍 将 侍 校 骑 弩 砲   10">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://1284685832.github.io/img/avatar.png">
+<meta property="article:published_time" content="2021-05-06T10:38:08.000Z">
+<meta property="article:modified_time" content="2023-07-15T13:50:08.000Z">
+<meta property="article:author" content="啪栏杆">
+<meta property="article:tag" content="游戏设计">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://1284685832.github.io/img/avatar.png"><link rel="shortcut icon" href="/fa%20fa-solid%20fa-pen-nib"><link rel="canonical" href="https://1284685832.github.io/%E6%96%B0%E6%A3%8B%E8%A7%84%E5%88%99/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '新棋规则',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-15 21:50:08'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#1e1e1e')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/latex-hexo.css"><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="莫名" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="莫名"><span class="site-name">莫名</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">新棋规则</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon fas fa-history"></i><span class="post-meta-label">更新于</span><time datetime="2023-07-15T13:50:08.000Z" title="更新于 2023-07-15 21:50:08">2023-07-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">50.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>155分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="新棋规则"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="22-36-2021-4-1">22:36 2021/4/1</h1>
+<h2 id="像棋1-0">像棋1.0</h2>
+<ul>
+<li>1.1 对局在11×11的棋盘上进行，落子在交叉点上，对战双方称为黑方和白方。</li>
+<li>1.2 有棋子32个，分黑白两组，每组16个，各有将×1，弩×2，骑×2，砲×2，校×2，侍×2，卒×5。</li>
+<li>1.3 对局前，摆放棋子如下：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+<th>G</th>
+<th>H</th>
+<th>I</th>
+<th>J</th>
+<th>K</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11</td>
+<td>砲</td>
+<td>弩</td>
+<td>骑</td>
+<td>校</td>
+<td>侍</td>
+<td>将</td>
+<td>侍</td>
+<td>校</td>
+<td>骑</td>
+<td>弩</td>
+<td>砲</td>
+</tr>
+<tr>
+<td>10</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>砲</td>
+<td>弩</td>
+<td>骑</td>
+<td>校</td>
+<td>侍</td>
+<td>将</td>
+<td>侍</td>
+<td>校</td>
+<td>骑</td>
+<td>弩</td>
+<td>砲</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>2.1 对局时，白方先走，双方轮流走一着。走一着，指移动某棋子到其他交叉点，或吃掉对方棋子而占据其交叉点，或打入一枚棋子。</li>
+<li>2.2 若无其他说明，各种棋子的移动不可越过棋子。</li>
+<li>2.3 各种棋子走法。
+<ul>
+<li>将，纵横斜走一格。</li>
+<li>侍，斜走一格。</li>
+<li>校，斜走两格(若希望棋局激烈，可改为斜走任意格)。</li>
+<li>骑，直走一格再斜走一格。</li>
+<li>弩，直走任意格(若希望棋局和缓，可改为直走两格)。</li>
+<li>砲，越过一个棋子，直走任意格。</li>
+<li>卒，直走一格。</li>
+</ul>
+</li>
+<li>2.4 走一着棋时，若终点有对方棋子，则吃掉它并占据其位置。吃掉的棋子从棋盘上移除。</li>
+<li>2.5 打入，指若吃掉的棋子有一对不同颜色的同名棋子，可以将此友方棋子放回棋盘任意未被占据的交叉点上。</li>
+<li>3.1 将军，一方的棋子可以在下一着吃掉另一方的将。应将，指在下一着解除被将军的状态，被将军的一方必须立即应将。如果被将军而无法应将，就算被将死，游戏结束。</li>
+<li>3.2 对局时一方出现下列情况之一，对方取胜：
+<ul>
+<li>将被对方将死。<br>
+平湖- 自己宣布认输。</li>
+</ul>
+</li>
+<li>3.3 出现下列情况之一，为和棋，判和棋后游戏结束：
+<ul>
+<li>双方均不可能取胜。</li>
+<li>一方提议作和，另一方表示同意。</li>
+</ul>
+</li>
+</ul>
+<h1 id="22-54-2021-4-5">22:54 2021/4/5</h1>
+<p>考虑将两版新象棋合并为一个项目。</p>
+<h2 id="像棋2-0">像棋2.0</h2>
+<ul>
+<li>1.1 对局在9×9的棋盘上进行，对战双方称为黑方和白方。</li>
+<li>1.2 有棋子32个，分黑白两组，每组16个，各有将×1，弩×2，骑×2，校×2，侍×2，卒×5。</li>
+<li>1.3 对局前，摆放棋子如下：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+<th>G</th>
+<th>H</th>
+<th>I</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>弩</td>
+<td>骑</td>
+<td>校</td>
+<td>侍</td>
+<td>将</td>
+<td>侍</td>
+<td>校</td>
+<td>骑</td>
+<td>弩</td>
+</tr>
+<tr>
+<td>8</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+</tr>
+<tr>
+<td>5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>弩</td>
+<td>骑</td>
+<td>校</td>
+<td>侍</td>
+<td>将</td>
+<td>侍</td>
+<td>校</td>
+<td>骑</td>
+<td>弩</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>2.1 对局时，白方先走，双方轮流走一着。走一着，指移动某棋子到其他交叉点，或吃掉对方棋子而占据其交叉点，或打入一枚棋子。</li>
+<li>2.2 各种棋子的移动不可越过棋子。</li>
+<li>2.3 各种棋子走法。
+<ul>
+<li>将，直走或斜走一格。</li>
+<li>侍，斜走一格。</li>
+<li>校，斜走两格(若希望棋局激烈，可改为斜走任意格)。</li>
+<li>骑，直走一格，斜走一格。</li>
+<li>弩，直走两格(若希望棋局激烈，可改为直走任意格)。</li>
+<li>卒，直走一格。</li>
+</ul>
+</li>
+<li>2.4 走一着棋时，若终点有对方棋子，则吃掉它并占据其位置。吃掉的棋子从棋盘上移除。</li>
+<li>3.1 将军，一方的棋子可以在下一着吃掉另一方的将。应将，指在下一着解除被将军的状态，被将军的一方必须立即应将。如果被将军而无法应将，就算被将死，游戏结束。</li>
+<li>3.2 对局时一方出现下列情况之一，对方取胜：
+<ul>
+<li>将被对方将死。</li>
+<li>自己宣布认输。</li>
+</ul>
+</li>
+<li>3.3 出现下列情况之一，为和棋，判和棋后游戏结束：
+<ul>
+<li>双方均不可能取胜。</li>
+<li>一方提议作和，另一方表示同意。</li>
+</ul>
+</li>
+</ul>
+<h1 id="22-32-2021-4-8">22:32 2021/4/8</h1>
+<p>长久以来，我把这个棋当作是我的黑历史：它的第一版没有经过精细的考虑，只是简单地引入将棋“打入”；它的第二版将规则大大精炼了，却成了波斯古象棋的简单重复。既没有趣味性、又没有创意，这种棋如何说得上好设计呢？在我重新审视行子、落子与吃子的关系时，我意识到可以将他们有机地结合起来，建立一个最完整的框架，使打入成为它顺理成章的一部分。目前的设计还很粗陋，但慢慢改进，我希望最终会比较平衡，同时保持一种原型机式的简洁。</p>
+<p>先提炼出最基本的部分，如下：</p>
+<h2 id="像棋3-0">像棋3.0</h2>
+<ul>
+<li>1.1 对局在9×9的格点上进行，相邻格点距离为1，对战双方称为黑方和白方。</li>
+<li>1.2 格点的类型数目为，黑将×1，黑校×2，黑骑×2，黑砲×2，黑弩×2，黑卒×5，白将×1，白校×2，白骑×2，白砲×2，白弩×2，白卒×5，点×53。</li>
+<li>1.3 格点的初始布局为，白车A9I9，白骑B9H9，白校C9G9，白侍D9F9，白将E9，白砲B8H8，白弩D8H8，白卒A7C7E7G7I7，黑车A1I1，黑骑B1H1，黑校C1G1，黑侍D1F1，黑将E1，黑砲B2H2，黑弩D2H2，黑卒A3C3E3G3I3，</li>
+<li>2.1 对局时，双方轮流进行使对方不面临同形局面的行动，白方先行。</li>
+<li>2.2 行动分几个步骤。(a)吃子。(b)走子。©落子。</li>
+<li>2.3 吃子，即指定一个友方棋子，消灭其附近的一枚敌方棋子。若不吃子则跳到下一步骤。
+<ul>
+<li>将，消灭横/纵坐标差1或横纵坐标均差1的敌方棋子。</li>
+<li>卒，消灭横纵坐标均差1的敌方棋子。</li>
+<li>侍，消灭横/纵坐标差1的敌方棋子。</li>
+<li>校，消灭横纵坐标均差1的敌方棋子。</li>
+<li>骑，消灭横纵坐标均差1的敌方棋子。</li>
+<li>弩，消灭横/纵坐标差n的敌方棋子，当且仅当两棋子连线上没有其他棋子。</li>
+<li>砲，消灭横/纵坐标差n的敌方棋子，当且仅当两棋子连线上有一个其他棋子。</li>
+<li>车，消灭横纵坐标均差1的敌方棋子。</li>
+</ul>
+</li>
+<li>2.4 走子，即将一个友方棋子由原格点移动到空格点，路径上不得有其他棋子。
+<ul>
+<li>将，直走1个单位或斜走一个单位。</li>
+<li>卒，直走1个单位。</li>
+<li>侍，斜走1个单位。</li>
+<li>校，斜走任意单位。</li>
+<li>骑，直走1个单位再斜走1个单位。</li>
+<li>弩，若吃子，将弩移动到敌方棋子处。否则直走一个单位。</li>
+<li>砲，若吃子，将砲移动到敌方棋子处。否则直走任意单位。</li>
+<li>车，直走任意单位。</li>
+</ul>
+</li>
+<li>2.5 落子，即将一个被消灭的敌方棋子置放在任意空格点中，并将其改为友方棋子。</li>
+<li>2.6 行动的几个步骤应指定同一个棋子，落子后回合结束。</li>
+<li>3.1 当某方消灭敌方的将后，游戏结束。</li>
+<li>3.2 对局结束后，若白将存活，白方胜。若黑将存活，黑方胜。若都存活，为和局。</li>
+</ul>
+<p>现棋盘如下：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+<th>G</th>
+<th>H</th>
+<th>I</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>车</td>
+<td>骑</td>
+<td>校</td>
+<td>侍</td>
+<td>将</td>
+<td>侍</td>
+<td>校</td>
+<td>骑</td>
+<td>车</td>
+</tr>
+<tr>
+<td>8</td>
+<td></td>
+<td>砲</td>
+<td></td>
+<td>弩</td>
+<td></td>
+<td>弩</td>
+<td></td>
+<td>砲</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td>砲</td>
+<td></td>
+<td>弩</td>
+<td></td>
+<td>弩</td>
+<td></td>
+<td>砲</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>车</td>
+<td>骑</td>
+<td>校</td>
+<td>侍</td>
+<td>将</td>
+<td>侍</td>
+<td>校</td>
+<td>骑</td>
+<td>车</td>
+</tr>
+</tbody>
+</table>
+<h1 id="21-07-2021-4-9">21:07 2021/4/9</h1>
+<p>考虑到侍与卒的设计同质化严重，考虑改变侍的定位。</p>
+<p>尽管卒只有五个，但增加了两个棋子，导致无法形成开放线，是不是有待商榷呢？</p>
+<ul>
+<li>卒，吃子，横吃或斜吃。走子，若横吃，则斜走，否则直走。</li>
+<li>侍，吃子，不能吃子或被吃。走子，直走或斜走任意格。</li>
+</ul>
+<p>如何呢？</p>
+<h1 id="21-07-2021-4-9-2">21:07 2021/4/9</h1>
+<p>和虎鲸测了半盘。有问题的不是侍而是校。这个游戏有很明显的防守优势，而校的位置不容易出来，本身控制范围也有盲区，就强度来说是比较弱的一档。而它和侍的角色差不多，把校去掉将会给我设计新棋子的空间。那么，新棋子要有什么特点呢。是七国象棋的“行人”还是永恒象棋的“士”呢。首先得明确一点，它不能比原来的校还弱。那么其实“行人”就难以满足要求了。“士”呢，有一个缺点，没有棋子相邻时是不能走的，我以为并不合理。那么，将“校”改为“贲”，效果是距离最近的友方棋子的复制。</p>
+<p>另外，关于马，由于面对直吃棋子的威胁时马既不能反杀又会被别马脚，而直吃的棋子偏偏占大多数，加上棋子密度很大，使得马的强度没有达到我的预期，考虑将吃子方式改为直吃来平衡一下。另外回归中象布局，兵和砲那两行往中间挪一格，防止骑被自家人卡死。</p>
+<p>现规则如下：</p>
+<h2 id="像棋3-1">像棋3.1</h2>
+<ul>
+<li>1.1 对局在9×9的格点上进行，相邻格点距离为1，对战双方称为黑方和白方。</li>
+<li>1.2 格点的类型数目为，黑将×1，黑校×2，黑骑×2，黑砲×2，黑弩×2，黑卒×5，白将×1，白贲×2，白骑×2，白砲×2，白弩×2，白卒×5，点×53。</li>
+<li>1.3 格点的初始布局为，白车A9I9，白骑B9H9，白校C9G9，白侍D9F9，白将E9，白砲B7H7，白弩D7H7，白卒A6C6E6G6I6，黑车A1I1，黑骑B1H1，黑贲C1G1，黑侍D1F1，黑将E1，黑砲B3H3，黑弩D3H3，黑卒A4C4E4G4I4，</li>
+<li>2.1 对局时，双方轮流进行使对方不面临同形局面的行动，白方先行。</li>
+<li>2.2 行动分几个步骤：⑴吃子；⑵走子；⑶落子。</li>
+<li>2.3 吃子，即指定一个友方棋子，消灭其附近的一枚敌方棋子。若不吃子则跳到下一步骤。
+<ul>
+<li>将，消灭横/纵坐标差1或横纵坐标均差1的敌方棋子。</li>
+<li>卒，消灭横纵坐标均差1的敌方棋子。</li>
+<li>侍，消灭横/纵坐标差1的敌方棋子。</li>
+<li>贲，吃子方式同距离最近的友方棋子。</li>
+<li>骑，消灭横纵坐标均差1的敌方棋子。</li>
+<li>弩，消灭横/纵坐标差n的敌方棋子，当且仅当两棋子连线上没有其他棋子。</li>
+<li>砲，消灭横/纵坐标差n的敌方棋子，当且仅当两棋子连线上有一个其他棋子。</li>
+<li>车，消灭横纵坐标均差1的敌方棋子。</li>
+</ul>
+</li>
+<li>2.4 走子，即将一个友方棋子由原格点移动到空格点，路径上不得有其他棋子。若不能走子则跳到下一步骤。
+<ul>
+<li>将，直走1个单位或斜走一个单位。</li>
+<li>卒，直走1个单位。</li>
+<li>侍，斜走1个单位。</li>
+<li>贲，走子方式同距离最近的友方棋子。</li>
+<li>骑，直走1个单位再斜走1个单位。</li>
+<li>弩，若吃子，将弩移动到敌方棋子处。否则直走一个单位。</li>
+<li>砲，若吃子，将砲移动到敌方棋子处。否则直走任意单位。</li>
+<li>车，直走任意单位。</li>
+</ul>
+</li>
+<li>2.5 落子，即将一个被消灭的敌方棋子置放在任意空格点中，并将其改为友方棋子。</li>
+<li>2.6 行动的几个步骤应指定同一个棋子，落子后回合结束。</li>
+<li>3.1 当某方消灭敌方的将后，游戏结束。</li>
+<li>3.2 对局结束后，若白将存活，白方胜。若黑将存活，黑方胜。若都存活，为和局。</li>
+</ul>
+<h2 id="2023-09-02-08-30-43">2023-09-02 08:30:43</h2>
+<p>由于龙的新设计可以一步移动到任何友方棋子附近，故而三角形的初始布局其实已无太大必要。至于兵线位置，有中象的开放线设计，稍稍靠后一点也无妨。另外，我去掉了比较无聊的士，位置空出来放隹(砲)，正好不会一步吃子了。其他方面，取消了九宫和河界。有人可能会有疑虑，这样会不会太难将死，我认为在棋子整体强度变高，且每回合都能免费替子(类似打入与升变的结合)的背景下，应该不至于有太高的和棋率。不过，原先豫棋的设计有一个问题，龙失去了最重要的地位，这可能会让习惯杀王棋模式的玩家不习惯，原来“龙离开棋盘其他棋子不能动”的设计则太刻意了，替子改为免费后倒是有了个挺好的表述。</p>
+<p>总之，我尝试回归到比较传统的布局上来，作为像棋系列的最新设计。</p>
+<h2 id="像棋4-0">像棋4.0</h2>
+<ul>
+<li>1.1 对局在9×9的格点上进行，相邻格点距离为1，对战双方称为黑方和白方。</li>
+<li>1.2 格点的初始布局为：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+<th>G</th>
+<th>H</th>
+<th>I</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>兕</td>
+<td>马</td>
+<td>象</td>
+<td>隹</td>
+<td>龙</td>
+<td>隹</td>
+<td>象</td>
+<td>马</td>
+<td>兕</td>
+</tr>
+<tr>
+<td>8</td>
+<td>鱼</td>
+<td></td>
+<td>鱼</td>
+<td></td>
+<td>鱼</td>
+<td></td>
+<td>鱼</td>
+<td></td>
+<td>鱼</td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>鱼</td>
+<td></td>
+<td>鱼</td>
+<td></td>
+<td>鱼</td>
+<td></td>
+<td>鱼</td>
+<td></td>
+<td>鱼</td>
+</tr>
+<tr>
+<td>1</td>
+<td>兕</td>
+<td>马</td>
+<td>象</td>
+<td>隹</td>
+<td>龙</td>
+<td>隹</td>
+<td>象</td>
+<td>马</td>
+<td>兕</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>2.1 对局时，双方轮流进行使对方不面临同形局面的行动，白方先行。</li>
+<li>2.2 每回合可以进行二种行动，走子与替子。</li>
+<li>2.3 棋子走法如下：
+<ul>
+<li>龙，走到任意友方棋子相邻格。</li>
+<li>隹，越过一个棋子，直走或斜走任意格(必须越子)。</li>
+<li>象，斜走任意格。</li>
+<li>兕，直走任意格。</li>
+<li>马，直走一格，斜走一格；可走任意次。</li>
+<li>鱼，直走或斜走一格；不能走到棋子上；走子后，将一附近敌子送入墓地。附近指走子前后都能走到(或表述为：走子前后均在直、斜一格以内)。</li>
+</ul>
+</li>
+<li>2.4 当棋子走到敌方棋子位置上时，将该棋子送入墓地并结束回合；当棋子走到友方棋子位置上时，撤销这一步并结束回合(这意味着走子路径上一般不得有其他棋子)。</li>
+<li>2.5 替子，指将一枚棋盘上的友方棋子(活子)与墓地中的友方棋子(死子)交换。</li>
+<li>2.6 可以放弃当回合的行动。</li>
+<li>2.7 禁止再现本局对战中出现过的局面。</li>
+<li>3.1 当某方回合结束时棋盘上没有龙，游戏结束；该方判负，另一方获胜。</li>
+<li>3.2 若双方都无法吃掉所有敌方棋子，为和局。</li>
+</ul>
+<p>给棋子改个名，加入生肖的风味：</p>
+<ul>
+<li>龙，龙/虎</li>
+<li>隹，鸡/猴</li>
+<li>象，猪/狗</li>
+<li>兕，牛/羊</li>
+<li>马，蛇/马</li>
+<li>鱼，鼠/兔</li>
+</ul>
+<h1 id="16-37-2021-5-13">16:37 2021/5/13</h1>
+<p>我有了全新的想法，与之相比之前的设计太累赘了。</p>
+<h2 id="豫棋1-0">豫棋1.0</h2>
+<ul>
+<li>1.1 对局在9×9的格点上进行，相邻格点距离为1，对战双方称为黑方和白方。</li>
+<li>1.2 格点的初始布局为：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+<th>G</th>
+<th>H</th>
+<th>I</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>豸</td>
+<td>鹿</td>
+<td>能</td>
+<td>禺</td>
+<td>虎</td>
+</tr>
+<tr>
+<td>8</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>豸</td>
+<td>牛</td>
+<td>鸟</td>
+<td>禺</td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>豸</td>
+<td>牛</td>
+<td>能</td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>豸</td>
+<td>鹿</td>
+</tr>
+<tr>
+<td>5</td>
+<td>鱼</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>豸</td>
+</tr>
+<tr>
+<td>4</td>
+<td>马</td>
+<td>鱼</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>象</td>
+<td>兕</td>
+<td>鱼</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>龟</td>
+<td>隹</td>
+<td>兕</td>
+<td>鱼</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>龙</td>
+<td>龟</td>
+<td>象</td>
+<td>马</td>
+<td>鱼</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>2.1 对局时，双方轮流进行使对方不面临同形局面的行动，白方先行。</p>
+</li>
+<li>
+<p>2.2 每回合可以进行二种行动，走子与升变。</p>
+</li>
+<li>
+<p>2.3 棋子走法如下：</p>
+<ul>
+<li>龙/虎，直走或斜走，直到被挡住或吃子(不能停)。</li>
+<li>龟/禺，和相邻棋子走法一样(没有相邻棋子不能走)。(或者:斜走一格)</li>
+<li>隹/鸟，越过一个棋子，直走任意格(必须越子)。(或者:可越过多个棋子)</li>
+<li>象/能，斜走任意格。</li>
+<li>兕/牛，直走任意格。</li>
+<li>马/鹿，直走一格，斜走一格(可先斜走再直走)。</li>
+<li>鱼/豸，直走一格。</li>
+</ul>
+</li>
+<li>
+<p>2.4 当棋子走到敌方棋子位置上时，吃掉该棋子并结束回合(这意味着走子路径上一般不得有其他棋子)。</p>
+</li>
+<li>
+<p>2.5 棋子升变，指将一枚棋盘内的友方棋子(活子)与棋盘外的友方棋子(死子)交换。</p>
+</li>
+<li>
+<p>2.6 每回合至多走子一次，升变一次(即可以放弃走子，升变，或放弃行动)。</p>
+</li>
+<li>
+<p>3.1 当某方吃掉所有敌方棋子后，游戏结束(此时对手只能行虚着，等价于两虚终局)。</p>
+</li>
+<li>
+<p>3.2 率先吃掉所有敌方棋子的一方胜，另一方败。若双方都无法吃掉所有敌方棋子，为和局。另外，一方认输判负，另一方胜。(等价于两虚终局者负)</p>
+</li>
+</ul>
+<h1 id="20-37-2021-5-21">20:37 2021/5/21</h1>
+<p>更新：不再区分黑方白方的棋子名称，统一为(龙，龟，隹，象，兕，马，鱼)。</p>
+<p>龟的走法确定为，进入墓地或从墓地打入棋盘任意位置。</p>
+<p>隹的走法确定为，必须越过棋子(一个或多个)。</p>
+<h1 id="10-07-2021-5-22">10:07 2021/5/22</h1>
+<p>龟破坏了游戏平衡，使得游戏无法结束，即使棋子本身设计得很棒，灵龟通阴阳嘛，但还是得忍痛舍弃它。</p>
+<p>考虑改成鹿，可以走到任意空点(不能吃子)。</p>
+<p>隹能越多子，使得开局两步就能换掉龙，这恐怕不太合理。但越一子又太弱，怎么办呢。另外有一点，必须越子使得隹有可能动弹不得，这是应该避免的。</p>
+<p>传统的炮该怎么描述呢？</p>
+<h2 id="豫棋1-1">豫棋1.1</h2>
+<ul>
+<li>1.1 对局在9×9的格点上进行，相邻格点距离为1，对战双方称为黑方和白方。</li>
+<li>1.2 格点的初始布局为：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+<th>G</th>
+<th>H</th>
+<th>I</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>鱼</td>
+<td>马</td>
+<td>象</td>
+<td>龟</td>
+<td>龙</td>
+</tr>
+<tr>
+<td>8</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>鱼</td>
+<td>兕</td>
+<td>隹</td>
+<td>龟</td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>鱼</td>
+<td>兕</td>
+<td>象</td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>鱼</td>
+<td>马</td>
+</tr>
+<tr>
+<td>5</td>
+<td>鱼</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>鱼</td>
+</tr>
+<tr>
+<td>4</td>
+<td>马</td>
+<td>鱼</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>象</td>
+<td>兕</td>
+<td>鱼</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>龟</td>
+<td>隹</td>
+<td>兕</td>
+<td>鱼</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>龙</td>
+<td>龟</td>
+<td>象</td>
+<td>马</td>
+<td>鱼</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>2.1 对局时，双方轮流进行使对方不面临同形局面的行动，白方先行。</li>
+<li>2.2 每回合可以进行二种行动，走子与替子。</li>
+<li>2.3 棋子走法如下：
+<ul>
+<li>龙，直走或斜走任意格。</li>
+<li>龟，(在棋盘上时)离开棋盘，(离开棋盘时)回到棋盘上任意空点。</li>
+<li>隹，越过一个及以上棋子，直走任意格(必须越子)。</li>
+<li>象，斜走任意格。</li>
+<li>兕，直走任意格。</li>
+<li>马，直走一格，斜走一格，可走任意次。(或斜走一格，然后直走任意格)</li>
+<li>鱼，直走一格。</li>
+</ul>
+</li>
+<li>2.4 当棋子走到敌方棋子位置上时，将该棋子送入墓地并结束回合；当棋子走到友方棋子位置上时，撤销这一步并结束回合(这意味着走子路径上一般不得有其他棋子)。</li>
+<li>2.5 替子，指将一枚棋盘上的友方棋子(活子)与墓地中的友方棋子(死子)交换。</li>
+<li>2.6 可以放弃当回合的行动。</li>
+<li>3.1 当某方吃掉所有敌方棋子后，游戏结束(此时对手只能行虚着，等价于两虚终局)。</li>
+<li>3.2 率先吃掉所有敌方棋子的一方胜，另一方败。若双方都无法吃掉所有敌方棋子，为和局。若一方认输，该方判负，另一方胜。(等价于两虚终局者负)</li>
+</ul>
+<h1 id="9-07-2021-5-23">9:07 2021/5/23</h1>
+<ul>
+<li>龙，走到任意友方棋子相邻格。龙不在棋盘上时友方棋子无法行动。</li>
+<li>鸟，走到任意空格。鸟占据龟的位置。</li>
+<li>龟，(在棋盘上时)离开棋盘，(离开棋盘时)回到棋盘上任意点。龟占据隹的位置。</li>
+</ul>
+<h1 id="14-07-2021-5-25">14:07 2021/5/25</h1>
+<ul>
+<li>它，斜走任意格，然后退一格。它占据龟的位置。</li>
+</ul>
+<p>终局条件改为，吃掉所有敌方棋子。</p>
+<h1 id="2023-08-21-23-27-17">2023-08-21 23:27:17</h1>
+<p>这个棋的主要特点是：特别的初始布局；对打入规则的改写。</p>
+<h2 id="初始布局设计">初始布局设计</h2>
+<p>我个人比较喜欢紧密地放在一起的初始布局，这样比较好记，不必像中象那样在棋盘上标注。但这有两个问题：其一是九个兵太多；其二是兵太难出。另有问题是，倘若取消九宫，那么要么像将棋那样花上二十步以上把将挪到角落，要么像国象那样额外添加“王车易位”的规则：两者均非我所喜。于是我灵光一闪，一开始就把棋子放在了角落，以上问题统统解决了。不过，在龙可以走到任意友方棋子相邻格的设计下，并没有必要采取此种布局。</p>
+<h2 id="打入规则改写">打入规则改写</h2>
+<p>将棋的打入是一个经典设计，很多新棋都会借鉴。但如果要原样借入，势必需要双方棋子方向有别、颜色无别，和一般的象棋子形制不同。倘若加以改写，打入的是己方的死子呢？打入原本是个滚雪球的规则，强者愈强、弱者愈弱，解决了杀王棋平局太多的弊病。如果打入(复活)的是己方死子，那岂不是死的子越强越有利，反而是有利于弱势方的规则。这样对局势必要拉长，长期僵持，能不能减少平局就要打个问号了。因此需要提高复活所需要付出的代价，首先想到的便是拿俘子去交换，不过这会使台下的操作过于复杂，增加耍赖与争执。另一个想法就是拿棋盘上的棋子去换，我很快意识到这相当于原地升变。显然在这种情况下重要的是棋盘上子的数量，因此还是利好优势方，除非这条规则太弱⸺于是我提高了替子的频率，每回合都可以免费替一次。</p>
+<p>在这个宗旨下，显然将被吃了也可以重新回到棋盘，于是游戏的终局条件自然地变成了吃掉棋盘上所有子。这会拉长游戏进程，如果弱势方只是一味地被杀，就没什么趣味了。幸好替子是替换友方棋子，这意味着棋子的位置是重要的，可以为了抢夺有利位置而送死，应该还是给后半段加入了一点策略要素。</p>
+<hr>
+<p>棋子的设计上没有太多创见，只是尽量做到子子不同，像中象中“士-象”与“兵-车”、国象中“王后-主教-城堡”这样同质化的设计非我所愿。我得意的想法是龙，降临到友方棋子周围突出了它的机动性，颇有能升能隐的意趣，强度上也不至于太离谱。但有些棋子就设计得不好，甚至改的还没原版好，比如鸟和它。</p>
+<p>我想还是要把中象“砲”的设计好好吸收，使棋盘如下：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+<th>G</th>
+<th>H</th>
+<th>I</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>鱼</td>
+<td>马</td>
+<td>兕</td>
+<td>隹</td>
+<td>龙</td>
+</tr>
+<tr>
+<td>8</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>鱼</td>
+<td>象</td>
+<td>禺</td>
+<td>隹</td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>鱼</td>
+<td>象</td>
+<td>兕</td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>鱼</td>
+<td>马</td>
+</tr>
+<tr>
+<td>5</td>
+<td>鱼</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>鱼</td>
+</tr>
+<tr>
+<td>4</td>
+<td>马</td>
+<td>鱼</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>兕</td>
+<td>象</td>
+<td>鱼</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>隹</td>
+<td>禺</td>
+<td>象</td>
+<td>鱼</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>龙</td>
+<td>隹</td>
+<td>兕</td>
+<td>马</td>
+<td>鱼</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>取消“龙不在棋盘上时友方棋子无法行动”的规则。</p>
+<ul>
+<li>隹，越过一个棋子，直走或斜走任意格。</li>
+<li>鱼，直走或斜走一格；不能走到棋子上；走子后，可吃掉一个附近敌子；附近指走子前后都能走到(或表述为：走子前后均在直、斜一格以内)。</li>
+<li>禺，走法同任意一个相邻友方棋子；相邻指直、斜一格以内。</li>
+</ul>
+<p>隹是砲类棋子，最一致的设计是朝鲜象棋里的包，只是太弱。加强方式有两种：一是能越多子；二是能斜走(乃至于像易棋那样走)。由于越多子太厉害了一些，且可能造成类似别马脚的误解，我倾向第二种办法。</p>
+<p>鱼的设计来自我之前走子吃子方式分离的想法，实现上很像国象的吃过路兵。</p>
+<p>禺代替了龟(以及鸟)，因为这两个棋子的设计我都不太满意：龟要么完全没有用，要么就是两步吃一子的无赖棋子；鸟看起来简直是龙的加强版，又或者是没有吃子能力的泥塑木偶。</p>
+<hr>
+<p>另有一个想法是把这个打入规则叫作夺舍，那么这棋瞬间就换了张仙侠皮，但皮也是很重要的，现在比较好的类象棋新棋差不多都是由风味取胜。</p>
+<p>给棋子改个名：</p>
+<ul>
+<li>龙，合体</li>
+<li>禺，化神</li>
+<li>隹，元婴</li>
+<li>兕，金丹</li>
+<li>象，紫府</li>
+<li>马，筑基</li>
+<li>鱼，练气</li>
+</ul>
+<h2 id="易棋1-0">易棋1.0</h2>
+<ul>
+<li>1.1 对局在11×11的1×1格点上进行，对战双方称为黑方和白方。</li>
+<li>1.2 格点的类型与数目为：黑将×1，黑弩×2，黑骑×2，黑砲×2，黑校×2，黑侍×2，黑卒×5，白将×1，白弩×2，白骑×2，白砲×2，白校×2，白侍×2，白卒×5，点(+)×89。</li>
+<li>1.3 格点的初始布局如下：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+<th>G</th>
+<th>H</th>
+<th>I</th>
+<th>J</th>
+<th>K</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11</td>
+<td>砲</td>
+<td>弩</td>
+<td>骑</td>
+<td>校</td>
+<td>侍</td>
+<td>将</td>
+<td>侍</td>
+<td>校</td>
+<td>骑</td>
+<td>弩</td>
+<td>砲</td>
+</tr>
+<tr>
+<td>10</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>砲</td>
+<td>弩</td>
+<td>骑</td>
+<td>校</td>
+<td>侍</td>
+<td>将</td>
+<td>侍</td>
+<td>校</td>
+<td>骑</td>
+<td>弩</td>
+<td>砲</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>2.1 对局时，双方轮流行动，白方先行。</li>
+<li>2.2 行动，指按规则变换格点，或放弃本轮行动(即虚着或弃权)。</li>
+<li>2.3 格点变换规则如下，n指任意正整数。
+<ul>
+<li>将，与距离为1或√2的格点交换坐标。</li>
+<li>侍，与距离为√2的格点交换坐标。</li>
+<li>校，与距离为2√2的格点交换坐标(若希望棋局激烈，可改为与距离为n√2的格点交换坐标)。</li>
+<li>骑，与距离为√5的格点交换坐标。</li>
+<li>弩，与距离为n的格点交换坐标(若希望棋局和缓，可改为与距离为2的格点交换坐标)。</li>
+<li>砲，以任意非点格点为对称中心，与对称格点交换坐标。</li>
+<li>卒，与距离为1的格点交换坐标。</li>
+</ul>
+</li>
+<li>3.1 当某方将移动到中线(A6，B6，C6，D6，E6，F6，G6，H6，I6中任意一点)后，双方的行动只能选择放弃本轮行动(只能行虚着或弃权)。</li>
+<li>3.2 当双方连续放弃本轮行动(出现连续两个虚着或弃权)后，游戏结束。</li>
+<li>3.3 游戏结束时，若白将在中线，白方胜。若黑将在中线，黑方胜。若没有将在中线，为和局。</li>
+<li>4.1 若某方行动后使对方重复面临曾出现过的局面(全局同形)，该行动改为放弃本轮行动。</li>
+<li>4.2 若某方行动违反以上规则，该行动改为放弃本轮行动。</li>
+<li>5.1 对规则的改动仅限以下几条，且改动应当提前向对局双方公示，说明。</li>
+<li>5.2 在各种对局中，可以改中线(A6，B6，C6，D6，E6，F6，G6，H6，I6)为中点(E6)或其他点，线，面，本规则不做强制规定。</li>
+<li>5.3 在各种对局中，可以改变格点数目，种类，初始布局，本规则不做强制规定。</li>
+<li>5.4 在各种对局中，可以自行决定用时，器材，赛制，裁判等其他规则，本规则不做强制规定。</li>
+<li>5.5 在各种对局中，可以将游戏结束条件改为连续三次及以上放弃本轮行动(行虚着或弃权)。</li>
+</ul>
+<h1 id="19-52-2021-3-31">19:52 2021/3/31</h1>
+<p>由于防御力的不足，有自闭的风险，同时侍的强度太低，考虑以下布局。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+<th>G</th>
+<th>H</th>
+<th>I</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>砲</td>
+<td>校</td>
+<td>骑</td>
+<td>弩</td>
+<td>将</td>
+<td>弩</td>
+<td>骑</td>
+<td>校</td>
+<td>砲</td>
+</tr>
+<tr>
+<td>8</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+</tr>
+<tr>
+<td>5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>砲</td>
+<td>校</td>
+<td>骑</td>
+<td>弩</td>
+<td>将</td>
+<td>弩</td>
+<td>骑</td>
+<td>校</td>
+<td>砲</td>
+</tr>
+</tbody>
+</table>
+<p>调整了一些棋子的位置以提高对中央区域的防御，这也意味着不能用中线，而是用中点作为终局条件。</p>
+<p>同时，将的走法改为侍的走法，以延长到中点的距离。</p>
+<p>这个更新还需要讨论。</p>
+<h1 id="8-19-2021-4-1">8:19 2021/4/1</h1>
+<p>已经委托夏日sb完成了ZoG规则文件的编写，现在可以下棋测试了。</p>
+<h1 id="22-35-2021-4-1">22:35 2021/4/1</h1>
+<p>定稿了，现规则如下：</p>
+<h2 id="易棋2-0">易棋2.0</h2>
+<ul>
+<li>1.1 对局在9×9的格点上进行，相邻格点距离为1，对战双方称为黑方和白方。</li>
+<li>1.2 格点的类型与数目：黑将×1，黑弩×2，黑骑×2，黑砲×2，黑校×2，黑卒×5，白将×1，白弩×2，白骑×2，白砲×2，白校×2，白卒×5，点×53。</li>
+<li>1.3 格点的初始布局如下，上方为白方，下方为黑方。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+<th>G</th>
+<th>H</th>
+<th>I</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>砲</td>
+<td>校</td>
+<td>骑</td>
+<td>弩</td>
+<td>将</td>
+<td>弩</td>
+<td>骑</td>
+<td>校</td>
+<td>砲</td>
+</tr>
+<tr>
+<td>8</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+</tr>
+<tr>
+<td>5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+<td></td>
+<td>卒</td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>砲</td>
+<td>校</td>
+<td>骑</td>
+<td>弩</td>
+<td>将</td>
+<td>弩</td>
+<td>骑</td>
+<td>校</td>
+<td>砲</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>2.1 对局时，双方轮流行动，白方先行。</li>
+<li>2.2 行动，指按规则变换格点，或放弃本轮行动(即虚着或弃权)。</li>
+<li>2.3 格点变换规则如下，n指任意正整数。
+<ul>
+<li>将，与距离为√2的格点交换坐标。</li>
+<li>校，与距离为n√2的格点交换坐标。</li>
+<li>骑，与距离为√5的格点交换坐标。</li>
+<li>弩，与距离为2^n的格点交换坐标。</li>
+<li>砲，以任意非点格点为对称中心，与对称格点交换坐标。</li>
+<li>卒，与距离为1的格点交换坐标。</li>
+</ul>
+</li>
+<li>3.1 当某方将移动到中点(E5)后，双方的行动只能选择放弃本轮行动(只能行虚着或弃权)。</li>
+<li>3.2 当双方连续放弃本轮行动(出现连续两个虚着或弃权)后，游戏结束。</li>
+<li>3.3 游戏结束时，若白将在中线，白方胜。若黑将在中线，黑方胜。若没有将在中线，为和局。</li>
+<li>4.1 若某方行动后使对方重复面临曾出现过的局面(全局同形)，该行动改为放弃本轮行动。</li>
+<li>4.2 若某方行动违反以上规则，该行动改为放弃本轮行动。</li>
+<li>5.1 对规则的改动仅限以下几条，且改动应当提前向对局双方公示，说明。</li>
+<li>5.2 在各种对局中，可以改中点(E6)为中线(A6，B6，C6，D6，E6，F6，G6，H6，I6)或其他点，线，面。</li>
+<li>5.3 在各种对局中，可以改变格点数目，种类，初始布局，本规则不做强制规定。</li>
+<li>5.4 在各种对局中，对用时，器材，赛制，裁判等其他规则，本规则不做强制规定。</li>
+<li>5.5 在各种对局中，可将游戏结束条件改为连续三次及以上放弃本轮行动(行虚着或弃权)。</li>
+</ul>
+<h1 id="8-33-2021-4-2">8:33 2021/4/2</h1>
+<p>发现一个bug，弩可以走距离为5n的斜线上，我的确考虑过345，后面怎么忘了呢。</p>
+<p>要打一个丑陋的补丁非我所愿，但允许的话弩实在强的过头。</p>
+<p>考虑削弱为2^(n-1)，n-1是为了走一格。当然，也可改为2^n，因为n可以为0。暂时改为2^n。</p>
+<p>名称定为“易棋”，取交换之意。</p>
+<h1 id="16-53-2021-4-3">16:53 2021/4/3</h1>
+<p>根据cfk的反馈，将弩增强为走2n格。</p>
+<h1 id="21-54-2021-4-8">21:54 2021/4/8</h1>
+<p>决定提炼出最基本的部分，如下：</p>
+<h2 id="易棋2-1">易棋2.1</h2>
+<ul>
+<li>1.1 对局在9×9的格点上进行，相邻格点距离为1，对战双方称为黑方和白方。</li>
+<li>1.2 格点的类型数目为，黑将×1，黑弩×2，黑骑×2，黑砲×2，黑校×2，黑卒×5，白将×1，白弩×2，白骑×2，白砲×2，白校×2，白卒×5，点×53。</li>
+<li>1.3 格点的初始布局为，白砲A9I9，白校B9H9，白骑C9G9，白弩D9F9，白卒A6C6E6G6I6，黑砲A1I1，黑校B1H1，黑骑C1G1，黑弩D1F1，黑卒A4C4E4G4I4。</li>
+<li>2.1 对局时，双方轮流进行使对方不面临同形局面的行动，白方先行。</li>
+<li>2.2 行动指按规则变换格点，格点变换规则如下：
+<ul>
+<li>将，与距离为√2的格点交换坐标。</li>
+<li>校，与距离为n√2的格点交换坐标(n指任意正整数)。</li>
+<li>骑，与距离为√5的格点交换坐标。</li>
+<li>弩，与距离为2n的格点交换坐标(n指任意正整数)。</li>
+<li>砲，以任意非点格点为对称中心，与对称格点交换坐标。</li>
+<li>卒，与距离为1的格点交换坐标。</li>
+</ul>
+</li>
+<li>3.1 当某方将移动到中点(E5)后，游戏结束。</li>
+<li>3.2 对局结束后，若白将在中点，白方胜。若黑将在中点，黑方胜。若没有将在中点，为和局。</li>
+</ul>
+<h1 id="9-28-2021-4-14">9:28 2021/4/14</h1>
+<p>更新，为了适应棋盘套装，根据历史衍变，改变棋子名称。对应表如下：</p>
+<table>
+<thead>
+<tr>
+<th>现名称</th>
+<th>中象</th>
+<th>国象</th>
+<th>将棋</th>
+<th>像棋</th>
+<th>易棋</th>
+<th>七国象棋</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>龙</td>
+<td>将、帅</td>
+<td>国王</td>
+<td>王将</td>
+<td>将</td>
+<td>将</td>
+<td>王</td>
+</tr>
+<tr>
+<td>凤</td>
+<td></td>
+<td>皇后</td>
+<td>角行、龙马</td>
+<td></td>
+<td></td>
+<td>裨</td>
+</tr>
+<tr>
+<td>兕</td>
+<td>车、伡</td>
+<td>城堡</td>
+<td>香车、成香</td>
+<td></td>
+<td></td>
+<td>弓</td>
+</tr>
+<tr>
+<td>牛</td>
+<td></td>
+<td></td>
+<td>飞车、龙王</td>
+<td>弩</td>
+<td>弩</td>
+<td>弩</td>
+</tr>
+<tr>
+<td>马</td>
+<td>马、傌</td>
+<td>骑士</td>
+<td>桂马、成桂</td>
+<td>骑</td>
+<td>骑</td>
+<td>骑</td>
+</tr>
+<tr>
+<td>象</td>
+<td>象、相</td>
+<td>主教</td>
+<td>银将、成银</td>
+<td>校</td>
+<td>校</td>
+<td>偏</td>
+</tr>
+<tr>
+<td>龟</td>
+<td>士、仕</td>
+<td></td>
+<td>金将</td>
+<td>侍</td>
+<td></td>
+<td>刀</td>
+</tr>
+<tr>
+<td>鱼</td>
+<td>卒、兵</td>
+<td>士兵</td>
+<td>步兵、成金</td>
+<td>卒</td>
+<td>卒</td>
+<td>剑</td>
+</tr>
+<tr>
+<td>隹</td>
+<td>砲、炮</td>
+<td></td>
+<td></td>
+<td>砲</td>
+<td>砲</td>
+<td>砲</td>
+</tr>
+<tr>
+<td>鹿</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>行</td>
+</tr>
+<tr>
+<td>虎</td>
+<td></td>
+<td></td>
+<td></td>
+<td>贲</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>禺、犬、豸、能、猱、羯、备用。</p>
+<p>棋子做好了：禺(猴)、兕、虎、马、龟、鸟(凤)、龙、鱼、隹、鹿、牛、它(蛇)、犬、豸、能(熊)、猱(原本的猴，已弃用)，共十六种。</p>
+<h1 id="2024-10-17-21-57-59">2024-10-17 21:57:59</h1>
+<p>易棋试验的结果是，规则的指引有点弱，不太明白改怎么走。另外枪中点似乎有点快了，也许改为｢老将先走到对手中宫者胜｣会好一点。</p>
+<p>其实｢交换位置｣的点子并不要求改变棋子走法。考虑一下，如果在一般的象棋里引入｢吃子改为交换位置｣，能不能玩？能的。</p>
+<hr>
+<h1 id="23-56-2021-4-1">23:56 2021/4/1</h1>
+<h2 id="循棋1-0">循棋1.0</h2>
+<ul>
+<li>1.1 对局在8×8的正方格点上进行，相邻格点距离为1，对战双方称为黑方和白方。</li>
+<li>1.2 对局前将黑×9，白×9，灰×18个点随机排布于棋盘中央6×6区域，棋盘如下：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>5</td>
+<td>-</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>-</td>
+</tr>
+<tr>
+<td>4</td>
+<td>-</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>-</td>
+</tr>
+<tr>
+<td>3</td>
+<td>-</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>-</td>
+</tr>
+<tr>
+<td>2</td>
+<td>-</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>-</td>
+</tr>
+<tr>
+<td>1</td>
+<td>-</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>-</td>
+</tr>
+<tr>
+<td>0</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>2.1 对局时，白方改变点横坐标，黑方改变点纵坐标。双方轮流行动，白方先行。</li>
+<li>2.2 行动，指按规则变换点，或放弃本轮行动。</li>
+<li>2.4 点变换规则：白方(黑方)将某行(列)点的横(纵)坐标+1，然后将横(纵)坐标为6的格点的横(纵)坐标改为1。</li>
+<li>3.1 当某方达成所有黑点与白点距离大于1，即黑白点不相邻时，双方的行动只能选择放弃本轮行动。</li>
+<li>3.2 当双方连续放弃本轮行动后，游戏结束。</li>
+<li>3.3 游戏结束时，若白方先达成黑白点不相邻，白方胜。若黑方先达成黑白子不相邻，黑方胜。若都没有达成，为和局。</li>
+<li>4.1 若某方行动后使对方面临曾出现的局面(双方连续移动同一行或列12次)，该行动改为放弃本轮行动。</li>
+<li>4.2 若某方行动违反以上规则，该行动改为放弃本轮行动。</li>
+<li>5.1 对规则的改动仅限以下几条，且改动应当提前向对局双方公示，说明。</li>
+<li>5.2 在各种对局中，可以将胜利条件改为完成某种特殊图形或其他合理条件。</li>
+<li>5.3 在各种对局中，可以改变格点数目(棋盘大小)，种类，初始布局，本规则不做强制规定。</li>
+<li>5.4 在各种对局中，可以自行决定用时，器材，赛制，裁判等其他规则，本规则不做强制规定。</li>
+<li>5.5 在各种对局中，可以将游戏结束条件改为连续三次及以上放弃本轮行动。</li>
+<li>5.6 在各种对局中，可以改黑白双方为队友，以胜利时长与其他队伍竞争。或者合并黑白双方，改为单人游戏。</li>
+</ul>
+<h1 id="20-28-2021-4-2">20:28 2021/4/2</h1>
+<p>考虑到计算对手的行动过于困难，考虑将“2.5一轮行动可进行1到4次变换”去掉，相当于一次只能沿固定方向转一格。</p>
+<p>进一步，若限定方向为正方向，也就不必“将横(纵)坐标为0的改为5”了。</p>
+<h1 id="10-30-2021-4-4">10:30 2021/4/4</h1>
+<p>本来想到一个点子，把数独做进去，不过与数独魔方没有本质区别，没意思。</p>
+<p>由于订购不到灰色的棋子，考虑仅用黑白棋子进行游戏，胜利条件改为黑白子相邻(每一个黑子相邻的四个子至少有一个白子，白子同理)。</p>
+<p>这样多少有点像生命游戏了。</p>
+<h1 id="21-52-2021-4-8">21:52 2021/4/8</h1>
+<p>决定提炼出最基本的部分，如下：</p>
+<h2 id="循棋1-1">循棋1.1</h2>
+<ul>
+<li>1.1 对局在6×6的正方格点上进行，相邻格点距离为1，对战双方称为黑方和白方。</li>
+<li>1.2 对局前将黑×9，白×9，灰×18个点随机排布于棋盘中。</li>
+<li>2.1 对局时，白方改变点横坐标，黑方改变点纵坐标。双方轮流进行使对方不面临同形局面的行动，白方先行。</li>
+<li>2.2 行动包含几个步骤：⑴白方(黑方)将某行(列)点的横(纵)坐标+1；⑵将横(纵)坐标为6的格点的横(纵)坐标改为1。</li>
+<li>3.1 当某方达成所有黑点与白点距离大于1(黑白点不相邻)时，游戏结束。</li>
+<li>3.2 对局结束后，若白方先达成黑白点不相邻，白方胜。若黑方先达成黑白子不相邻，黑方胜。若都没有达成，为和局。</li>
+</ul>
+<h2 id="循棋2-0">循棋2.0</h2>
+<ul>
+<li>1.1 对局在9×9的正方格点上进行，相邻格点距离为1，对战双方称为黑方和白方。</li>
+<li>1.2 对局前将黑子×40，白子×40，透明子×1随机排布于棋盘中。</li>
+<li>2.1 对局时，白方改变点横坐标，黑方改变点纵坐标。双方轮流进行使对方不面临同形局面的行动，白方先行。</li>
+<li>2.2 行动包含几个步骤：⑴白方(黑方)将某行(列)点的横(纵)坐标+1；⑵将横(纵)坐标为10的格点的横(纵)坐标改为1。</li>
+<li>3.1 当黑方达成所有每一个黑子相邻的四个子至少有一个白子或透明子，白子同理时，游戏结束。</li>
+<li>3.2 对局结束后，若白方先达成，白方胜。若黑方先达成，黑方胜。若都没有达成，为和局。</li>
+</ul>
+<hr>
+<p>8:37 2021/4/2</p>
+<h2 id="剥棋1-0">剥棋1.0</h2>
+<ul>
+<li>1.1 对局在19×19的格点上进行，格点相距1，对战双方称为黑方和白方。</li>
+<li>1.2 对局前随机将1×1黑白灰色方片置于格点上，每一格点摞3层，要求填满所有格点。</li>
+<li>1.3 白方片透明，灰方片半透明，黑方片不透明。颜色表如下，目视颜色指方片看上去(显示)的颜色。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>第n行/列</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+<th>13</th>
+<th>14</th>
+<th>15</th>
+<th>16</th>
+<th>17</th>
+<th>18</th>
+<th>19</th>
+<th>20</th>
+<th>21</th>
+<th>22</th>
+<th>23</th>
+<th>24</th>
+<th>25</th>
+<th>26</th>
+<th>27</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上层颜色</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>白</td>
+<td>灰</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>白</td>
+<td>白</td>
+<td>灰</td>
+<td>灰</td>
+<td>白</td>
+<td>白</td>
+<td>灰</td>
+<td>灰</td>
+<td>白</td>
+<td>白</td>
+<td>白</td>
+<td>灰</td>
+<td>白</td>
+<td>灰</td>
+<td>灰</td>
+<td>灰</td>
+</tr>
+<tr>
+<td>中层颜色</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>白</td>
+<td>灰</td>
+<td>黑</td>
+<td>黑</td>
+<td>白</td>
+<td>白</td>
+<td>灰</td>
+<td>灰</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>白</td>
+<td>灰</td>
+<td>白</td>
+<td>灰</td>
+<td>白</td>
+<td>白</td>
+<td>灰</td>
+<td>白</td>
+<td>灰</td>
+<td>灰</td>
+<td>白</td>
+<td>灰</td>
+</tr>
+<tr>
+<td>下层颜色</td>
+<td>黑</td>
+<td>白</td>
+<td>灰</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>白</td>
+<td>灰</td>
+<td>白</td>
+<td>灰</td>
+<td>白</td>
+<td>灰</td>
+<td>白</td>
+<td>灰</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>白</td>
+<td>灰</td>
+<td>白</td>
+<td>白</td>
+<td>灰</td>
+<td>白</td>
+<td>灰</td>
+<td>灰</td>
+</tr>
+<tr>
+<td>目视上层</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>白</td>
+<td>灰</td>
+<td>灰</td>
+<td>灰</td>
+<td>灰</td>
+<td>灰</td>
+<td>灰</td>
+<td>灰</td>
+</tr>
+<tr>
+<td>目视中层</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>白</td>
+<td>灰</td>
+<td>灰</td>
+<td>灰</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>白</td>
+<td>灰</td>
+<td>灰</td>
+<td>白</td>
+<td>灰</td>
+<td>灰</td>
+<td>灰</td>
+<td>灰</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>2.1 对局时，双方轮流操作，白方先行。</li>
+<li>2.2 操作，指行动一次，或放弃本轮行动。</li>
+<li>2.3 行动规则：⑴选择一个可用方片(可用方片指其上未叠放方片的方片)，猜测其颜色(仅限方片拥有的颜色)；⑵然后揭开该方片，验证猜测；⑶猜对则重复上一步骤，猜错则结束行动。</li>
+<li>3.1 当所有方片被揭开，双方的行动只能选择放弃本轮行动。</li>
+<li>3.2 当双方连续放弃本轮行动后，游戏结束。</li>
+<li>3.3 游戏结束时，若白方揭开的方片多于黑方，白方胜。若黑方揭开的方片多于白方，黑方胜。若相同，为和局。</li>
+<li>4.1 若某方行动违反以上规则，该行动改为放弃本轮行动。</li>
+<li>5.1 对规则的改动仅限以下几条，且改动应当提前向对局双方公示，说明。</li>
+<li>5.2 在各种对局中，可以将胜利条件改为白方比黑方多n片或其他合理条件。</li>
+<li>5.3 在各种对局中，可以改变格点数目，颜色，种类，本规则不做强制规定。</li>
+<li>5.4 在各种对局中，可以自行决定用时，器材，赛制，裁判等其他规则，本规则不做强制规定。</li>
+<li>5.5 在各种对局中，可以将游戏结束条件改为连续3次及以上放弃本轮行动。</li>
+</ul>
+<h1 id="19-21-2021-4-2">19:21 2021/4/2</h1>
+<p>发现在两层以上的情况下，猜方片下的颜色是没法玩的。</p>
+<p>因为你在揭开方片之前不知道它实际上是什么颜色，你只知道它看上去是什么颜色，这样你只有揭开中层方片才知道揭上层方片时猜对没有，那三层有什么意义呢。因此将三层方片改为两层。</p>
+<h1 id="20-04-2021-4-2">20:04 2021/4/2</h1>
+<p>也许可以猜揭开方片的颜色，这样就可以当场验证了。因此重新改为三层。</p>
+<p>之前有一个最简单的版本，不好玩，但已经有了猜颜色、连续行动、多层棋子这三个基本特色。规则如下：</p>
+<ul>
+<li>1.1 对局在19×19的格点上进行，格点相距1，对战双方称为黑方和白方。</li>
+<li>1.2 对局前随机将1×1黑白方片置于格点上，每一格点摞2层，要求填满所有格点。</li>
+<li>2.1 对局时，双方轮流操作，白方先行。</li>
+<li>2.2 操作，指行动一次，或放弃本轮行动。</li>
+<li>2.3 行动规则如下：⑴选择一个可用方片，猜测其下方片的颜色(仅限方片拥有的颜色)；⑵揭开该方片，验证猜测；⑶猜对则重复上一步骤，猜错则结束行动。</li>
+<li>3.1 当所有方片被揭开，双方的行动只能选择放弃本轮行动。</li>
+<li>3.2 当双方连续放弃本轮行动后，游戏结束。</li>
+<li>3.3 游戏结束时，若白方揭开的方片多于黑方，白方胜。若黑方揭开的方片多于白方，黑方胜。若相同，为和局。</li>
+<li>4.1 若某方行动违反以上规则，该行动改为放弃本轮行动。</li>
+</ul>
+<h1 id="14-44-2021-4-3">14:44 2021/4/3</h1>
+<p>原定名为“掀棋”，现在觉得不够形象，改名为“剥棋”。</p>
+<h1 id="14-29-2021-4-4">14:29 2021/4/4</h1>
+<p>由于订购不到灰色半透明棋子，考虑仅用透明白子与半透明黑子进行游戏，此时颜色表如下：</p>
+<table>
+<thead>
+<tr>
+<th>情形</th>
+<th>层次</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实际</td>
+<td>上层</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>白</td>
+<td>黑</td>
+<td>白</td>
+<td>白</td>
+<td>白</td>
+</tr>
+<tr>
+<td>实际</td>
+<td>中层</td>
+<td>黑</td>
+<td>黑</td>
+<td>白</td>
+<td>黑</td>
+<td>白</td>
+<td>黑</td>
+<td>白</td>
+<td>白</td>
+</tr>
+<tr>
+<td>实际</td>
+<td>下层</td>
+<td>黑</td>
+<td>白</td>
+<td>黑</td>
+<td>黑</td>
+<td>白</td>
+<td>白</td>
+<td>黑</td>
+<td>白</td>
+</tr>
+<tr>
+<td>目视</td>
+<td>上层</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>白</td>
+</tr>
+<tr>
+<td>目视</td>
+<td>中层</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>黑</td>
+<td>白</td>
+<td>黑</td>
+<td>黑</td>
+<td>白</td>
+</tr>
+</tbody>
+</table>
+<p>注意到，猜下层颜色的条件为两层棋子或只有最多一种透明棋子，猜本层颜色的条件为存在半透明或透明棋子(但在实体棋中恐怕并无意义)。</p>
+<h1 id="21-44-2021-4-8">21:44 2021/4/8</h1>
+<p>决定提炼出最基本的部分，如下：</p>
+<h2 id="剥棋1-1">剥棋1.1</h2>
+<ul>
+<li>1.1 对局在19×19的格点上进行，格点相距1，对战双方称为黑方和白方。</li>
+<li>1.2 对局前随机将1×1黑，透明方片置于格点上，每一格点摞3层，填满所有格点。</li>
+<li>2.1 对局时，双方轮流行动，白方先行。</li>
+<li>2.2 行动包括几个步骤：⑴选择一个可用方片，猜测其下方片的目视颜色(黑方片为黑色，透明方片为其下方片的颜色)，然后揭开该方片，验证猜测；⑵若猜对，则重复步骤a；⑶若猜错，则结束行动。</li>
+<li>3.1 当所有方片被揭开，游戏结束。</li>
+<li>3.2 游戏结束后，若白方揭开的方片多于黑方，白方胜。若黑方揭开的方片多于白方，黑方胜。若相同，为和局。</li>
+</ul>
+<h1 id="21-51-2021-4-8">21:51 2021/4/8</h1>
+<p>更名为“揭牌”。</p>
+<h1 id="23-38-2021-4-13">23:38 2021/4/13</h1>
+<h2 id="揭牌1-2">揭牌1.2</h2>
+<p>考虑到要适应我设计的棋盘套装，需要做适当的修改。</p>
+<ul>
+<li>1.1 对局在9×9的格点上进行，格点相距1，对战双方称为黑方和白方。</li>
+<li>1.2 对局前随机将1×1黑色，白色，透明方片置于格点上，每一格点摞3层，填满所有格点。</li>
+<li>2.1 对局时，双方轮流行动，白方先行。</li>
+<li>2.2 行动包括几个步骤：⑴选择一个可用方片，猜测其下方片的目视颜色(黑方片为黑色，白方片为白色，透明方片为其下方片的颜色)；然后揭开该方片，验证猜测；⑵若猜对，则重复步骤a；⑶若猜错，则结束行动。</li>
+<li>3.1 当所有方片被揭开，游戏结束。</li>
+<li>3.2 游戏结束后，若白方揭开的方片多于黑方，白方胜。若黑方揭开的方片多于白方，黑方胜。若相同，为和局。</li>
+</ul>
+<hr>
+<h1 id="15-44-2021-4-3">15:44 2021/4/3</h1>
+<h2 id="卦棋1-0">卦棋1.0</h2>
+<ul>
+<li>1.1 对局在8×16的棋盘进行，每格尺寸为2×1，对战双方称为黑方和白方。</li>
+<li>1.2 规定棋盘中心为坐标原点，点(2，2)(2，-2)(-2，-2)(-2，2)围成的区域称“顶层”，点(4，4)(4，-4)(-4，-4)(-4，4)围成的区域(除去顶层)称“上层”，点(6，6)(6，-6)(-6，-6)(-6，6)围成的区域(除去顶层，上层)称“中层”，点(8，8)(8，-8)(-8，-8)(-8，8)围成的区域(除去顶层，上层，中层)称“下层”。棋盘如下：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>坐标</th>
+<th>-8</th>
+<th>-6</th>
+<th>-4</th>
+<th>-2</th>
+<th>2</th>
+<th>4</th>
+<th>6</th>
+<th>8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td>-</td>
+<td>^</td>
+<td>^</td>
+<td>^</td>
+<td>^</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td>-</td>
+<td>^</td>
+<td>^</td>
+<td>^</td>
+<td>^</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td>-</td>
+<td>^</td>
+<td>×</td>
+<td>×</td>
+<td>^</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td></td>
+<td>-</td>
+<td>^</td>
+<td>×</td>
+<td>×</td>
+<td>^</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>-1</td>
+<td></td>
+<td>-</td>
+<td>^</td>
+<td>×</td>
+<td>×</td>
+<td>^</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>-2</td>
+<td></td>
+<td>-</td>
+<td>^</td>
+<td>×</td>
+<td>×</td>
+<td>^</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>-3</td>
+<td></td>
+<td>-</td>
+<td>^</td>
+<td>^</td>
+<td>^</td>
+<td>^</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>-4</td>
+<td></td>
+<td>-</td>
+<td>^</td>
+<td>^</td>
+<td>^</td>
+<td>^</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>-5</td>
+<td></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>-6</td>
+<td></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>-7</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>-8</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>2.1 对局时，双方轮流操作，白方执白先行。</li>
+<li>2.2 操作，指行动一次，或放弃本轮行动。</li>
+<li>2.3 行动规则如下：n为大于3的正整数。</li>
+<li>2.4 将一个棋子置于某顶层格。</li>
+<li>2.5 若该格已经叠放了n层(超过三层)棋子，将该格最上面n-3层棋子移至任意相邻格，否则结束行动。重复该步骤。</li>
+<li>3.1 当任意两个横坐标相等，纵坐标差1的下层格各自叠满三层棋子，双方只能放弃本轮行动。</li>
+<li>3.2 当双方连续放弃本轮行动后，游戏结束。</li>
+<li>3.3 游戏结束时，双方各自从侧面观察这两个下层格，可以观察到两个八卦。双方各自以靠近自己的一卦为上，以远离自己的一卦为下，得出一个六十四卦。</li>
+<li>3.4 双方各自按易经解读自己看到的那一卦，白吉黑凶为白方胜，白凶黑吉为黑胜，都吉都胜，都凶都败。</li>
+<li>4.1 若某方行动违反以上规则，该行动改为放弃本轮行动。</li>
+<li>5.1 对规则的改动仅限以下几条，且改动应当提前向对局双方公示，说明。</li>
+<li>5.2 在各种对局中，可以将胜利条件改为其他公平的条件。</li>
+<li>5.3 在各种对局中，可以自行决定用时，器材，赛制，裁判等其他规则，本规则不做强制规定。</li>
+<li>5.4 在各种对局中，可以多场对局使用同一座棋墩，直到下层格没有一对格子满足条件。</li>
+<li>5.5 在各种对局中，可以将游戏结束条件改为连续3次及以上放弃本轮行动。</li>
+</ul>
+<h1 id="19-51-2021-4-3">19:51 2021/4/3</h1>
+<p>总算是憋出来了，这到底是下棋还是算卦呢。该叫它“卦棋”还是“棋卦”呢。无论如何，利用这个装置可以实现古人的所有解卦手段，用它行棋不过是一隅。</p>
+<h1 id="21-08-2021-4-3">21:08 2021/4/3</h1>
+<p>我不满意，这样根本没必要做多层立体的棋盘，它的可能性完全没发挥出来，我不满意。</p>
+<h1 id="8-30-2021-4-4">8:30 2021/4/4</h1>
+<p>检讨一下。</p>
+<p>首先就目前的游戏方式，不需要立体的棋墩。</p>
+<p>其次叠三层为八卦，两八卦组成六十四卦，强行将上下关系变成左右，给结果判定带来了困难，连带着规则都写不明晰，设计本身也不自然，应当改成六层。</p>
+<p>然后，能落子于空格点意味着棋手可以尽情反悔，寻找最好的一卦，游戏不平衡，剪枝太容易。</p>
+<p>我在写落子规则时想象的场景是从堆高的格点向四周蔓延扩散，而要实现这种效果，需要设定只能落子于非空格点。</p>
+<p>更改规则如下：</p>
+<h2 id="卦棋2">卦棋2</h2>
+<ul>
+<li>1.1 对局在8×8的棋盘进行，相邻格点距离为1，对战双方称为黑方和白方。</li>
+<li>1.2 对局前，在(5，5)(4，4)格点放1黑子，在(4，5)(5，4)格点放1白子。棋盘如下：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+<th>G</th>
+<th>H</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td></td>
+<td></td>
+<td></td>
+<td>白</td>
+<td>黑</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td>黑</td>
+<td>白</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>2.1 对局时，双方轮流操作，白方执白先行。</li>
+<li>2.2 操作，指行动一次，或放弃本轮行动。</li>
+<li>2.3 n为大于6的正整数。</li>
+</ul>
+<p>叠满指叠放六层棋子。</p>
+<p>边缘格点指A1，A2，A3，A4，A5，A6，A7，A8，B1，B8，C1，C8，D1，D8，E1，E8，F1，F8，G1，G8，H1，H2，H3，H4，H5，H6，H7，H8。</p>
+<p>行动规则如下：</p>
+<h2 id="卦棋2-1">卦棋2.1</h2>
+<ul>
+<li>2.4 将一个棋子置于某非空格点。</li>
+<li>2.5 若该格点已经叠放了n层(超过6层)棋子，将该棋子移至任意相邻格点(距离为1的格点)，否则结束行动。重复该步骤。</li>
+<li>3.1 当某方使任意边缘格点叠放了6层棋子，该方只能放弃本轮行动。</li>
+<li>3.2 当双方连续放弃本轮行动后，游戏结束。</li>
+<li>3.3 游戏结束时，双方各自选中最后叠满的格点，白字为阳爻，黑子为阴爻。根据易经解读，白吉黑凶为白方胜，白凶黑吉为黑胜，都吉都胜，都凶都败。</li>
+<li>3.4 易经六十四卦列表如下：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+<th>13</th>
+<th>14</th>
+<th>15</th>
+<th>16</th>
+<th>17</th>
+<th>18</th>
+<th>19</th>
+<th>20</th>
+<th>21</th>
+<th>22</th>
+<th>23</th>
+<th>24</th>
+<th>25</th>
+<th>26</th>
+<th>27</th>
+<th>28</th>
+<th>29</th>
+<th>30</th>
+<th>31</th>
+<th>32</th>
+<th>33</th>
+<th>34</th>
+<th>35</th>
+<th>36</th>
+<th>37</th>
+<th>38</th>
+<th>39</th>
+<th>40</th>
+<th>41</th>
+<th>42</th>
+<th>43</th>
+<th>44</th>
+<th>45</th>
+<th>46</th>
+<th>47</th>
+<th>48</th>
+<th>49</th>
+<th>50</th>
+<th>51</th>
+<th>52</th>
+<th>53</th>
+<th>54</th>
+<th>55</th>
+<th>56</th>
+<th>57</th>
+<th>58</th>
+<th>59</th>
+<th>60</th>
+<th>61</th>
+<th>62</th>
+<th>63</th>
+<th>64</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>乾</td>
+<td>坤</td>
+<td>屯</td>
+<td>蒙</td>
+<td>需</td>
+<td>讼</td>
+<td>师</td>
+<td>比</td>
+<td>小畜</td>
+<td>履</td>
+<td>泰</td>
+<td>否</td>
+<td>同人</td>
+<td>大有</td>
+<td>谦</td>
+<td>豫</td>
+<td>随</td>
+<td>蛊</td>
+<td>临</td>
+<td>观</td>
+<td>噬嗑</td>
+<td>贲</td>
+<td>剥</td>
+<td>复</td>
+<td>无妄</td>
+<td>大畜</td>
+<td>颐</td>
+<td>大过</td>
+<td>坎</td>
+<td>离</td>
+<td>咸</td>
+<td>恒</td>
+<td>遁</td>
+<td>大壮</td>
+<td>晋</td>
+<td>明夷</td>
+<td>家人</td>
+<td>睽</td>
+<td>蹇</td>
+<td>解</td>
+<td>损</td>
+<td>益</td>
+<td>夬</td>
+<td>姤</td>
+<td>萃</td>
+<td>升</td>
+<td>困</td>
+<td>井</td>
+<td>革</td>
+<td>鼎</td>
+<td>震</td>
+<td>艮</td>
+<td>渐</td>
+<td>归妹</td>
+<td>丰</td>
+<td>旅</td>
+<td>巽</td>
+<td>兑</td>
+<td>涣</td>
+<td>节</td>
+<td>中孚</td>
+<td>小过</td>
+<td>既济</td>
+<td>未济</td>
+</tr>
+<tr>
+<td>䷀</td>
+<td>䷁</td>
+<td>䷂</td>
+<td>䷃</td>
+<td>䷄</td>
+<td>䷅</td>
+<td>䷆</td>
+<td>䷇</td>
+<td>䷈</td>
+<td>䷉</td>
+<td>䷊</td>
+<td>䷋</td>
+<td>䷌</td>
+<td>䷍</td>
+<td>䷎</td>
+<td>䷏</td>
+<td>䷐</td>
+<td>䷑</td>
+<td>䷒</td>
+<td>䷓</td>
+<td>䷔</td>
+<td>䷕</td>
+<td>䷖</td>
+<td>䷗</td>
+<td>䷘</td>
+<td>䷙</td>
+<td>䷚</td>
+<td>䷛</td>
+<td>䷜</td>
+<td>䷝</td>
+<td>䷞</td>
+<td>䷟</td>
+<td>䷠</td>
+<td>䷡</td>
+<td>䷢</td>
+<td>䷣</td>
+<td>䷤</td>
+<td>䷥</td>
+<td>䷦</td>
+<td>䷧</td>
+<td>䷨</td>
+<td>䷩</td>
+<td>䷪</td>
+<td>䷫</td>
+<td>䷬</td>
+<td>䷭</td>
+<td>䷮</td>
+<td>䷯</td>
+<td>䷰</td>
+<td>䷱</td>
+<td>䷲</td>
+<td>䷳</td>
+<td>䷴</td>
+<td>䷵</td>
+<td>䷶</td>
+<td>䷷</td>
+<td>䷸</td>
+<td>䷹</td>
+<td>䷺</td>
+<td>䷻</td>
+<td>䷼</td>
+<td>䷽</td>
+<td>䷾</td>
+<td>䷿</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>4.1 若某方行动违反以上规则，该行动改为放弃本轮行动。</li>
+<li>5.1 对规则的改动仅限以下几条，且改动应当提前向对局双方公示，说明。</li>
+<li>5.2 在各种对局中，可以将胜利条件改为其他公平的条件(也就是不必囿于易经六十四卦)。</li>
+<li>5.3 在各种对局中，可以自行决定用时，器材，赛制，裁判等其他规则，本规则不做强制规定。</li>
+<li>5.4 在各种对局中，可以多场对局使用同一棋盘，直到边缘格点都叠满。</li>
+<li>5.5 在各种对局中，可以将游戏结束条件改为连续3次及以上放弃本轮行动。</li>
+</ul>
+<h1 id="22-40-2021-4-5">22:40 2021/4/5</h1>
+<p>考虑以下改进。</p>
+<p>首先，为了适配我定制的棋盘，将棋盘改为9×9。</p>
+<p>其次，为了实现纺锤型的难度曲线，考虑让游戏从棋盘的一角开始，到对角结束。</p>
+<h1 id="21-37-2021-4-8">21:37 2021/4/8</h1>
+<p>决定提炼出最基本的部分，如下：</p>
+<h2 id="卦棋2-1-2">卦棋2.1</h2>
+<ul>
+<li>1.1 对局在9×9的棋盘进行，相邻格点距离为1，对战双方称为黑方和白方。</li>
+<li>1.2 对局前，在A1格点放1黑子。</li>
+<li>2.1 对局时，双方轮流操作，白方执白先行。</li>
+<li>2.2 行动包含几个步骤：⑴将一个棋子置于某非空格点；⑵若该格点已经叠放了n层(超过6层)棋子，将该棋子移至任意相邻格点(距离为1的格点)，否则结束行动；⑶重复步骤⑴⑵。</li>
+<li>3.1 当某方使I9格点叠放了n层棋子，游戏结束。</li>
+<li>3.2 游戏结束时，以黑白子分别为阳爻，白黑子分别为阴爻，根据卦象判断，白吉黑凶为白方胜，白凶黑吉为黑胜，都吉都胜，都凶都败。</li>
+</ul>
+<hr>
+<h1 id="23-21-2021-4-5">23:21 2021/4/5</h1>
+<h2 id="落棋1-0">落棋1.0</h2>
+<p>考虑到大棋墩设计的消失，没有必要继承原有的易经内涵，或者说，这些东西不该成为设计的障碍，也不该出现在流程化算法化的规则文本中。因此不仅规则应该改，表述也可以更简单易懂。</p>
+<p>我意识到，可以经过简单的改造让卦棋成为多层生命游戏。我想可以换个名字，就叫“菌棋”。</p>
+<p>现规则如下：</p>
+<ul>
+<li>1.1 对局在9×9的棋盘进行，相邻格点距离为1，对战双方称为黑方和白方。</li>
+<li>1.2 对局前，在A1格点放1黑子。棋盘如下：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+<th>G</th>
+<th>H</th>
+<th>I</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>黑</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>2.1 对局时，双方轮流操作，白方执白先行。</li>
+<li>2.2 操作，指行动一次，或放弃本轮行动。</li>
+<li>2.3 行动规则如下：相邻格点指与选定格点距离为1或√2的格点。</li>
+<li>2.4 行动包含两个步骤：⑴移除对方的无效棋子。无效棋子指，在该棋子所在的层，所有相邻格点都没有棋子，或所有相邻格点都是同一方的棋子；⑵将一个棋子置于某格点，该格点没有叠满n层棋子(暂定n为3)。</li>
+<li>3.1 当某方只能落子于无效格点，该方只能放弃本轮行动。</li>
+<li>3.2 当双方连续放弃本轮行动后，游戏结束。</li>
+<li>3.3 游戏结束后，棋盘上棋子数量更多的一方胜利，数量一样则平局。</li>
+<li>4.1 若某方行动后使对方重复面临曾出现过的局面，该行动改为放弃本轮行动。</li>
+<li>4.2 若某方行动违反以上规则，该行动改为放弃本轮行动。</li>
+<li>5.1 对规则的改动仅限以下几条，且改动应当提前向对局双方公示，说明。</li>
+<li>5.2 在各种对局中，可以将n改为其他正整数。</li>
+<li>5.3 在各种对局中，可以自行决定用时，器材，赛制，裁判等其他规则，本规则不做强制规定。</li>
+<li>5.4 在各种对局中，可以将游戏结束条件改为连续3次及以上放弃本轮行动。</li>
+</ul>
+<h1 id="23-30-2021-4-5">23:30 2021/4/5</h1>
+<p>我注意到，这个游戏和生命游戏最大的不同点，在于分黑白两方。实际上，如果将相邻格点定义中的√2去掉，那么这个游戏几乎就是一个多层围棋。围棋当然是好游戏，但我需要考察这个点子是否有足够的独创性。另一个问题是，“菌棋”这名字似乎不是很恰当。</p>
+<h1 id="23-38-2021-4-5">23:38 2021/4/5</h1>
+<p>和围棋不一样，围死吃子只有在围一个子时相同，或者说根本不是围死吃子。在考察生命游戏的内涵后，可以总结其核心规则，即，群落死于孤独，内卷与竞争。故改进“无效棋子”的定义为“在该棋子所在的层，所有相邻格点都没有棋子，或所有相邻格点都是同一方的棋子”。</p>
+<p>现在，“菌棋”大可以说自己是生命游戏的优秀后代。</p>
+<p>更名为“落棋”，以体现多层棋子的设计，且落有群落，聚落之意。</p>
+<h1 id="21-30-2021-4-8">21:30 2021/4/8</h1>
+<p>决定提炼出最基本的部分，如下：</p>
+<h1 id="落棋1-1">落棋1.1</h1>
+<ul>
+<li>1.1 对局在9×9的棋盘进行，相邻格点距离为1，对战双方称为黑方和白方。</li>
+<li>2.1 对局时，双方轮流进行使对方不面临同形局面的行动，白方执白先行。</li>
+<li>2.2 行动包含两个步骤：⑴移除对方的无效棋子。无效棋子：在该棋子所在的层，所有相邻格点都没有棋子，或所有相邻格点都是同一方的棋子。相邻格点：与选定格点距离为1或√2的格点；⑵将一个棋子置于某格点，该格点没有叠满n层棋子(暂定n为3)。</li>
+<li>3.1 当某方只能落子于无效格点，游戏结束。</li>
+<li>3.2 游戏结束后，棋盘上棋子数量更多的一方胜利，数量一样则平局。</li>
+</ul>
+<hr>
+<p>补围棋逻辑规则。</p>
+<h2 id="现代围棋">现代围棋</h2>
+<ul>
+<li>1.1 对局在19×19的正方格点上进行，对战双方称为黑方和白方。</li>
+<li>1.2 每个格点可以被染色为黑，白或无色。</li>
+<li>1.3 给定格点P，如果没有被染色为C，且存在一条(水平或垂直)起始于P点，由相连的P的同色点组成，终止于某C色点的路径，那么点P能“到达”C色。</li>
+<li>1.4 “清除”一种颜色是指清空一切不能到达无色的该颜色的格点。</li>
+<li>2.1 从全盘无色的格点开始，两位玩家轮流操作，黑方先行。</li>
+<li>2.2 每个回合，玩家只能从以下两种操作中选择其一：⑴弃权；⑵行动，且此行动的结果不得重复已有的格点染色。</li>
+<li>2.3 一次行动由以下步骤组成：⑴将一个无色点染成己方的颜色；⑵然后清除对方的颜色；⑶清除己方的颜色。</li>
+<li>3.1 游戏在两次连续的弃权后结束。</li>
+<li>3.2 黑(白)方的总分，是黑(白)色格点颜色的总数，与仅与黑(白)色相连的无色点的总数之和。</li>
+<li>3.3 得分高者为胜，平分则为平局。</li>
+</ul>
+<p>补眼棋规则，眼棋，即无虚着古棋。</p>
+<h2 id="眼棋">眼棋</h2>
+<ul>
+<li>1.1 对局在19×19的正方格点上进行，对战双方称为黑方和白方。</li>
+<li>1.2 每个格点可以被染色为黑，白或无色。</li>
+<li>1.3 给定格点P，如果没有被染色为C，且存在一条(水平或垂直)起始于P点，由相连的P的同色点组成，终止于某C色点的路径，那么点P能“到达”C色。</li>
+<li>1.4 “清除”一种颜色是指清空一切不能到达无色的该颜色的格点。</li>
+<li>2.1 从全盘无色的格点开始，两位玩家轮流进行不重复已有的格点染色的行动，白方先行。</li>
+<li>2.2 一次行动由以下步骤组成：⑴将一个无色点染成己方的颜色；⑵清除对方的颜色；⑶清除己方的颜色。</li>
+<li>3.1 当双方玩家无法合法行动时结束。</li>
+<li>3.2 某方的总分，是该颜色格点颜色的总数。</li>
+<li>3.3 得分高者为胜，平分则为平局。</li>
+</ul>
+<p>眼棋是上世纪数学家发明的。表面上它很像应氏规则的填满数子，同时似乎能合理地推出还棋头规则。但是，当棋手不能“合法行动”时，实际上相当于停了一手，这会造成双方手数不等。另外，“合法行动”不一定是双方愿意采取的行动，比如块子自尽不违反禁全同，是“合法行动”，规则又禁止虚着，因此官子阶段棋手不得不捏着鼻子送死。这使得眼棋无法成为传统围棋规则的简化版本，而是一种新的游戏，其官子策略与围棋大相径庭。</p>
+<p>所以，发明者企图从围棋中去除虚着的尝试失败了。</p>
+<p>如果要达成这个目标，可以显式地规定禁止自尽，也可以回归围棋的早期形态“吃子棋”，在双方手数相等时，俘子多等价于活子多。</p>
+<h2 id="古围棋-吃子棋">古围棋(吃子棋)</h2>
+<ul>
+<li>1.1 对局在19×19的正方格点上进行，对战双方称为黑方和白方。</li>
+<li>1.2 每个格点可以被染色为黑，白或无色。</li>
+<li>1.3 给定格点P，如果没有被染色为C，且存在一条(水平或垂直)起始于P点，由相连的P的同色点组成，终止于某C色点的路径，那么点P能“到达”C色。</li>
+<li>1.4 “清除”一种颜色是指清空一切不能到达无色的该颜色的格点。</li>
+<li>2.1 从全盘无色的格点开始，两位玩家轮流行动，白方先行。</li>
+<li>2.2 行动不能使对方重复面临曾出现过的局面。</li>
+<li>2.3 一次行动由以下步骤组成：⑴清除对方的颜色；⑵将一个无色点染成己方的颜色；⑶清除对方的颜色。</li>
+<li>3.1 当双方同意终局，游戏结束。</li>
+<li>3.2 某方的总分，是对局中清除对方颜色的格点总数。</li>
+<li>3.3 得分高者为胜，平分则为平局。</li>
+</ul>
+<p>收后还子与手数相等的原则比较复杂，前者是细化贴目的手段，后者是活子等价俘子的条件。在俘子计分的情况下，手数相等不需要严格执行，而收后还子应当放到比赛规则而不是行棋规则中。</p>
+<p>另外，这个版本的吃子棋仍然是协议终局的，也就是说仍有虚手，只是没有写明。保留虚手，也就是说保留了公活，对于双方都不愿落子的点，该规则允许棋手将其与一方不能落子一方不愿落子的点“真眼”等量齐观。这是通过协议终局实现的。</p>
+<p>我们看到，围棋里不愿下与不能下实际上没有那么大的区别，而眼棋最大的问题在于它强迫棋手下不愿下的棋，直到不能下，棋局才结束，这是不符合围棋现实的，因而才无法与围棋规则近似相等。也就是说，如果构造出一个规则，当棋盘上没有愿下和能下的点时，能够使棋局自然结束，就可以和现有围棋规则“古棋”划上等号，我的目标就实现了。</p>
+<p>尝试如下：</p>
+<h2 id="溢棋1-0">溢棋1.0</h2>
+<ul>
+<li>1.1 对局在17×17的正方格点上进行，对战双方称为黑方和白方。</li>
+<li>1.2 每个格点可以被染色为黑，白或无色。</li>
+<li>1.3 给定格点P，如果没有被染色为C，且存在一条起始于P点，由相连的P的同色点组成，终止于某C色点的路径，那么点P能“到达”C色。</li>
+<li>1.4 “清除”一种颜色是指清空一切不能到达无色的该颜色的格点。</li>
+<li>2.1 从全盘无色的格点开始，两位玩家轮流行动，白方先行。</li>
+<li>2.2 行动不得使对手重复面临曾遇到过的局面。</li>
+<li>2.3 一次行动由以下步骤组成：⑴将一个无色点染成己方的颜色；⑵清除对方的颜色。</li>
+<li>3.1 当双方的行动一定会“清除”某种颜色，游戏结束。</li>
+<li>3.2 某方的总分，是对局中清除对方颜色的格点总数。</li>
+<li>3.3 得分高者为胜，平分则为平局。</li>
+</ul>
+<p>目标并没有实现，延后提子使游戏流程与古棋(传统围棋)出现了实质性的不同。</p>
+<h1 id="2023-05-10-19-10-40">2023-05-10 19:10:40</h1>
+<p>注意到PSK(positional superko)不允许颗子自尽，那么必须要额外设置虚着(停一手)；而SSK(situational superko)允许颗子自尽，实现了虚着的功能。因此眼棋所使用的“禁全同”规则必须为SSK或更宽松的类型。就像<em>闲话围棋规则</em>里说的：“假如说围棋是一只羊的话，约束规则就是它的羊圈。只要羊圈足够大，不至于妨碍羊的生活，那么羊圈修成方的还是圆的对于羊来说都是无所谓的，只要羊圈上没有破洞就行。”显然对于眼棋来说PSK有点太紧了。那么，改为SSK似乎就解决了问题。</p>
+<p>同时，过去的我所犯的一个错误是认为“吃子棋”应当在行棋规则中规定协议终局，这显然是一个误解。诚然，在SSK下不禁自尽，但这并不意味着棋局无法结束，因为双方连续颗子自尽是违反SSK的，当双方无棋可下时，先手颗子自尽，后手将不得不自填一眼，送掉所有大块，最后先手占据整个棋盘。这样虽然没法贴目了，但仍然可以终局。</p>
+<p>不能贴目是个大问题吗？是的。所以需要在自己填眼之前结束对局。这需要在规则上做一点修改，使得SSK能够成为一种终局手段。这样双方各送死一子，就等价于两虚终局了，由于这样终局显然比自填一眼输得少，AI会自然形成这种终局办法，进一步地，会在地盘划分完毕后选择这样终局，这样就和一般围棋相类了。</p>
+<p>注意在此规则下，玩家不必优先选择有效行动，因而不会被逼迫到不得不自填一眼送死大龙的尴尬情境中。</p>
+<h2 id="古围棋2-0">古围棋2.0</h2>
+<ul>
+<li>1.1 对局在19×19的正方格点上进行，对战双方称为黑方和白方。</li>
+<li>1.2 每个格点可以被染色为黑，白或无色。</li>
+<li>1.3 给定格点P，如果没有被染色为C，且存在一条(水平或垂直)起始于P点，由相连的P的同色点组成，终止于某C色点的路径，那么点P能“到达”C色。</li>
+<li>1.4 “清除”一种颜色是指清空一切不能到达无色的该颜色的格点。</li>
+<li>2.1 从全盘无色的格点开始，两位玩家轮流行动，白方先行。</li>
+<li>2.2 一次行动由以下步骤组成：⑴清除对方的颜色；⑵将一个无色点染成己方的颜色；⑶清除对方的颜色。</li>
+<li>3.1 当某方行动使对方重复面临曾出现过的局面时，该行动无效。</li>
+<li>3.2 当某方行动无效时，游戏结束。</li>
+<li>3.3 某方的总分，是对局中清除对方颜色的格点总数。</li>
+<li>3.4 得分高者为胜，平分则为平局。</li>
+</ul>
+<p>参考文章：<em>闲谈围棋规则</em>、<em>眼棋和古朝鲜规则</em>、<em>吃子棋等价于还棋头的思考</em>、<em>赞成座子还棋头的古棋规则的人似乎越来越多了</em>、<em>围棋规则新论</em></p>
+<p>以上规则会导致荒谬的情况发生：落后方可以在未实证死活时通过故意触犯全同强行终局，且计俘子虽等价于计活子(等手情况下)，但不等价于数地或数目，因为地、目这类概念是为了提前终局而创造的概念，其将盘面点数与<strong>可兑现</strong>的点数结合了起来。想要在无虚手围棋中实现协议终局，必须好好斟酌表述。</p>
+<h1 id="2023-06-15-13-01-03">2023-06-15 13:01:03</h1>
+<p>根据老外的<a target="_blank" rel="noopener" href="http://www.daogo.org/.">一些讨论</a>，眼棋（或称<em>无虚着围棋</em>）在添加了计俘子规则后，和古棋规则就一模一样了（The amended version, which allows passing by returning a captured prisoner as a pass stone, has also been called “no pass go with prisoner return”. This ruleset (in a version permitting some suicides) was published as “The Most Primitive Go Rule”, T. Yoshikawa, Computer Go, 13: 6-7, 1989, though it could well have been discovered earlier. Scans of this newletter are available at <a target="_blank" rel="noopener" href="http://www.daogo.org/.%EF%BC%89%E3%80%82%E5%85%B6%E5%AE%9E%E8%BF%99%E5%BE%88%E5%A5%BD%E7%90%86%E8%A7%A3%EF%BC%8C%E6%AF%95%E7%AB%9F%E8%AE%A1%E6%B4%BB%E5%AD%90%E4%B8%8E%E8%AE%A1%E4%BF%98%E5%AD%90%E6%98%AF%E4%B8%80%E4%BD%93%E4%B8%A4%E9%9D%A2%E3%80%82%E6%9E%9C%E7%84%B6%E5%8F%A4%E6%A3%8B%E8%A7%84%E5%88%99%E4%B8%80%E8%84%89%E7%9B%B8%E6%89%BF%EF%BC%8C%E7%9C%9F%E6%BC%82%E4%BA%AE%E5%95%8A%E3%80%82">http://www.daogo.org/.）。其实这很好理解，毕竟计活子与计俘子是一体两面。果然古棋规则一脉相承，真漂亮啊。</a></p>
+<p>显然想要恢复古棋并去除虚着的人不止我一个，比如这个篇口气很大的<a target="_blank" rel="noopener" href="https://senseis.xmp.net/?AnalysisOfUltimateGo"><em>Analysis of Ultimate Go</em></a>，思路几乎和我一般无二，大家都更喜欢自然、简洁、逻辑严谨的规则表述。</p>
+<h1 id="2023-08-11-09-36-16">2023-08-11 09:36:16</h1>
+<ul>
+<li>俘子：一方行棋后，对方的棋子如果被完全包围，那么这些棋子需要被提掉，成为提子方的俘虏。</li>
+<li>虚着：当轮到行棋时，可以不落子，而将一枚棋子交给对方。</li>
+<li>活子：被某方占据的空交叉点。</li>
+<li>目：被一方的活子完全包围的空交叉点是该方的目。</li>
+<li>地：棋盘上一方的所有活子以及被这些活子包围的目组成该方的地。</li>
+<li>空：被某方完全包围的空交叉点。</li>
+<li>中立点：双方都没有完全包围的空交叉点被称为中立点，中立点不是任何一方的目或地。</li>
+<li>手数：某方行棋的次数，其数等于虚着数、对方俘子数、活子数之和。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>规则名称</th>
+<th>是否禁全同</th>
+<th>是否禁止自尽</th>
+<th>终局条件</th>
+<th>死活判定</th>
+<th>计点方式</th>
+<th>等效贴点值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中国规则</td>
+<td>PSK,但有特例</td>
+<td>禁止</td>
+<td>两虚后判定死活，达成一致后终局</td>
+<td>协议死活，争议实战解决</td>
+<td>数子法</td>
+<td>7.5</td>
+</tr>
+<tr>
+<td>日本规则</td>
+<td>不采用</td>
+<td>禁止</td>
+<td>两虚(可要求重新开始对局)</td>
+<td>判例判定</td>
+<td>数目法</td>
+<td>6.5</td>
+</tr>
+<tr>
+<td>应氏规则</td>
+<td>采用，但不明确</td>
+<td>不禁止</td>
+<td>两虚后判定死活，再两虚后终局</td>
+<td>提证死活，再两虚后所有棋子为活子</td>
+<td>数子法</td>
+<td>7.5</td>
+</tr>
+<tr>
+<td>新西兰规则</td>
+<td>SSK</td>
+<td>不禁止</td>
+<td>协议暂停，判定死活后终局(对局重新开始时，若对先  手有争议则直接终局)</td>
+<td>协议死活，争议实战解决(对局重新开始时，若对先手有争议则所有棋子均为活子)</td>
+<td>数子法</td>
+<td>7</td>
+</tr>
+<tr>
+<td>美国规则</td>
+<td>SSK</td>
+<td>禁止</td>
+<td>两虚后判定死活，再四虚后终局</td>
+<td>协议死活，争议实战解决，再四虚后所有棋子为活子</td>
+<td>等手比目</td>
+<td>7.5</td>
+</tr>
+<tr>
+<td>智运会规则</td>
+<td>SSK</td>
+<td>禁止</td>
+<td>两虚后判定死活，再两虚后终局</td>
+<td>协议死活，争议实战解决，再两虚后所有棋子为活子</td>
+<td>数子法(收后还子)</td>
+<td>6.5</td>
+</tr>
+<tr>
+<td>Tromp-Taylor规则</td>
+<td>PSK</td>
+<td>不禁止</td>
+<td>两虚(可选择两虚后协议死活，四虚终局)</td>
+<td>两虚后所有棋子均为活子(可选择协议死活，四虚后所有棋子为活子)</td>
+<td>数子法</td>
+<td>?</td>
+</tr>
+<tr>
+<td>现代古棋规则</td>
+<td>SSK</td>
+<td>不禁止</td>
+<td>首虚后判断死活，再两虚后终局</td>
+<td>协议死活，争议实战解决，再两虚后所有棋子为活子</td>
+<td>等手比目</td>
+<td>6.5</td>
+</tr>
+</tbody>
+</table>
+<p>为了解决“吃子棋2.0”会导致的问题，我们有：</p>
+<h2 id="古围棋3-0">古围棋3.0</h2>
+<ul>
+<li>1.1 对局在19×19的正方格点上进行，对战双方称为黑方和白方。</li>
+<li>1.2 每个格点可以被染色为黑，白或无色。</li>
+<li>1.3 给定格点P，如果没有被染色为C，且存在一条(水平或垂直)起始于P点，由相连的P的同色点组成，终止于某C色点的路径，那么点P能“到达”C色。</li>
+<li>1.4 “清除”一种颜色是指清空一切不能到达无色的该颜色的格点。</li>
+<li>2.1 从全盘无色的格点开始，两位玩家轮流行动，白方先行。(明朝似乎是白先，此处可商)</li>
+<li>2.2 一次行动由以下步骤组成：⑴清除对方的颜色；⑵将一个无色点染成己方的颜色；⑶清除对方的颜色。(清除两次以提取自杀的棋子)</li>
+<li>3.1 某方的总分，是额外加分与对局中清除对方颜色的格点总数之和。(计俘子规则)</li>
+<li>3.2 当某方行动使对方重复面临曾出现过的局面时，该行动无效，对方加1分。(不禁颗子自杀，自杀相当于虚着)</li>
+<li>3.3 对局中首先出现无效行动时，该方额外加1分，对方仍加1分。(实现首虚，保持胜负结果与古棋一致)</li>
+<li>3.4 对局中出现无效行动以后，再出现连续两个无效行动，那么棋局终局。(类似“1+2”终局条件。想法是：由于该规则下触犯禁全同并不会导致输棋，而是交一俘子，这样在没棋下了的时候最佳策略就是主动触犯禁全同，继而终局，和连续虚手终局效果一致)</li>
+<li>3.5 黑方额外加7分。(用于贴目，分先感觉贴7目比较合理)</li>
+<li>3.6 得分高者为胜，平分则为平局。</li>
+</ul>
+<h1 id="2023-08-11-19-53-37">2023-08-11 19:53:37</h1>
+<p>注意到两点不足，一是将“一次行动由以下步骤组成。将一个无色点染成己方的颜色。清除己方的颜色。清除对方的颜色”改成“一次行动由以下步骤组成。清除对方的颜色。将一个无色点染成己方的颜色。清除对方的颜色”改变了触发全同的轮着方，会导致禁全同的原表述产生错误；二是“1+2”终局似乎不适合无虚手围棋，因为一共三个无效手，没法平分，打破了等手；三是规则中并没有显式地规定等手，且黑白首虚加同样的分并不能实现等手。更进一步，有交俘子、手数相等的规则，贴目完全可以细化到0.5目，首虚规则并不必要。</p>
+<h2 id="古围棋4-0">古围棋4.0</h2>
+<ul>
+<li>1.1 对局在19×19的正方格点上进行，对战双方称为黑方和白方。</li>
+<li>1.2 每个格点可以被染色为黑，白或无色。</li>
+<li>1.3 给定格点P，如果没有被染色为C，且存在一条(水平或垂直)起始于P点，由相连的P的同色点组成，终止于某C色点的路径，那么点P能“到达”C色。相连的同色点称为“块”。</li>
+<li>1.4 “清除”一种颜色是指清空一切不能到达无色的该颜色的格点。</li>
+<li>2.1 从全盘无色的格点开始，两位玩家轮流行动，白方先行。(明朝似乎是白先，此处可商)</li>
+<li>2.2 一次行动由以下步骤组成：⑴将一个无色点染成己方的颜色；⑵清除己方的颜色；⑶清除对方的颜色。若某次行动清除了自己的颜色，这次行动称为“弃着”。</li>
+<li>3.1 某方的总分，是：
+<ul>
+<li>对局完全结束后，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><mtext>己方所清除的对方颜色格点数</mtext></mrow><annotation encoding="application/x-tex">\sum 己方所清除的对方颜色格点数</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord cjk_fallback">己方所清除的对方颜色格点数</span></span></span></span> (计俘子法)</li>
+<li>对局完全结束后，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><mtext>己方颜色格点数</mtext></mrow><annotation encoding="application/x-tex">\sum 己方颜色格点数</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord cjk_fallback">己方颜色格点数</span></span></span></span> (计活子法)</li>
+<li>对局结束后，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><mtext>只能到达己方颜色的无色格点数</mtext><mo>−</mo><mtext>对方所清除的己方颜色格点数</mtext><mo>−</mo><mtext>最多能到达两个无色块的己方颜色块数</mtext><mo>−</mo><mn>2</mn><mo>×</mo><mtext>最多能到达一无色块的己方颜色块数</mtext></mrow><annotation encoding="application/x-tex">\sum 只能到达己方颜色的无色格点数 - 对方所清除的己方颜色格点数 - 最多能到达两个无色块的己方颜色块数 - 2 × 最多能到达一无色块的己方颜色块数</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord cjk_fallback">只能到达己方颜色的无色格点数</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord cjk_fallback">对方所清除的己方颜色格点数</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord cjk_fallback">最多能到达两个无色块的己方颜色块数</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord cjk_fallback">最多能到达一无色块的己方颜色块数</span></span></span></span> (数路法)</li>
+<li>对局结束后，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><mtext>己方颜色的格点数</mtext><mo>+</mo><mtext>只能到达己方颜色的无色格点数</mtext><mo>−</mo><mtext>最多能到达两个无色块的己方颜色块数</mtext><mo>−</mo><mn>2</mn><mo>×</mo><mtext>最多能到达一无色块的己方颜色块数</mtext></mrow><annotation encoding="application/x-tex">\sum 己方颜色的格点数 + 只能到达己方颜色的无色格点数 - 最多能到达两个无色块的己方颜色块数 - 2 × 最多能到达一无色块的己方颜色块数</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord cjk_fallback">己方颜色的格点数</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord cjk_fallback">只能到达己方颜色的无色格点数</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord cjk_fallback">最多能到达两个无色块的己方颜色块数</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord cjk_fallback">最多能到达一无色块的己方颜色块数</span></span></span></span> (数子法)</li>
+<li>对局结束后，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><mtext>己方颜色的格点数</mtext><mo>+</mo><mtext>只能到达己方颜色的无色格点数</mtext><mo>−</mo><mtext>对方所清除的己方颜色格点数</mtext><mo>−</mo><mtext>最多能到达两个无色块的己方颜色块数</mtext><mo>−</mo><mn>2</mn><mo>×</mo><mtext>最多能到达一无色块的己方颜色块数</mtext><mo>−</mo><mn>180</mn><mo>+</mo><mtext>己方行动次数</mtext></mrow><annotation encoding="application/x-tex">\sum 己方颜色的格点数 + 只能到达己方颜色的无色格点数 - 对方所清除的己方颜色格点数 - 最多能到达两个无色块的己方颜色块数 - 2 × 最多能到达一无色块的己方颜色块数 - 180 + 己方行动次数</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord cjk_fallback">己方颜色的格点数</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord cjk_fallback">只能到达己方颜色的无色格点数</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord cjk_fallback">对方所清除的己方颜色格点数</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord cjk_fallback">最多能到达两个无色块的己方颜色块数</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord cjk_fallback">最多能到达一无色块的己方颜色块数</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">180</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord cjk_fallback">己方行动次数</span></span></span></span> (填满计点法)</li>
+</ul>
+</li>
+<li>3.2 当某方行动产生的局面曾在对局中出现过，且该行动不是弃着时，该行动无效。(不禁自尽。颗子自尽相当于虚着交一俘子)</li>
+<li>3.4 先行方弃着后，后手方也弃着，那么棋局终局。(类似“1+2”终局条件，但保证了手数相当)</li>
+<li>3.5 额外得分为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6.5</mn></mrow><annotation encoding="application/x-tex">6.5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6.5</span></span></span></span> 分。(用于贴目)</li>
+<li>3.6 某方的得分，是：
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>该方总分</mtext><mo>−</mo><mtext>对方总分</mtext></mrow><annotation encoding="application/x-tex">该方总分 - 对方总分</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord cjk_fallback">该方总分</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord cjk_fallback">对方总分</span></span></span></span> (出入法)</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mtext>该方总分</mtext><mo>−</mo><mtext>对方总分</mtext></mrow><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac{该方总分 - 对方总分}{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2173em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8723em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">该方总分</span><span class="mbin mtight">−</span><span class="mord cjk_fallback mtight">对方总分</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span> (归本法)</li>
+</ul>
+</li>
+<li>3.7 胜负关系：
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>先行方得分</mtext><mo>&gt;</mo><mtext>额外得分</mtext></mrow><annotation encoding="application/x-tex">先行方得分 &gt; 额外得分</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord cjk_fallback">先行方得分</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord cjk_fallback">额外得分</span></span></span></span> 且 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mtext>后手方得分</mtext><mo>&lt;</mo><mtext>额外得分</mtext></mrow><annotation encoding="application/x-tex">- 后手方得分 &lt; 额外得分</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord cjk_fallback">后手方得分</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord cjk_fallback">额外得分</span></span></span></span> 时，先行方胜；反之后手方胜。(出入法)</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>先行方得分</mtext><mo>&gt;</mo><mfrac><mtext>额外得分</mtext><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">先行方得分 &gt; \frac{额外得分}{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord cjk_fallback">先行方得分</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.2173em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8723em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">额外得分</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span> 且 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mtext>后手方得分</mtext><mo>&lt;</mo><mfrac><mtext>额外得分</mtext><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">- 后手方得分 &lt; \frac{额外得分}{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord cjk_fallback">后手方得分</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.2173em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8723em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">额外得分</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span> 时，先行方胜；反之后手方胜。(归本法)</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>先行方得分</mtext><mo>=</mo><mo>−</mo><mtext>后手方得分</mtext><mo>=</mo><mtext>额外得分</mtext></mrow><annotation encoding="application/x-tex">先行方得分 = - 后手方得分 = 额外得分</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord cjk_fallback">先行方得分</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord cjk_fallback">后手方得分</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord cjk_fallback">额外得分</span></span></span></span> 时，平局。</li>
+<li>其他情况待定。</li>
+</ul>
+</li>
+</ul>
+<h1 id="23-29-2021-4-15">23:29 2021/4/15</h1>
+<p>围棋只管纵横，要是加入斜向如何呢。吃子似乎太困难了。那么增加吃子的收益如何，仿照黑白棋，将吃的子翻面。八面围住太困难了，设计成纵横或斜向分别围住就能吃子呢。不行，不能分开算，一块棋没法分。我想起新棋吧里带吃子的五子棋，似乎也有这种混搭的感觉。好点子都被想完了，麻烦。</p>
+<h1 id="13-38-2021-5-1">13:38 2021/5/1</h1>
+<p>眼棋复杂了官子后的情况，因此，在九路小棋盘上也不会很快结束。眼棋是适宜做进九路小棋盘的。由于棋盘上总共只有81个点，眼棋只需要黑白棋子各四十，因而与象棋子有了通用的可能性。棋盘套装正在积极推进中。</p>
+<h1 id="2023-08-16-17-14-30">2023-08-16 17:14:30</h1>
+<p>先前的吃子棋4.0原本以为已经完善的，但还是有不足之处。其中之一是把计分法和数子法混到了一起，导致块子自杀可能触发终局；其二是把手数相等作为终局的条件，导致实际上是计活子；其三是没有规定其他方面：让子棋、棋盘、棋子、时间规则⋯⋯</p>
+<h2 id="古围棋5-0">古围棋5.0</h2>
+<ul>
+<li>1.1 对局在 19×19 的正方格点上进行，对战双方称为黑方和白方。</li>
+<li>1.2 每个格点可以被染色为黑，白或无色。</li>
+<li>1.3 给定格点P，如果没有被染色为C，且存在一条(水平或垂直)起始于P点，由相连的P的同色点组成，终止于某C色点的路径，那么点P能“到达”C色。</li>
+<li>1.4 “清除”一种颜色是指清空一切不能到达无色的该颜色的格点。</li>
+<li>2.1 从全盘无色的格点开始，两位玩家轮流行动，黑方先行。</li>
+<li>2.2 一次行动由以下步骤组成：将一个无色点染成己方的颜色；清除己方的颜色；清除对方的颜色。若某次行动清除了自己的颜色，这次行动称为“弃着”。</li>
+<li>2.3 若某方非“弃着”的行动产生的局面曾在对局中出现过，该行动无效。(不禁自尽，颗子自尽即虚着交一俘子)</li>
+<li>3.1 对局在连续的两次“弃着”后结束。</li>
+<li>3.2 分先对局中，贴分为 7 分。(用于贴目)</li>
+<li>3.3 被清除的白色格点数 - 被清除的黑色格点数 &gt; 贴分，黑方胜；反之，白方胜；若相等，首次弃着者胜。</li>
+</ul>
+<p>注释：</p>
+<ul>
+<li>1.1 棋盘大小也可选择 9×9 、13×13 、17×17 等规格。</li>
+<li>1.2 作为辅助得分计算的用具，可以使用第三种颜色(比如透明)的棋子。它代表基本眼位，只能放置在与黑白棋子相邻的无色格点上，且放置它不占用回合。该格点视为无色格点，但在计算得分时不属于任何一方。事实上，这只是对空点的一种标记。</li>
+<li>1.1 让子棋中，受让子一方先在星位、天元放 1～9 颗棋子，然后轮到对手。
+<ul>
+<li>让先(让一子)贴分为 0 分，让二～九子贴分为 1～8 分。</li>
+<li>如果要让半子(分先)、一子半、二子半、三子半、乃至于八子半，可以在让一～九子的基础上将贴分加上 7 分。</li>
+</ul>
+</li>
+<li>2.2 现代围棋中的“停一手”源自于颗子自杀，因此“弃着”时需要还一颗俘子，日韩规则无法提证死活的毛病即源于此。</li>
+<li>2.1 决定先后方的传统办法是猜先：某方抓一把棋子，对手出示一颗或两颗棋子，表示猜测其数量是奇数或偶数；猜对的一方先行。</li>
+<li>3.1 作为简便的计算方式，可以采用：
+<ul>
+<li>数目法：将死子回填，用第三种颜色的棋子填满基本眼位，这时 得分 = 不能到达对方颜色的无色格点数(称为己方目数或路数)</li>
+<li>数子法：不回填死子，用第三种颜色的棋子填满基本眼位，这时 得分 = 不能到达对方颜色的无色格点数 + 己方颜色格点数(称为己方子数)</li>
+<li>协议终局下，若白方首弃，黑方的数目法得分会比数子法少 1 分，需要补正。(见粘劫收后的<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/28203866">相关讨论</a>)</li>
+<li>自然终局下，若黑方收后，黑方得分会多 1 分，需要补正。(一般黑方盘面领先时会收后)</li>
+</ul>
+</li>
+<li>3.2 在一般对局中，可以不下到终局，经双方同意，双方提取死子加入得分，结束本局游戏(这样的终局方式称为协议终局)。如果未能对死活达成共识，则对局恢复，重新开始对局，先后手不变，仍禁全同。</li>
+<li>3.3 得分的计算方式的选择是任意的，只要得出的结果不变，也可以采用其他等价的计算方法。</li>
+<li>3.5 时间规则：
+<ul>
+<li>加秒制：每方拥有一个时间池，其中有若干分钟的保留时间，结束回合时向时间池里加若干秒。</li>
+<li>读秒制：每方有若干分钟的保留时间和读秒时间，保留时间用尽后，每回合时间超过若干秒的，超出时间从读秒时间内扣除。</li>
+<li>包干制：每方拥有若干分钟的保留时间。</li>
+<li>其他时间规则，包括两日制、不限时制、等等。</li>
+</ul>
+</li>
+<li>3.6 犯规(触犯全同、超时、等等)的处理应当以不影响游戏进程为原则，不宜用罚分、判负等手段，棋手无异议裁判不得擅自介入。</li>
+</ul>
+<h1 id="2024-05-10-16-01-46">2024-05-10 16:01:46</h1>
+<p>古围棋规则极简版：落子无悔，气尽提子，子多为胜。(这里的“子多为胜”显然指俘子，落子无悔则内涵了ssk⸺对局中轮着方相同的重复局面一定可以由双方轮流悔棋达到)</p>
+<p>注释极简版：</p>
+<ul>
+<li>棋盘大小可任选选。</li>
+<li>计算分数的办法可任选。</li>
+<li>让子棋额外贴n-1分。</li>
+<li>尽管规则里没有真正的“虚手”，但可以交一俘子模拟停一手。</li>
+</ul>
+<h1 id="14-12-2021-5-4">14:12 2021/5/4</h1>
+<p>昨天到了智推棋“大力士棋”，规则书写得不好，使得我们理解出了问题。</p>
+<p>我们以为:一回合把自己的1-3枚连成直线的棋子沿直线方向动一格。只要在某方向上自己的棋子比对面多，就可以推过去“二推一，三推二”推几格都行。推完后如果形成了新的可以推的阵型可以继续推，没得推了回合才结束。</p>
+<p>然后玩了一晚上，觉得防守方太优势了。</p>
+<p>基本一进攻就要被一换二。</p>
+<p>然后想着改进，最朴素的想法是加强深入敌阵的棋子。但这样不太自然，也没有想到太好的方法。然后我们灵机一动，加入了打入\移动棋子前可以复活一个死掉的棋子，放回棋盘。</p>
+<p>早上测试过，感觉相当好玩，应该写成明文规则。</p>
+<h2 id="推棋1-0">推棋1.0</h2>
+<ul>
+<li>1.1 对局在边长为4的六边形格点上进行，相邻格点距离为1，对战双方称为黑方和白方。</li>
+<li>1.2 对局开始前，将14枚黑子与14枚白子按“3+6+5”的方式排布在棋盘上。</li>
+<li>1.3 “推动敌方棋子”指在某方向上己方棋子与敌方棋子相邻，当可移动的己方棋子列更长且敌方棋子列有空间移动时，这列棋子可以向该方向移动以推动敌方棋子列。直到条件不满足或这些敌方棋子都被推出棋盘。</li>
+<li>2.1 游戏开始后，两位玩家轮流行动，白方先行。</li>
+<li>2.2 一次行动由以下步骤组成：⑴将一个棋盘外的己方棋子放回棋盘；⑵将连成直线的1到3枚棋子沿直线移动一格；⑶推动敌方棋子。</li>
+<li>3.1 当某方率先将六个敌方棋子推出棋盘，游戏结束，该方胜利。</li>
+</ul>
+<h1 id="14-42-2021-5-4">14:42 2021/5/4</h1>
+<p>中午做了修改:</p>
+<ul>
+<li>3.1 当某方棋盘外的棋子达到6个，游戏结束，该方失败。</li>
+</ul>
+<p>这两种结束条件有细微的差别，前一种需要额外的计数器，后一种不需要。除此之外游戏策略也有差别。哪一种结束方式更好呢。</p>
+<p>加入打入后，最初的结束条件是：当某方棋子不能被推出棋盘，游戏结束，该方胜利。这个条件要求摆出一个边长为二的实心六边形，实际上是做不到的，因此被放弃了，尽管这个条件很自然。</p>
+<p>对于“能不能移动四颗棋子，能不能四推三”尚在争论中。</p>
+<p>对于正式的规则，我的室友认为非常无聊，同时他非常喜欢连续推动带来的策略性。</p>
+<p>加入打入规则是我的想法，我对此颇为自得。</p>
+<h1 id="2024-03-29-11-42-41">2024-03-29 11:42:41</h1>
+<h2 id="麻将规则相关">麻将规则相关</h2>
+<p>昨晚聊到麻将，在知乎上一搜，看到了一场大战。</p>
+<p>简单来说，有三个麻将规则设计者(<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/bai-li-81-10/posts">百里子明</a>、<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/27a03/posts">27A03</a>、<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/li-mou-38-6">a87g5o</a>)相互攻讦，留下了大量的文章与评论，对我这样的外行，他们的东西是很有营养的。</p>
+<p>目前我的水平还不能对他们的观点做出评判，早上和朋友聊了一下，大致确定<em>血战到底</em>、<em>血流成河</em>这两种规则并非灵丹妙药，“造牌为上”的观念是怎么成为三个人的共识的呢？</p>
+<p>a87g5o是个魔怔人，并且他的规则“造牌为本”，实际上就是自闭做牌，然而他竟还能给日麻扣一个“互动性不足”的帽子。不过，他的观点也有合理性的成分：</p>
+<blockquote>
+<p>麻将规则，化解到最后就是几个基本问题：采用多少张牌，吃碰杠和有没有，怎么算和牌（起和），和牌怎么计算分数，怎么算游戏结束，结束了分数怎么分配。每个问题想一遍，尤其要想历史上的规则都是怎么安排的，这么做的理由，我们采用或不采用的理由。</p>
+</blockquote>
+<p>看了康庄众娱的游戏视频，基本上就是确定要做某种牌型后把没用的牌打出去，后面完全不需要人工操作，托管电脑也是一样的。</p>
+<p>国标麻将、中庸麻将，实话说没感觉有什么技术性，相比来说中庸麻将还稍好一些，要记的番种少一些。自然麻将看过规则，但作者自说自话太严重了，完全没明白他的规则特点是什么，实话说不是很想了解。</p>
+<p>k神麻将可能是这几个里面竞技性最好的一种，但是没有视频，光看规则也看不出什么。</p>
+<p>这几个造牌麻将设计师给我的感觉是什么呢？就好像这样的酒馆战旗设计师：</p>
+<p>“大多数人没成型就被抬走了，不造牌！”</p>
+<p>“护甲、冰箱、保护、点金、发现、偷牌，这些都是假把式，不造牌！”</p>
+<p>“对，归根到底是战力牌太强了，玩战旗就盯着烂分去！所有人都应该追梦速本！”</p>
+<p>“我们应该采取血战规则，打死人就不能买卖，尸体才可以继续玩。”</p>
+<p>“针对牌没有意思，瑞文被猎是抢和，应该踢出酒馆⋯⋯你说没攻防了？那是你不懂凑阵容的乐趣！”</p>
+<p>(就<em>造牌</em>达成了共识，然后开始互相攻击)</p>
+<p>“你的酒馆战旗种族太少了，每个种族就一套阵容，缺主线！”</p>
+<p>“你的套路太不平衡了，所有人都奔着鱼人去，滥赏！”</p>
+<p>“成型阵容太多了，新人根本记不住，结果就是没人玩，那些凑不出来的阵容有什么用？应该全删掉。”</p>
+<p>我真觉得与其学他们的设计，不如从酒馆战旗里寻找灵感呢，至少不会走到上面那种邪路上去。</p>
+<h1 id="2024-03-31-19-27-26">2024-03-31 19:27:26</h1>
+<table>
+<thead>
+<tr>
+<th>基本操作</th>
+<th>同</th>
+<th>异</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>山&gt;手</td>
+<td>摸</td>
+<td></td>
+</tr>
+<tr>
+<td>山&gt;河</td>
+<td>翻</td>
+<td></td>
+</tr>
+<tr>
+<td>手&gt;河</td>
+<td>切</td>
+<td></td>
+</tr>
+<tr>
+<td>手&gt;山</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>河&gt;山</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>河&gt;手</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>河&gt;河</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>手&gt;手</td>
+<td>理</td>
+<td></td>
+</tr>
+<tr>
+<td>山&gt;山</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>流局满贯相当于用牌河和牌。</p>
+<p>注意副露区里有指示物和手牌的一部分(固定、亮出的手牌)，应该区分开来，或者另设一个空间来放置指示物。</p>
+<p>普通牌与指示物牌可以相互转化，比如翻财神、杠。</p>
+<p><em>杠</em>本质是三张牌，将刻子从手牌移动到副露，第四章牌变为指示物。</p>
+<p>和牌相当于把手牌固定、亮出。给这种操作起个名字叫<em>露出</em>吧。实际上涉及露出的行动还有：吃、碰、杠(明杠、暗杠)、立直、拔北⋯⋯</p>
+<p>换牌可以看成弱化版的万能牌，即先从牌河摸一张牌，再将万能牌切出。这样理解的好处是：保证牌型美观，可以调整强度，绑定实际动作(更具体)。</p>
+<p>仅仅关注和种、分值、授受、禁则这些地方，设计出来的规则没有充足的创新性，即使某些人认为已经和原规则有足够大的区别了，我以为仍属于改良而非革命，顶多大版本号(主版本号)加一，绝不至于改名的；有些所谓的XX麻将，其改动之细微只够得上小版本号(次版本号)加一，乃至补丁号(修订号)加一。这里将语义版本号的思想稍加扩展，情况就很清楚了⸺主版本号意味着不兼容的API修改，次版本号意味着向下兼容的功能性新增，修订号意味着向下兼容的问题修正。</p>
+<p>大牌不一定更好防，这个得看牌型与牌效，不同的和种有的更好防、有的更难防。</p>
+<p>在不看他的手牌的情况下，最安全的牌就是他不要的牌，在振听规则下，安全率100%，没有振听，越早打出的牌越危险(越晚打出的牌，他周围的牌则很危险)。</p>
+<p>那么，鼓励吃碰杠，鼓励展示手牌的一部分如何？</p>
+<p>副露给的信息，最重要的是手牌的推进程度，其他层面的信息需要结合番种、役等等场外条件，对防守来说太不充足了。也就是说，即使规则鼓励吃碰杠，对防守也没太大帮助。</p>
+<p>副露区需要精心设计，一是设计役种(通过看副露，知道不可能做某些役种⋯⋯因此需要役种间区分度明显)；二是⋯⋯</p>
+<h1 id="2024-04-01-08-52-45">2024-04-01 08:52:45</h1>
+<p>昨天聊到十一点半，留了个“如何设计露出规则”的尾巴，这大概是最难的一条。</p>
+<p>一是展示手牌(亮花牌、天命之战)，二是宣言(立直报听)，三是停顿(这个本来就有，犹豫要不要吃碰杠)，四是新的动作(对？还有“加碰”)。</p>
+<p>等等，有一条简单粗暴的增加防守性的办法：不切牌。</p>
+<ul>
+<li>杠(不摸切)</li>
+<li>暗碰</li>
+<li>暗吃</li>
+<li>暗对</li>
+</ul>
+<p>另外授受制对攻防的影响也不小：</p>
+<blockquote>
+<p>前几天我们在讨论立直麻将的攻防条件，管理突然蹦出来一句“康庄麻将的造牌收益是怎么体现的？是什么让康庄麻将每局都在造牌的？中庸授受的攻防和全铳有什么区别，中庸授受就可以不用防守了吗，就不抢和了吗？”我的第一反应是这是什么无稽之谈，康庄麻将的攻防与立直麻将明显有本质不同，但看到他列出的算式我又犯了嘀咕：全铳的话，要避免放铳，不放铳的情况下要尽快和牌不错；即使极端到全分付，别人和牌一样要付很多的损失，虽然不用考虑防守，还是应该去选择最快和牌的方式。</p>
+</blockquote>
+<blockquote>
+<p>通过这么个分析，我们得出了一个结论：授受制只影响攻防，不影响麻将抢和的本质。授受越接近全铳，攻防判断越极端，越要求玩家读听避铳的能力；授受越接近全分付，攻防判断越扁平，越要求玩家最快速度构成和牌的能力。在“最快速度构成和牌”和“读听避铳”之间，肯定是后者更有“技术”一点，也难怪全铳的拥趸更支持这种授受。</p>
+</blockquote>
+<p>看到几条理想麻将规则的特征，来自<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/chidingming">chidingming</a>：</p>
+<blockquote>
+<p>第一，规则简明易学。摸打吃碰杠是麻将行牌的基本操作，尽量减少特殊规定。四副一对是和牌的基本条件，可以对和牌设置一定的门槛，但不宜要求太苛刻。</p>
+<p>第二，设定的番种有难度有美感有趣味。清一色、碰碰和、全带幺等经典番种自然不可或缺。七对作为特殊牌型，既美又有难度，可以接受。杠上开花、海底捞月等少数的偶然番种，可以带来惊喜。乱风乱将等，破坏了牌型的美观，不能接受。</p>
+<p>第三，尽量去除博彩元素。麻将天生就有很大随机性，优秀的规则也不能消除运气成份，但至少不应该故意增加博彩性。红中推倒胡的奖码，长沙麻将的扎鸟，日本麻将的里宝牌，都不能接受。</p>
+<p>第四，尽可能体现竞技性。除了算番合理，还要控制单局得分，输赢不宜过大。若某盘运气爆棚，一把大牌就决定了全场胜负，这实际上弱化了竞技性。足球、乒乓球、排球等运动，不管多美，都是每球只计1分。麻将如果每把牌得分固定，也许枯燥。参考篮球，每球有1分、2分、3分三个等级。麻将单局得分也可以有等级，但最高得分与最低得分最好不要超过10倍。</p>
+</blockquote>
+<p>和种设计可以看<a target="_blank" rel="noopener" href="https://www.acfun.cn/a/ac42694202?from=video">a87g5o这篇文章</a>：</p>
+<blockquote>
+<p>实际上，这种单人组牌类游戏的和种（计分方式）设计，早有老牌游戏珠玉在前，即是德州扑克。德州扑克的最大牌只有两种，同花顺和四条，其巧妙之处在于，下属的各个牌型，葫芦，同花，顺子，三条，两对，一对，同花与顺子各自是同花顺的部分满足状态，同时本身又具有同花顺的部分美感，且他们都是成牌；葫芦与四条关系不大，但仍是三条的一种发展方式，其下三条两对各自有方式形成葫芦，最根基的一对来保证最基本的比较关系。可以看出，整个构组过程，体现了极端的聚集：同花顺要求花色相同，数字相连；四条要求数字相同，然后再各自放开一部分限制，形成多个不同的小组合，小部分，是自顶向底散开的一个过程。少量规整的顶层和种，逐渐解开散开，放松一部分要求，成为一个个与顶层和种相关的小和种。在最底层，对子，与花/顺的听牌，成为最基本的比赛单位，一个造牌的起点，这部分内容也是不多的。这才是“造”的精髓：头尾收紧，中身丰满，呈橄榄型。</p>
+</blockquote>
+<blockquote>
+<p>在所有这些主力和种之间，最为关键的，合计出现率超过90%的七个和种，我们称之为“主线”，它们分别是：混一色，碰碰和，全带幺，三色同顺，一条龙，聚四数，镜同。</p>
+</blockquote>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="image.png" alt="康庄3规则"></p>
+<blockquote>
+<p>和种定义解释与示例</p>
+<p>**混一色：**和牌仅包含字牌与一种花色数牌</p>
+<p>**全带幺：**和牌的每一副面子与对子均包含19数牌或字牌</p>
+<p>**三色同顺：**和牌包含三副花色不同、序数相同的顺子</p>
+<p>**碰碰和：**和牌仅包含刻子或杠子</p>
+<p>两杠：和牌包含且仅包含两个杠子</p>
+<p>**聚四数：**和牌仅包含连续的四个序数牌(不必须都包含)。例：🀈🀉🀊🀉🀊🀋🀛🀛🀛🀒🀓🀔🀔🀔，即2345聚四数</p>
+<p>**一条龙：**和牌包含同一花色123、456、789三副顺子</p>
+<p>全单：和牌仅包含序数牌13579(不能有字牌，必然是碰碰和或七对)</p>
+<p>七对：由七个对子构成的特殊和牌</p>
+<p>**镜同：**和牌包含两副花色相同、序数不同的面子，且与另一种花色的两副面子序数各自相同(雀头不限)。例：🀇🀈🀉🀌🀍🀎🀐🀑🀒🀕🀖🀗🀝🀝，即123678万条镜同</p>
+<p>清一色：和牌仅包含一种花色的序数牌</p>
+<p>小三元：和牌包含中、白、发三种中的两副刻子/杠，和一个对子</p>
+<p>三连刻：和牌包含三副花色相同、序数递增1的刻子/杠。例：🀈🀈🀈🀉🀉🀉🀊🀊🀊🀞🀟🀠🀀🀀，即234万三连刻</p>
+<p>聚三数：和牌仅包含三个连续的序数牌(不必须都包括)。例：🀌🀍🀎🀎🀎🀎🀞🀟🀠🀕🀕🀕🀖🀖，即678聚三数</p>
+<p>三步高：和牌包含三副花色相同、序数递增1的顺子(不能递增2)。例：🀚🀛🀜🀛🀜🀝🀜🀝🀞🀀🀀🀀🀃🀃，即23456饼三步高</p>
+<p>三风刻：和牌包含三副风牌刻子</p>
+<p>三同刻：和牌包含三副序数相同的刻子</p>
+<p>全双：和牌仅包含序数牌2468</p>
+<p>两般高：和牌包含两副花色序数均相同的顺子、另外两副花色序数均相同的顺子(和牌包含两副一般高)。例：🀉🀊🀋🀉🀊🀋🀟🀠🀡🀟🀠🀡🀅🀅</p>
+<p>混幺九：和牌仅包含序数牌1、9和字牌</p>
+<p>四连环：和牌包含一种花色的123、345、567、789四副顺子</p>
+<p>三同顺：和牌包含一种花色序数相同的三副顺子</p>
+<p>大三元：和牌包含中发白的三副刻子/杠</p>
+<p>十三幺：包含🀇🀏🀐🀘🀙🀡🀀🀁🀂🀃🀄🀅🀆13张，外加其中任何一张的特殊和牌</p>
+<p>三杠：和牌包含且仅包含三个杠</p>
+<p>四步高：和牌包含四副花色相同、序数递增1的顺子。</p>
+</blockquote>
+<p>看到一个论断：</p>
+<blockquote>
+<p>授受、铳责、起和、攻防、竞技，是麻将的核心元素。</p>
+</blockquote>
+<h1 id="2024-04-02-10-12-03">2024-04-02 10:12:03</h1>
+<h2 id="麻将规则设计的三个目标">麻将规则设计的三个目标</h2>
+<ul>
+<li>减缓速度：白名单、黑名单、叠加制/起和线、通行证、稀释牌山、提高和牌张数、减少手牌(如先打再摸)、和牌不结束</li>
+<li>增加防守性：增加场况(明牌、宣言、动作)、增加安全张(如振听规则、可打出的花牌)、不切牌、惩罚进攻(如全铳制)</li>
+<li>鼓励造牌：番种设计(主线、分布)、万能牌、换牌/捞牌、滥赏大牌、和牌不独赢、合作造牌(如牌河麻将)</li>
+</ul>
+<p>我在上述三个目标中的内容创新，主要是：想到了切牌数这一影响防守性的维度，设计了几个不切牌的动作；想到了效果类似万能牌的一类<em>捞牌</em>动作；想到借鉴地方麻将(苏花麻将)的通行证派减速法。</p>
+<p>对于<em>造牌</em>我要说几句，<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/689269022">a8的文章</a>讲解了他所理解的<em>造牌</em>：</p>
+<blockquote>
+<p>“造牌”，是麻将游戏中，区别于“抢和”的一个概念。“抢和”的定义为以快速构成和牌型为主要目标的麻将游戏过程，是一个对过程，对游戏策略的定义。因此，“造牌”也应定义为：在麻将游戏的过程中，不以最快构成和牌型，而是以构成有特定美感或难度的和牌型为目标的麻将游戏过程。</p>
+</blockquote>
+<p>这个定义有一个问题，<em>抢和</em>的定义里完全不涉及“美感或难度”，作为对偶的概念，<em>造牌</em>应当定义为：在麻将游戏的过程中，不以最快构成和牌型，而是以构成更高分数的和牌型为目标的麻将游戏过程。</p>
+<p>一般来说更漂亮、更难的牌型分数更高，因此造成了这个误解。</p>
+<p>正确定义的这一对概念，其实就是各类游戏中都具有的<em>稳</em>、<em>贪</em>两种风格，彼此之间没有高下之分。而a8及其他人所崇尚的<em>造牌</em>，本意应当是崇尚牌型美感，却逐渐异化成了对<em>造牌/贪</em>的推崇，形成的负面结果就是他们的造牌麻将完全失去了游戏风格的博弈与抉择，只能谈娱乐性，聊不了竞技性(这又是一个被他们异化的概念，为免误解，用策略复杂度也行)。</p>
+<p>百里子明对造牌的理解也有问题，他有一个“美感选番、难度赋分”的原则，用难度来量化美观程度，因此认为降低了造大牌的难度便是降低了造牌度。这显然只在难度与美感表里一体的情况下成立，有些过于理想化了。首先任何麻将规则都不能夸海口说自己没有滥赏，且滥赏显示了规则制定者的引导与取向，不能一概否定；其次现实游戏中难度不仅仅是组合数所反映的概率，而是处在动态的变化中的，若要反映真实难度，需要让分数也随之变化，且不说这在实现上是否可行，即使做到了，这种情况下相同的牌型便可能有不同的分数，这就直接反驳了“难度美感两面一体”的观点。</p>
+<p>如果将<em>造牌度</em>按本意定义为：游戏内所和牌牌型的美观程度，那么就能解除<em>造牌</em>与<em>游戏风格</em>的耦合，分开讨论，控制变量了。注意这个定义下的造牌度仍然与速度相关，同等条件下速度越慢造牌度越高。在上面的列表，通过减速实现的造牌归到<em>减缓速度</em>一栏。</p>
+<p>接下来审视一下几个观点：</p>
+<ul>
+<li>提高起和要求是按头造牌⸺减速，提高造牌度；但只能保下限。</li>
+<li>极大提高造牌分数是滥赏造牌⸺对速度的影响不好说，提高造牌度。</li>
+<li>极大提高小和分数是重新定义造牌⸺确实是假造牌，美观度没有提升。</li>
+<li>极大扩充和种表是假装能让玩家造牌⸺对速度无影响，提高造牌度上限；提上限并不总能实际提高造牌度。</li>
+<li>万能牌是假造牌，美感没提升⸺是的；可以用其他手段弥补，比如捞牌。</li>
+<li>血战到底是假造牌，越往后难度越低⸺难度降低是事实，但美观度并没有降低，同时速度减慢，因此造牌度提高。</li>
+<li>为了造牌不能改变或者降低和牌的难度⸺造牌度本质上是美观度，牌型不变美观度就不变。</li>
+</ul>
+<p>对于番种表的设计，首先要做的是拿出一个框架，甚至应该采取枚举的做法，整出一张大表，把所有可能的番种与其对应的组合数/概率都列出来。在这个基础上做减法，才能保证结果的合理性，否则对设计师的见识与经验的要求太高了。</p>
+<p>精算麻将似乎做了类似的工作，见<a target="_blank" rel="noopener" href="http://wiki.jowei19.com/w/2338">玉雀的wiki</a>。</p>
+<p>四海麻将也有<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/673784934">这么一张番种表</a>。</p>
+<p>朋友设计了牌河造牌玩法，类似麻将版拖拉机：手牌若干张，四人共享牌河，当某玩家打出的牌和牌河里某张牌数字/花色相同，可以把两张牌夹住的牌都收走，给予相应分数(字牌夹住额外加分，组成对子、面子、杠子额外加分)，摸完牌山比分数。</p>
+<p>稍稍讨论之后，发现他忽略了多次所收的牌之间的联动，而我一开始就觉得这是一个收集积木然后用积木搭建筑的游戏。这样看来，这游戏就变成了类似古典麻将的感觉，收牌有分，收来的牌组成特定的形状有分，收来的牌和了分更多⸺都是累加的。</p>
+<p>手牌太多会导向速攻，影响策略复杂度，这是需要考虑的问题。</p>
+<p>吃碰杠仍然可以加入，这下更像麻将了。</p>
+<p>以下是朋友的规则设计：</p>
+<h2 id="牌河麻将规则">牌河麻将规则</h2>
+<ul>
+<li>
+<p>对局开始：所有玩家摸手牌到一定数量。</p>
+</li>
+<li>
+<p>基本游玩方式：玩家轮流摸牌打牌，将牌打入共用的牌河中并按顺序排列。当一个玩家打出的牌与牌河中另一枚牌满足一定关系（暂定为相同字牌或相同序数的序数牌）时，该玩家将这两张牌（称为扣牌）与两张牌之间的牌（称为带牌）收到自己的得分区，称为得分牌，同时得到本次收牌的收牌分。</p>
+</li>
+<li>
+<p>收牌分：收牌时可以立即得收牌分，收牌分包括枚数底分和奖分。当单次收牌满足一些条件时可以获得奖分（如扣牌同花色、收牌包含字牌、顺子等）。</p>
+</li>
+<li>
+<p>终局：在荒牌时一局结束。根据各玩家得分区的牌计算得出玩家在这局里的得分区得分。将收牌分与得分区得分相加得到本局总分。</p>
+</li>
+<li>
+<p>记分方法：组合得分牌以达成组合，达成组合可以得到组合分（组合包括对子、刻子、顺子，以及一些可能的“役种”，如两色同刻、三步高）。</p>
+</li>
+</ul>
+<h3 id="说明">说明</h3>
+<ul>
+<li>
+<p>设计初衷：设计某种“牌河麻将”，造牌重点在牌河，且有较强互动性。</p>
+<ol>
+<li>一般麻将讲造牌，将手牌（包括副露牌）造成特定形状以胡牌（或听牌），手牌区是游戏的重点。希望设计造牌重点不在手牌的麻将游戏。</li>
+<li>一般麻将讲造牌，主要是造自己的牌，与他家的互动仅限于鸣牌（吃碰杠等）及荣胡。虽然很多麻将的牌河是公共的，但牌河内的牌无法互动。希望设计有更强互动性的麻将游戏。</li>
+<li>玩法灵感来源于童年扑克游戏“拖拉机”：玩家轮流出牌并排列，当出现相同数牌时可以将两张牌及中间牌全部收走。希望以收牌为核心玩法，并且在一定程度上还原“拖拉机”游戏风味。</li>
+</ol>
+</li>
+<li>
+<p>手牌：手牌数量对游戏策略有很大影响。可以想象当有十四张手牌时下家手里大概率有可以收掉上家刚打的牌，玩家会一致采取速攻打法，导致游戏无法理想进行；而只有一张手牌时玩家没有任何策略可用，导致游戏变成完全的运气游戏。暂定手牌为三张。</p>
+</li>
+<li>
+<p>收牌分：收牌越多得收牌分越多，还原“拖拉机”扑克风味。为了鼓励玩家造牌河，设计奖分规则，提高造牌河奖励。但是考虑到速攻对造牌河的破坏，单纯提高造牌河奖励并不够理想（亦即速攻会破坏牌河，收不到自己造的牌河奖励再高也没用）。</p>
+</li>
+<li>
+<p>组合分：一般麻将用手牌造牌，而这个游戏是某种“牌河麻将”，造牌不是在手牌进行，而是在牌河与得分区进行。得分区的牌可控性较低，并且数量不像手牌一般是恒定的，因此不考虑造胡牌形状以及对应奖励。考虑古典麻将为顺子、刻子、杠子给副数，设计通过组合得分牌来获得分数的规则。</p>
+</li>
+<li>
+<p>终局条件：设置荒牌为终局条件符合一般麻将规则，但不是唯一规定。可以想到的一个好处是不需要将一副麻将所有牌打出，可以减少终局的垃圾时间，让游戏过程更统一化（手牌总是有三或四张）。</p>
+</li>
+<li>
+<p>关于限制速攻：速攻是造牌的敌人。造牌麻将一般通过禁止胡牌即完局来限制速攻对造牌的破坏，但想要还原“拖拉机”风味的收牌玩法几乎直接意味着这种限制方法不可行。可以参考其他方法对收牌进行一些限制，如几枚起收、收牌后几巡内不能收牌等。</p>
+</li>
+<li>
+<p>关于牌河公共性的思考：在设计过程中发现难以沿用一些麻将规则的原有思路，一个关键原因是将造牌区域移到“具有公共性的牌河”。牌河的“公共性”使得牌河对所有人可见，并且其价值对不同玩家而言很难有区别。</p>
+</li>
+</ul>
+<h1 id="2024-04-03-10-34-32">2024-04-03 10:34:32</h1>
+<p>能想到的限制速攻的方向：</p>
+<ul>
+<li>减少出牌选择：减少手牌数、收牌条件改为有相同牌、收牌条件改为能组成刻子顺子</li>
+<li>限制收牌次数：收牌后须出牌、硬性限制(几枚起收、收牌后几巡内不能收牌)</li>
+<li>阻止收牌的动作：加入吃碰杠(优先级高于收牌)、加入抢收(他出牌后你出同样的牌则由你收牌)</li>
+<li>调整收牌收益：收牌结果改为收夹住的牌(牌河里多一副对子)、牌河私有(玩家只能收走自己出过的牌)</li>
+</ul>
+<p>注意到杠似乎是不存在的；另外吃碰似乎可能会导致手牌减少，这个取决于回合流程的设计；这个游戏没理由保持13张手牌，因此收牌后打牌是一个特别规定。</p>
+<p>还得多测试，脑测太难了。</p>
+<p>小测了一下，原版肯定太速攻了，即使两个人玩牌河也堆不起来，两回合内必有收牌，干脆把上述列表中不冲突的手段都用上，看看结果会怎么样。</p>
+<p>收牌数减少到5，收牌条件改成最严苛的“成面子才能收”(不过异色面子暂定也算)，收牌数减少到“只收夹住的牌”，加入抢收，加入吃碰杠，收牌后倒不用必须出牌(抢收与吃碰杠都会少摸一张)，硬性限制可加可不加。</p>
+<p>吃碰杠的机制要改，如果吃碰都带抢收效果，在收牌数减少的情况下会在牌河留下刻子与顺子，那么杠应该可以把这刻子收走才对。但是顺子怎么办？要不让吃碰变成可以把扣牌都收走吧，这就没有杠了。如此一来，原定义的抢收现在要么是吃，要么是碰⋯⋯看来应该定义成异色顺子，把它和吃区分开来。</p>
+<p>要不要限制一下这些动作，要求出一样的牌呢？最简单的情形是碰，在应碰尽碰的原则下，两人出的牌必然相同。吃、抢收就不一定了，出一样的牌当然是能吃到收到的，出其他牌有时也能吃到，抢收这种情况会更多。限制一下，有利于提供更多场况，应该有利于防守⋯⋯</p>
+<p>另外匹配原则应该是贪婪匹配吧，否则会有一些很搞笑的事情出现，比如抢收0张牌。这个倒也不用特别规定，玩家肯定会选收得多的匹配办法。</p>
+<h2 id="牌河麻将规则·改">牌河麻将规则·改</h2>
+<ul>
+<li>对局开始：所有玩家摸手牌到5张。</li>
+<li>基本游玩方式：玩家轮流摸牌、打牌、收牌。
+<ul>
+<li>摸牌：从牌山摸一张牌。</li>
+<li>打牌：将牌打入共用的牌河中并按顺序排列。</li>
+<li>收牌：若打出的牌与牌河中另两枚牌组成了刻子、顺子(同不同色均可)，该玩家将这三张牌(称为扣牌)两两之间的牌(称为带牌)收到自己的得分区。</li>
+</ul>
+</li>
+<li>合法行动：在一名玩家摸牌、打牌之后(收牌之前)，所有玩家可以进行如下行动。这些行动会跳过上位玩家的收牌阶段与你的摸牌阶段，以及你们之间的玩家的回合。行动优先级从上至下递减。
+<ol>
+<li>碰：打出一张牌，如果与牌河中另一枚牌组成了刻子，收牌，并将这副刻子收走。</li>
+<li>吃：打出一张牌，若这张牌与牌河中另两枚牌组成了同色顺子，收牌。</li>
+<li>抢收：打出一张相同的牌，若这张牌与牌河中另两枚牌组成了不同色顺子，收牌。</li>
+</ol>
+</li>
+<li>收牌得分：游戏在荒牌时一结束；结束后计算得分；玩家的得分=收牌数+刻子数+顺子数+杠子数。</li>
+</ul>
+<h1 id="2024-04-04-22-20-48">2024-04-04 22:20:48</h1>
+<h2 id="麻将基本规则-推倒和">麻将基本规则(推倒和)</h2>
+<ol>
+<li>基本玩法：4人摸牌至13张手牌，然后依次进行回合，直到牌山摸完或有玩家和牌(或满足其他条件)，游戏结束。</li>
+<li>概念说明：略去了对未加更改概念的说明。
+<ul>
+<li>和：手牌组成了4副面子+1副对子的牌型，以及规定的其他特殊牌型时，可以宣布和牌，将所有手牌移入副露区。</li>
+<li>面子：3张相同的牌(称为刻子)或3张同花色数字连续的牌(称为顺子)。</li>
+<li>对子：2张相同的牌。</li>
+<li>杠子：4张相同的牌，经由动作<em>杠</em>成为刻子与杠子指示物的组合；指示物不算手牌。</li>
+<li>副露区：鸣牌后某些手牌所放置的区域；这种手牌应展示给其他玩家且不能打出。</li>
+</ul>
+</li>
+<li>回合构成：一个回合由以下阶段构成，回合结束后进入下家的回合。
+<ol>
+<li>鸣牌阶段：若选择鸣牌，将刚刚打出的那张牌加入副露区(称为扣牌)，然后执行所选的鸣牌。
+<ol>
+<li>荣和：若扣牌与你的手牌组成和牌型，此时可以选择和牌。</li>
+<li>杠：⑴明杠：将手牌中的一副刻子移至副露区，与扣牌组成一副杠子；⑵加杠：将你在副露区的一副刻子与扣牌组成一副杠子。</li>
+<li>碰：将手牌中的两张牌移至副露区，与扣牌组成一副刻子。</li>
+<li>吃：将手牌中的两张牌移至副露区，与扣牌组成一副顺子；扣牌必须是上家打出的牌。</li>
+<li>过：将未组合的扣牌返还。</li>
+</ol>
+</li>
+<li>摸牌阶段：摸牌，直到手牌数达到14张。</li>
+<li>摊牌阶段：依次进行以下动作。
+<ol>
+<li>自摸：若你的手牌形成了和牌型，此时可以选择和牌。</li>
+<li>暗杠：若你的手牌形成了杠子，此时可以选择杠，将手牌中的一副杠子移至副露区，再摸一张牌。</li>
+</ol>
+</li>
+<li>切牌阶段：打出手牌，直到手牌数达到13张。</li>
+<li>轮询阶段：从下家开始，依次向其他玩家询问是否鸣牌，首先询问荣和，然后依次询问杠、碰、吃，等等；有玩家鸣牌则开始他的回合，否则进入下家的回合。</li>
+</ol>
+</li>
+<li>分数计算：按照番种表的规定，为每位玩家赋予分数，以分数决定胜负与顺位；可能的加分项包括特定形状的和牌型、不同种类副露的数量、特定的行为、和牌的方式，等等。</li>
+</ol>
+<hr>
+<p>(四月八日补)和朋友反复讨论了几天，方定下这个规则框架，但还有一点犹豫，是否应该取消单独的摸牌阶段？先写写看吧：</p>
+<ol>
+<li>基本玩法：4人摸牌至13张手牌，然后依次进行回合，直到有玩家退出游戏，游戏结束。</li>
+<li>概念说明：略去了对未加更改概念的说明。
+<ul>
+<li>杠子：4张相同的牌，经由动作<em>杠</em>成为刻子与杠子指示物的组合；指示物不算手牌。</li>
+<li>副露区：鸣牌后某些手牌所放置的区域；这种手牌应展示给其他玩家且不能打出。</li>
+</ul>
+</li>
+<li>回合构成：一个回合由以下阶段构成，回合结束后进入下家的回合。另外，结束阶段前，每个阶段结束后需要摸牌，直到手牌数达到14张；结束及之后的阶段结束后，需打出手牌，直到手牌数达到13张。无法打出手牌的玩家将退出游戏。
+<ol>
+<li>鸣牌阶段：若选择鸣牌，将刚刚打出的那张牌加入副露区(称为扣牌)，然后执行所选的鸣牌。
+<ol>
+<li>荣和：若扣牌与你的手牌组成和牌型，此时可以选择和牌；将所有手牌移入副露区。</li>
+<li>杠：⑴明杠：将手牌中的一副刻子移至副露区，与扣牌组成一副杠子；⑵加杠：将你在副露区的一副刻子与扣牌组成一副杠子。</li>
+<li>碰：将手牌中的两张牌移至副露区，与扣牌组成一副刻子。</li>
+<li>吃：将手牌中的两张牌移至副露区，与扣牌组成一副顺子；扣牌必须是上家打出的牌。</li>
+<li>过：将未组合的扣牌返还。</li>
+</ol>
+</li>
+<li>摊牌阶段：依次进行以下动作。
+<ol>
+<li>自摸：若你的手牌形成了和牌型，此时可以选择和牌；将所有手牌移入副露区。</li>
+<li>暗杠：若你的手牌形成了杠子，此时可以选择杠，将手牌中的一副杠子移至副露区。</li>
+</ol>
+</li>
+<li>结束阶段：独属于你的阶段结束了，接下来的阶段其他玩家也可以行动。</li>
+<li>轮询阶段：从下家开始，依次向其他玩家询问是否鸣牌，首先询问荣和，然后依次询问杠、碰、吃，等等；有玩家鸣牌则开始他的回合，否则进入下家的回合。</li>
+</ol>
+</li>
+<li>分数计算：玩家退出游戏后，按照番种表的规定计算分数，以分数决定胜负与顺位；可能的加分项包括特定形状的和牌型、不同种类副露的数量、特定的行为、和牌的方式，等等。</li>
+</ol>
+<hr>
+<p>(四月十日补)加杠错了，而且加杠是可以抢杠和的，这就更复杂了。</p>
+<ol>
+<li>基本玩法：x(一般为4)人决定好次序，摸牌至n(一般为13)张手牌，然后依次进行回合，直到有a(一般为1)位玩家退出游戏，游戏结束。</li>
+<li>概念说明：略去了对未加更改概念的说明。
+<ul>
+<li>杠子：4张相同的牌，经由动作<em>杠</em>成为刻子与杠子指示物的组合；指示物不算手牌。</li>
+<li>副露区：鸣牌后某些手牌所放置的区域；这种手牌应展示给其他玩家且不能打出、移动。</li>
+</ul>
+</li>
+<li>回合构成：一个回合由以下阶段构成，回合结束后进入下家的回合。另外，每个阶段结束后需要摸牌，直到手牌数达到n+1张；回合结束后，需打出手牌，直到手牌数达到n张。无法打出手牌的玩家将退出游戏。
+<ol>
+<li>鸣牌阶段：若选择鸣牌，将刚刚打出的那张牌加入副露区(称为扣牌)，然后执行所选的鸣牌。行动后，将未组合的扣牌返还。
+<ol>
+<li>荣和：若扣牌与你的手牌组成和牌型，此时可以选择和牌；将所有手牌移入副露区。</li>
+<li>杠：⑴明杠：将手牌中的一副刻子移至副露区，与扣牌组成一副杠子。</li>
+<li>碰：将手牌中的两张牌移至副露区，与扣牌组成一副刻子。</li>
+<li>吃：将手牌中的两张牌移至副露区，与扣牌组成一副顺子；扣牌必须是上家打出的牌。</li>
+</ol>
+</li>
+<li>摊牌阶段：依次进行以下动作(次数不限)。
+<ol>
+<li>自摸：若你的手牌形成了和牌型，此时可以选择和牌；将所有手牌移入副露区。</li>
+<li>杠：若你的手牌形成了杠子，此时可以选择杠，⑵暗杠：将手牌中的一副杠子移至副露区，再摸一张牌；⑶加杠：将你在副露区的一副刻子与摸到的牌组成一副杠子；摸到的牌视为扣牌。(独属于你的阶段结束了，接下来的阶段其他玩家也可以行动。)</li>
+</ol>
+</li>
+<li>抢杠阶段：从下家开始，依次向其他玩家询问是否与扣牌和牌，若无抢杠和，返还扣牌。</li>
+<li>轮询阶段：从下家开始，依次向其他玩家询问是否鸣牌，首先询问荣和，然后依次询问杠、碰、吃，等等；有玩家鸣牌则开始他的回合，否则进入下家的回合。</li>
+</ol>
+</li>
+<li>分数计算：玩家退出游戏后，按照番种表的规定计算分数，以分数决定胜负与顺位；可能的加分项包括特定形状的和牌型、不同种类副露的数量、特定的行为、和牌的方式，等等。</li>
+</ol>
+<hr>
+<p>(四月廿二日补)将<em>副露</em>一词替换掉；更改了部分表述。</p>
+<ul>
+<li>基本玩法：x(一般为4)人决定好次序，摸牌至n(一般为13)张手牌，然后依次进行回合，直到有a(一般为1)位玩家退出游戏，游戏结束。</li>
+<li>概念说明(略去了未加更改的概念)：
+<ul>
+<li>杠子：4张相同的牌，经由动作<em>杠</em>成为刻子(3张相同的牌)与杠子指示物的组合；指示物不算手牌。</li>
+<li>明牌：鸣牌后，将某些手牌称为<em>明牌</em>；明牌应向其他玩家亮明，且不能打出、移动。</li>
+</ul>
+</li>
+<li>回合构成：一个回合由以下阶段构成，回合结束后进入下家的回合。另外，每个阶段结束后需要摸牌，直到手牌数达到n+1张；回合结束后，需打出手牌，直到手牌数达到n张。无法打出手牌的玩家将退出游戏。
+<ol>
+<li>鸣牌阶段：若选择鸣牌，亮明刚刚打出的那张牌(称为<em>扣牌</em>)，然后执行所选的鸣牌。行动后，将未组合的扣牌返还。
+<ol>
+<li>荣和：若扣牌与你的手牌组成和牌型(4副刻子或顺子+1副对子，或特殊和牌型)，此时可以选择和牌；将所有手牌亮明。</li>
+<li>杠：⑴明杠：将手牌中的一副刻子亮明，与扣牌组成一副杠子。</li>
+<li>碰：将手牌中的两张牌亮明，与扣牌组成一副刻子。</li>
+<li>吃：将手牌中的两张牌亮明，与扣牌组成一副顺子(三张花色相同、数字连续的牌)；扣牌必须是上家打出的牌。</li>
+</ol>
+</li>
+<li>摊牌阶段：依次进行以下动作(次数不限)。
+<ol>
+<li>自摸：若你的手牌形成了和牌型，此时可以选择和牌；将所有手牌亮明。</li>
+<li>杠：若你的手牌形成了杠子，此时可以选择杠，⑵暗杠：将手牌中的一副杠子亮明，再摸一张牌；⑶加杠：将你的一副明牌刻子与摸到的牌组成一副杠子；摸到的牌视为扣牌。(独属于你的阶段结束了，接下来的阶段其他玩家也可以行动。)</li>
+</ol>
+</li>
+<li>抢杠阶段：从下家开始，依次向其他玩家询问是否与扣牌和牌(称为<em>抢杠和</em>)；若无抢杠和，返还扣牌。</li>
+<li>轮询阶段：从下家开始，依次向其他玩家询问是否鸣牌，首先询问荣和，然后依次询问杠、碰、吃，等等；有玩家鸣牌则开始他的回合，否则进入下家的回合。</li>
+</ol>
+</li>
+<li>分数计算：玩家退出游戏后，按照番种表的规定计算分数，以分数决定胜负与顺位；可能的加分项包括特定形状的和牌型、不同种类明牌的数量、特定的行为、和牌的方式，等等。</li>
+</ul>
+<hr>
+<p>(四月廿九日补)优化了表述与流程。</p>
+<ul>
+<li>基本玩法：几人(一般为4)决定好次序，摸若干张(一般为13)手牌，然后依次进行回合，直到有若干个(一般为1)玩家无法打出手牌，游戏结束。</li>
+<li>概念说明(略去了未加更改的概念)：
+<ul>
+<li>杠子：4张相同的牌，经由动作<em>杠</em>成为刻子(3张相同的牌)与杠子指示物的组合。(杠子算3张牌)</li>
+<li>明牌：鸣牌后组成的面子；明牌应向其他玩家亮明，不能拆分、打出。</li>
+</ul>
+</li>
+<li>回合构成：轮询阶段→鸣牌阶段→摸牌阶段→摊牌阶段→杠后阶段→切牌阶段
+<ol>
+<li>轮询阶段：上位玩家结束回合后，询问其他玩家是否鸣牌，有玩家鸣牌则开始他的回合，否则进入下家的回合。询问次序是：首先询问其下家是否荣和，然后依次询问对家、上家；之后依次询问杠、碰、吃，等等。</li>
+<li>鸣牌阶段：若选择鸣牌，拿取牌河里的最后1张牌，然后执行所选的鸣牌。
+<ol>
+<li>荣和：将所有手牌亮明，与扣牌组成和牌型(4副面子+1副对子，或特殊和牌型；面子包括顺子、刻子、杠子)。</li>
+<li>明杠：将手牌中的1副刻子亮明，与扣牌组成1副杠子。</li>
+<li>碰：将手牌中的2张牌亮明，与扣牌组成1副刻子。</li>
+<li>吃：将手牌中的2张牌亮明，与扣牌组成1副顺子(3张花色相同、数字连续的牌)；扣牌必须是上家打出的牌。</li>
+</ol>
+</li>
+<li>摸牌阶段：若｢手牌+明牌｣不足n+1张，从牌山摸1张牌。</li>
+<li>摊牌阶段：若满足摊牌条件，你可以执行下列动作。
+<ol>
+<li>自摸：若你的手牌形成了和牌型，此时可以将所有手牌亮明，宣布和牌。</li>
+<li>暗杠：将手牌中的一副杠子亮明。</li>
+<li>加杠：将手牌中的1张牌亮明，与你的1副明牌刻子组成1副杠子；此时进入轮询阶段，询问是否有人和这张牌，无人响应则开始杠后阶段。</li>
+</ol>
+</li>
+<li>杠后阶段：若｢手牌+明牌｣不足n+1张，从牌山摸1张牌；若此时满足摊牌条件，可以回到摊牌阶段。</li>
+<li>切牌阶段：若｢手牌+明牌｣达到n+1张，向牌河打1张牌。</li>
+</ol>
+</li>
+<li>分数计算：玩家退出游戏后，按照番种表的规定计算分数，以分数决定胜负与顺位；可能的加分项包括和牌型的形状、听牌的方式、和牌的方式、不同种类明牌面子的数量，等等。</li>
+</ul>
+<h2 id="破门麻将">破门麻将</h2>
+<ol>
+<li>基本玩法：4人摸牌至13张手牌，然后依次进行回合，直到有1位玩家退出游戏，游戏结束。</li>
+<li>概念说明：略去了对未加更改概念的说明。
+<ul>
+<li>和：手牌组成了4副面子和1副对子的牌型，且有横牌时，可以宣布和牌，将所有手牌移入副露区。</li>
+<li>搭子：2张花色相同、序数差1或2的牌。</li>
+<li>副露：行动后将某些手牌推倒；这种手牌应展示给其他玩家且不能打出或移动。</li>
+<li>横牌：横置的副露牌；这种手牌应展示给其他玩家且不能打出。</li>
+</ul>
+</li>
+<li>回合构成：一个回合由以下阶段构成，回合结束后进入下家的回合。另外，摊牌阶段后，需要摸牌，直到手牌数达到14张；轮询阶段前，需打出手牌，直到手牌数达到13张。无法打出手牌的玩家将退出游戏。
+<ol>
+<li>鸣牌阶段：若选择鸣牌，将刚刚打出的那张牌作为横牌，然后执行所选的鸣牌。行动后，返还未组合的横牌。
+<ol>
+<li>碰：将手牌中的两张牌移至副露区，与该横牌组成一副刻子。</li>
+<li>吃：将手牌中的两张牌移至副露区，与该横牌组成一副顺子；横牌必须是上家打出的牌。</li>
+<li>加：将该横牌与副露区的X子组成一副X子。</li>
+</ol>
+</li>
+<li>摊牌阶段：在以下行动中选择一项，行动后，本回合不摸牌。
+<ol>
+<li>扔：将手牌中的一副对子或搭子移至副露区，另选一张手牌作为横牌。</li>
+<li>捞：正置一张横牌，然后将一张手牌替换为牌河中的任意一张牌。</li>
+</ol>
+</li>
+<li>轮询阶段：从下家开始，依次向其他玩家询问是否鸣牌，首先询问荣和，然后依次询问杠、碰、吃，等等；有玩家鸣牌则开始他的回合，否则进入下家的回合。</li>
+</ol>
+</li>
+<li>分数计算：玩家退出游戏后，按照番种表的规定计算分数，以分数决定胜负与顺位；加分项有：横牌数量、和牌形状、特定行动、和牌方式。</li>
+</ol>
+<h3 id="注释">注释</h3>
+<ol>
+<li>设计目标：在推倒和的基础上增加游戏互动性、增加场况、提高防守性、减缓速度、提高和牌型的平均美观度。</li>
+<li>规则文本里的<em>手牌</em>包括副露。</li>
+<li>没有<em>杠</em>这一操作，虽然可以通过<em>加</em>来制造<em>杠子</em>，但算作4张牌而非3张。</li>
+<li>平和不算番种，它的分数来自横牌。</li>
+<li>番种表还没有确定，希望给点建议。</li>
+</ol>
+<h1 id="2024-04-10-21-26-31">2024-04-10 21:26:31</h1>
+<p>我料到会和a8有一场论战，但没想到聊这么久。</p>
+<p>总结一下：</p>
+<ul>
+<li>不如<em>马戏星探</em>。</li>
+<li>锁子有个更常见的名字搭子。</li>
+<li>癞子太多狠踩油门(推倒和平均8巡、日麻12巡、国标13.6巡、康庄三14巡)。</li>
+<li>容易快速听牌，然后变成无聊的自摸麻将。</li>
+<li>捞牌总是能捞到，对手针对的代价太大。</li>
+<li>扔牌容易破解，最优解是扔面子。</li>
+<li>新手乱扔容易和不了牌。</li>
+<li>横牌容易看不清手牌组合。</li>
+<li>通过增加场况来提高防守性不现实。</li>
+<li>对于竞技性、防守性、读牌的批评。</li>
+</ul>
+<p>这几个问题里，有几个相互联系，让横牌可以换是一个解法。如果横牌可以打出呢？这样，横牌会更像手牌而非副露，是另一种可以并行不悖的解法。如果只有横牌可以换呢？这样首先没有了摆正横牌这个动作，而且是更强力的矫正。只是，这样最优策略就从“只扔面子”变成了“只扔废牌”，同样容易破解。</p>
+<p>根据朋友的说明，如果暴露的场况都是“已完成的组合”，效果会比较有限。所以我设计额外带一张横牌，不过看样子横牌也容易是成牌的一部分，这样的效果没有达到预期。是否应该扩大横牌数与范围？</p>
+<p>有番种表，大家就会造大牌(假设牌堆无限)；有和牌结束，大家就会抢快：这是一个<em>稳-贪平衡</em>。另一方面，围绕有限的牌山，存在另一组<em>稳-贪平衡</em>。我觉得两个方向的策略性能保持平衡是最好的。</p>
+<p>小问题我就先在规则文本里修掉好了。</p>
+<p>其实破门麻将这名字不太好听，也许可以叫方城麻将。</p>
+<p>番种表可以用康庄的，a8同意了。</p>
+<h1 id="2024-04-11-17-34-41">2024-04-11 17:34:41</h1>
+<h2 id="马戏星探">马戏星探</h2>
+<p>看了一下马戏星探，确实设计得很好，固定顺序、翻面、挖角都是很有意思的机制。固定顺序让游戏进程变慢了，且让挖角(很类似捞牌)有了更多趣味与收益；翻面防止运气影响太大，同时让挖角更灵活；挖角一是有事可做、二能调整手牌、三也提供分数，一般对下家有利。互动性上，因为每位玩家出的牌都能和下家产生互动，因此没有那么自闭。分数的计算相当直观，只需要少量额外token。额外行动与一巡结束显然是后期平衡性调整的结果，对憋大牌的玩家更友好，这是有必要的，否则策略太单一。</p>
+<p>我能从中借鉴什么呢？不准理牌？捞副露？截鸣牌？</p>
+<h2 id="原点麻将">原点麻将</h2>
+<blockquote>
+<p>跟你一样整了一堆额外行动，他是在考虑部分计分，但是还没到你的实质百搭</p>
+</blockquote>
+<p>他新加的动作我框起来了，我新加的动作因为都是通名，单开一列以免重复。</p>
+<p>他的设计有一个地方很古怪，那就是副露和暗手牌是割裂的，比如：“若⼿中的🀅暗對已固定在鳴牌區為對⼦，他⼈打出🀅時不能宣告和牌。但若是⾃⼰摸進第三張🀅，因可將暗對升級為暗碰作為刻⼦，故可直接宣告⾃摸和牌。”还有，我不太喜欢给规则搞好几个版本，把有新意的部分放在最后面更是让人难以理解。</p>
+<table>
+<thead>
+<tr>
+<th>通名</th>
+<th>鸣牌特征</th>
+<th>搭子</th>
+<th>顺子</th>
+<th>对子</th>
+<th>刻子</th>
+<th>杠子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>牌河+手牌→副露</td>
+<td></td>
+<td>吃</td>
+<td></td>
+<td>碰</td>
+<td>大明杠</td>
+</tr>
+<tr>
+<td>加</td>
+<td>牌河+副露→副露</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>牌河+手牌+副露→副露</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>手牌+副露→副露</td>
+<td></td>
+<td></td>
+<td>[暗对升级]</td>
+<td>[暗碰升级]</td>
+<td>小明杠/加杠/补杠</td>
+</tr>
+<tr>
+<td>扔</td>
+<td>手牌→副露</td>
+<td></td>
+<td>[暗吃]</td>
+<td>[暗对]</td>
+<td>[暗碰]</td>
+<td>暗杠</td>
+</tr>
+</tbody>
+</table>
+<p>他的新动作倒也不难理解，就是把加杠、暗杠推广了一下，这样的动作对会麻将的人来说是很自然的。实际上，我也是从这里开始设计的。但我没看明白他的新动作有什么设计意图。</p>
+<p><em>加</em>按原本的规则文本是“牌河+副露→副露”这个方向的，但在横牌不再是一种副露的现在，这个方向也许应写作“牌河+副露+横牌→副露”。此外“牌河+副露+暗手牌→副露”算什么呢？</p>
+<p>也许可以建立<em>手牌(指暗手牌)-副露-横牌</em>这样的对立，但这是否必要？看起来下面这种处理漂亮多了。</p>
+<table>
+<thead>
+<tr>
+<th>通名</th>
+<th>鸣牌特征</th>
+<th>搭子</th>
+<th>顺子</th>
+<th>对子</th>
+<th>刻子</th>
+<th>杠子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>钓</td>
+<td>牌河+手牌→副露</td>
+<td></td>
+<td>吃</td>
+<td></td>
+<td>碰</td>
+<td>大明杠</td>
+</tr>
+<tr>
+<td>粘</td>
+<td>手牌+副露→副露</td>
+<td></td>
+<td></td>
+<td>[暗对升级]</td>
+<td>[暗碰升级]</td>
+<td>小明杠/加杠</td>
+</tr>
+<tr>
+<td>扔</td>
+<td>手牌→副露</td>
+<td></td>
+<td>[暗吃]</td>
+<td>[暗对]</td>
+<td>[暗碰]</td>
+<td>暗杠</td>
+</tr>
+</tbody>
+</table>
+<p>原<em>加</em>系误解了加杠所取的名字，暂时维持原名；碰吃锁均属于“牌河+手牌→副露”，起通名<em>钓</em>；“暗手牌+副露→副露”起通名<em>粘</em>。</p>
+<h2 id="方城麻将-钓鱼麻将">方城麻将(钓鱼麻将)</h2>
+<ul>
+<li>基本玩法：4人摸牌至13张手牌，然后依次进行回合，直到有1位玩家和牌或所有玩家退出游戏，游戏结束。</li>
+<li>概念说明：略去了对未加更改概念的说明。
+<ul>
+<li>和：手牌组成了4副面子和1副对子的牌型，且有横牌时，可以宣布和牌，将所有手牌亮明。</li>
+<li>明牌：行动后将某些手牌推倒正置(明牌不能被再次亮明)；这种手牌应展示给其他玩家且不能打出。</li>
+<li>横牌：横置的明牌；这种手牌应展示给其他玩家。</li>
+</ul>
+</li>
+<li>回合构成：一个回合由以下阶段构成，回合结束后进入下家的回合。另外，摊牌阶段后，需要摸牌，直到手牌数达到14张；轮询阶段前，需打出手牌，直到手牌数达到13张。无法打出手牌的玩家将退出游戏。
+<ol>
+<li>鸣牌阶段：若选择鸣牌，将刚刚打出的那张牌作为横牌，然后执行所选的鸣牌。
+<ol>
+<li>钓：将该横牌与手牌中的一副搭子或对子组合成面子，亮明。
+<ol>
+<li>手牌是暗牌：即吃(不限上家)、碰。</li>
+<li>手牌是明牌：类似加杠，即之前的<em>加</em>。</li>
+<li>手牌一张暗牌一张明牌：同样可以钓。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>摊牌阶段：可以在以下行动中选择一项。行动后，本回合不摸牌。
+<ol>
+<li>扔(打窝)：将手牌中的一副搭子或对子亮明，选其中一张作为横牌。</li>
+<li>粘：选一张手牌亮明并作为横牌，与一副明牌搭子或对子组合成面子。</li>
+<li>捞：正置一张横牌，将牌河中的任意一张牌变为明牌。</li>
+</ol>
+</li>
+<li>轮询阶段：从下家开始，依次向其他玩家询问是否鸣牌；有玩家鸣牌则开始他的回合，否则进入下家的回合。</li>
+</ol>
+</li>
+<li>分数计算：玩家退出游戏后，按照番种表的规定计算分数，以分数决定胜负与顺位；加分项有：横牌数量、和牌形状、特定行动、和牌方式。</li>
+</ul>
+<p>把摊牌阶段的几个操作合并了；横牌可以打出了；修改了表述使得<em>捞</em>可以和牌。</p>
+<p>把鸣牌阶段的操作也合并了；修改了<em>扔</em>的定义以防止横牌与扔牌组成面子；增加了<em>粘</em>这一动作。</p>
+<p>我似乎悄然改变了副露的定义，按规则文本，吃碰来的面子由副露与横牌组成，是可以拆的。这是我让横牌身兼数职，既当记分器又作明手牌所造成的结果。</p>
+<h1 id="2024-04-12-10-26-26">2024-04-12 10:26:26</h1>
+<p>改动是不是太大了？要不还是把横牌归类成一种副露吧。另外，看陈丰恺这么讨厌日麻术语，加上“副露”这个词本身就不太形象，考虑改为“亮牌”(作动词用时)、“明牌”(作名词、形容词用时)。</p>
+<h1 id="2024-04-29-14-02-56">2024-04-29 14:02:56</h1>
+<p>牌类游戏据说都是起源于中国，具体的脉络如下：</p>
+<ul>
+<li>骰子
+<ul>
+<li>宣和牌
+<ul>
+<li>多米诺骨牌</li>
+<li>天九牌(牌九)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>叶子牌
+<ul>
+<li>马吊牌
+<ul>
+<li>长牌</li>
+<li>麻将牌</li>
+<li>扑克牌</li>
+<li>塔罗牌</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>根据目前所见资料，我个人判断，麻将规则发展史的三个重要时空截点：</p>
+<p>①(<em>绘图麻雀牌谱</em>、<em>想定宁波规则</em>所代表的)古典麻将规则及牌具的定型；</p>
+<p>②八九十年代，计副与数和尾等机制在港粤地区麻将规则中的彻底消亡；</p>
+<p>③21世纪之后，地方规则的全面向(禁吃)尊杠推倒胡的趋同演化。</p>
+<p>然后，离我们当下很近的第四个新截点，恐怕就是④血流红中麻将在移动互联网时代的休闲棋牌游戏中所向披靡。</p>
+</blockquote>
+<p>想到一个究极推倒和：</p>
+<ul>
+<li>血流成河</li>
+<li>中搭萬、发搭索、白搭筒</li>
+<li>风字任意3张算顺子，四风算杠子</li>
+</ul>
+<p>⸺全加进去会怎样？</p>
+<p>再想一想，除了血战血流，还有什么和牌不结束的办法？</p>
+<h2 id="钓鱼麻将规则·人话版">钓鱼麻将规则·人话版</h2>
+<ul>
+<li>基本玩法：4人决定好次序，摸牌至13张手牌，然后依次进行回合，直到有1位玩家和牌，游戏结束。</li>
+<li>概念说明(略去了未加更改的概念)：
+<ul>
+<li>明牌：向其他玩家亮明且不能打出的手牌，一般由钓、扔(打窝)、粘、捞、和牌等行动产生，比如和牌需要亮明所有手牌；明牌可以自由地参与和牌型的组合，除了不能打出和手牌没什么区别，比如明牌🀇可以和手牌里的🀈🀉组成面子。</li>
+<li>鱼饵：鱼饵是钓、扔(打窝)、粘这些行动所产生的能量点数，可以用它来从牌河里捞牌；建议把明牌横置来表示鱼饵，鱼饵消耗掉之后把它摆正即可。</li>
+</ul>
+</li>
+<li>回合构成：轮询阶段→钓牌阶段→摸牌阶段→和牌阶段→切牌阶段
+<ol>
+<li>轮询阶段：上位玩家结束回合后，须询问其他玩家要不要钓牌，有玩家宣布钓牌则开始他的回合，否则进入下家的回合。</li>
+<li>钓牌阶段：若宣布钓牌，拿取牌河里的最后1张牌，然后执行所选的行动。
+<ol>
+<li>钓：若你的2张手牌或明牌能和这张牌组成1副面子，可以亮明这3张牌，鱼饵+1。</li>
+<li>荣和：若手牌+明牌能和这张牌组成和牌型(4副面子+1副对子，或特殊和牌型)，可以消耗1鱼饵，将所有手牌亮明，宣布和牌。</li>
+</ol>
+</li>
+<li>摸牌阶段：若满足条件，你可以从下列动作选择一项执行。
+<ol>
+<li>摸：若手牌+明牌不足14张，从牌山摸1张牌。</li>
+<li>扔(打窝)：若手牌中有1副搭子或对子，可以把它们亮明，鱼饵+1。</li>
+<li>粘：若手牌能和你已有的2张明牌组成面子，可以把它亮明，鱼饵+1。</li>
+<li>捞：若你有鱼饵，可以消耗1个，将牌河中的任意一张牌摸进手牌。</li>
+</ol>
+</li>
+<li>和牌阶段：若你的手牌+明牌能组成和牌型，可以消耗1鱼饵，将所有手牌亮明，宣布和牌。</li>
+<li>切牌阶段：若手牌+明牌多于13张，将1张手牌打出到牌河。</li>
+</ol>
+</li>
+<li>分数计算：游戏结束后，统计每位玩家的明牌来计算分数，以分数决定胜负与顺位。分数=底分×倍数
+<ul>
+<li>底分
+<ol>
+<li>捞牌和牌计1分；钓牌和牌计2分。</li>
+<li>每副顺子计1分；每副数牌刻子计2分；每副字牌刻子计4分。</li>
+<li>数字相似的顺子(含步高、连环、龙顺)每组计1分。</li>
+<li>数字相同的顺子与刻子每组计2分；相同的字牌刻子每组计4分。</li>
+<li>若和牌，数牌雀头计2分，字牌雀头计3分。</li>
+<li>对对和计4分，十三幺计8分。</li>
+</ol>
+</li>
+<li>倍数
+<ol>
+<li>清一色：所有明牌都是同种花色，多1倍。</li>
+<li>聚三数：所有明牌的数字都属于同一个顺子，多1倍。</li>
+<li>九纹龙：明牌中包含1～9的所有数字，多1倍。</li>
+<li>无字碑：所有明牌都是数牌，多1倍。</li>
+<li>千字文：所有明牌都是字牌，多2倍。</li>
+<li>天地和：第一巡结束前和牌，多2倍。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>(四月卅日)考虑把打窝和粘合并了。至于损失的场况？对防守来说可能是减少了，但对进攻有效的信息反而变多了吧。</p>
+<ul>
+<li>基本玩法：4人决定好次序，摸牌至13张手牌，然后依次进行回合，直到有1位玩家和牌，游戏结束。</li>
+<li>概念说明(略去了未加更改的概念)：
+<ul>
+<li>明牌：向其他玩家亮明且不能打出的手牌，一般由钓、扔(打窝)、捞、和牌等行动产生，比如和牌需要亮明所有手牌；明牌可以自由地参与和牌型的组合，除了不能打出和手牌没什么区别，比如明牌🀇可以和手牌里的🀈🀉组成面子。</li>
+<li>鱼饵：鱼饵是钓、扔(打窝)这些行动所产生的能量点数，可以用它来从牌河里捞牌；建议把明牌横置来表示鱼饵，鱼饵消耗掉之后把它摆正即可。</li>
+</ul>
+</li>
+<li>回合构成：轮询阶段→钓牌阶段→摸牌阶段→和牌阶段→切牌阶段
+<ol>
+<li>轮询阶段：上位玩家结束回合后，须询问其他玩家要不要钓牌，有玩家宣布钓牌则开始他的回合，否则进入下家的回合。</li>
+<li>钓牌阶段：若宣布钓牌，拿取牌河里的最后1张牌，然后执行所选的行动。
+<ol>
+<li>钓：若你的2张手牌或明牌能和这张牌组成1副面子，可以亮明这3张牌，鱼饵+1。</li>
+<li>和：若手牌+明牌能和这张牌组成和牌型(4副面子+1副对子，或特殊和牌型)，可以将所有手牌亮明，宣布和牌。(不消耗鱼饵，可以看作先钓后和)</li>
+</ol>
+</li>
+<li>摸牌阶段：若满足条件，你可以从下列动作选择一项执行。
+<ol>
+<li>摸：若手牌+明牌不足14张，从牌山摸1张牌。</li>
+<li>扔(打窝)：若手牌中有1副面子，可以把它们亮明，鱼饵+1。</li>
+<li>捞：若你有鱼饵，可以消耗1个，将牌河中的任意一张牌摸进手牌。</li>
+</ol>
+</li>
+<li>和牌阶段：若你的手牌+明牌能组成和牌型，可以消耗1个鱼饵，将所有手牌亮明，宣布和牌。</li>
+<li>切牌阶段：若手牌+明牌多于13张，将1张手牌打出到牌河。</li>
+</ol>
+</li>
+<li>分数计算：游戏结束后，统计每位玩家的明牌来计算分数(分数=底分×倍数)，以分数决定胜负与顺位。
+<ul>
+<li>底分：初始分数为0分，同时满足多个番种的，将其分数加总计算。
+<ol>
+<li>捞牌和牌计1分；钓牌和牌计2分。</li>
+<li>每副顺子计1分；每副数牌刻子计2分；每副字牌刻子计4分。</li>
+<li>数字相似的顺子(含步高、连环、龙顺)每组计1分。</li>
+<li>数字相同的顺子(般高)、相同的数牌刻子每组计2分；相同的字牌刻子每组计4分。</li>
+<li>若和牌，数牌雀头计2分，字牌雀头计3分。</li>
+<li>对对和(指七对子)计4分，十三幺计16分。</li>
+</ol>
+</li>
+<li>倍数：初始倍数为1倍，同时满足多个番种的，将其倍数加总计算。
+<ol>
+<li>镜二色：面子分别属于两种花色且数量相等，多1倍。</li>
+<li>清一色：所有明牌都是同种花色，多1倍。</li>
+<li>聚三数：所有明牌的数字都属于同一个顺子，多1倍。</li>
+<li>九数齐：明牌中包含1～9的所有数字，多1倍。</li>
+<li>无字碑：所有明牌都是数牌，多1倍。</li>
+<li>千字文：所有明牌都是字牌，多2倍。</li>
+<li>天地和：第一巡结束前和牌，多2倍。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>(五月七日)增加了番种。想要加入跑和特色的吃碰规则，但规则文本不太好写。</p>
+<ul>
+<li>基本玩法：4人决定好次序，摸牌至13张手牌，然后依次进行回合，直到有1位玩家和牌，游戏结束。</li>
+<li>概念说明(略去了未加更改的概念)：
+<ul>
+<li>明牌：向其他玩家亮明且不能打出的手牌，一般由钓、扔(打窝)、捞、和牌等行动产生，比如和牌需要亮明所有手牌；明牌可以自由地参与和牌型的组合，除了不能打出和手牌没什么区别，比如明牌🀇可以和手牌里的🀈🀉组成面子。</li>
+<li>鱼饵：鱼饵是钓、扔(打窝)这些行动所产生的能量点数，可以用它来从牌河里捞牌；建议把明牌横置来表示鱼饵，鱼饵消耗掉之后把它摆正即可。</li>
+</ul>
+</li>
+<li>回合构成：钓牌阶段→摸牌阶段→和牌阶段→切牌阶段
+<ol>
+<li>钓牌阶段：若宣布钓牌，拿取鱼牌(上位玩家打出或摸到的那张牌)，然后执行所选的行动。
+<ol>
+<li>钓：若这张牌能和你手牌或明牌中的任意2张组成1副面子，可以亮明这3张牌，鱼饵+1。</li>
+<li>和：若你｢手牌+明牌｣能和这张牌组成和牌型(4副面子+1副对子，或特殊和牌型)，可以消耗1个鱼饵，将所有手牌亮明，宣布和牌。</li>
+</ol>
+</li>
+<li>摸牌阶段：若满足条件，你可以从下列动作选择一项执行。
+<ol>
+<li>摸：若你｢手牌+明牌｣不足14张，从牌山摸1张牌。</li>
+<li>扔(打窝)：若你手牌中有1副面子，可以把它们亮明，鱼饵+1。</li>
+<li>捞：若你有鱼饵，可以消耗1个，将牌河中的任意一张牌摸进手牌。</li>
+</ol>
+</li>
+<li>和牌阶段：若你的｢手牌+明牌｣能组成和牌型，可以消耗1个鱼饵，将所有手牌亮明，宣布和牌。</li>
+<li>切牌阶段：若｢手牌+明牌｣多于13张，将1张手牌亮明并打出到牌河(这张牌称为鱼牌)；然后询问其他玩家要不要钓这张牌，有玩家宣布钓牌则进入他的钓牌阶段，否则开始下家的回合。</li>
+</ol>
+</li>
+<li>分数计算：游戏结束后，统计每位玩家的明牌来计算分数(分数=底分×倍数)，以分数决定胜负与顺位。
+<ul>
+<li>底分：初始分数为0分，同时满足多个番种的，将其分数加总计算。
+<ol>
+<li>捞牌和牌计1分；钓牌和牌计2分。</li>
+<li>每副顺子计1分；每副数牌刻子计2分；每副字牌刻子计3分。</li>
+<li>数字相似的顺子(含步高、连环、龙顺)每组计1分。</li>
+<li>数字相同的顺子(般高)每组计2分；相同的刻子每组计2分；相同的字牌刻子每组计3分。</li>
+<li>若和牌，数牌雀头计2分，字牌雀头计3分。</li>
+<li>对对和(指七对子)计6分，十三幺计8分。</li>
+</ol>
+</li>
+<li>倍数：初始倍数为1倍，同时满足多个番种的，将其倍数加总计算。
+<ol>
+<li>清一色：所有数牌都是同种花色，多1倍。</li>
+<li>镜二色：面子分别属于两种花色且数量相等，多1倍。</li>
+<li>聚同顺：所有数牌序数都在3个相连数字范围内，多1倍。</li>
+<li>九纹龙：明牌中包含1～9的所有数字，多1倍。</li>
+<li>无字碑：所有明牌都是数牌，多1倍。</li>
+<li>三元齐：明牌中包含三种箭牌，多1倍。</li>
+<li>四喜毕：明牌中包含四种风牌，多2倍。</li>
+<li>千字文：所有明牌都是字牌，多2倍。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>(五月廿八)简化了规则以突出主题风味。</p>
+<blockquote>
+<ol>
+<li>
+<p>吃、碰、打窝(把手牌里一副面子亮出来)会产生鱼饵(能量点)，消耗1个可以从牌河里捞牌，以及和牌。</p>
+</li>
+<li>
+<p>杠牌增加一次捞牌机会。</p>
+</li>
+<li>
+<p>和牌结束，但是不独赢，明牌算分。</p>
+</li>
+<li>
+<p>算分类似古典麻将，底分×倍数；番种都能累计。</p>
+</li>
+</ol>
+</blockquote>
+<ul>
+<li>基本玩法：4人决定好次序，摸牌至13张手牌，然后依次进行回合，直到有1位玩家和牌，游戏结束。</li>
+<li>概念说明(略去了未加更改的概念)：
+<ul>
+<li>鱼饵：鱼饵是钓牌、扔(打窝)这些行动所产生的能量点数，可以用它来从牌河里捞牌；建议把明牌横置来表示鱼饵，鱼饵消耗掉之后把它摆正即可。</li>
+<li>空军：如果你放铳了，你在本局游戏中获得｢空军｣称号。</li>
+</ul>
+</li>
+<li>回合构成：钓牌阶段→摸牌阶段→摊牌阶段→切牌阶段
+<ol>
+<li>钓牌阶段：若宣布钓牌，拿取鱼牌(上位玩家打出或摸到的那张牌)，然后执行所选的行动。
+<ol>
+<li>和：若你｢手牌+明牌｣能和这张牌组成和牌型(4副面子+1副对子，或特殊和牌型)，可以消耗1个鱼饵，将所有手牌亮明，宣布和牌。</li>
+<li>碰：若这张牌能和你手牌中的任意2张组成1副刻子，可以亮明这3张牌，鱼饵+1。</li>
+<li>吃：若这张牌能和你手牌中的任意2张组成1副顺子，可以亮明这3张牌，鱼饵+1；只能吃上家。</li>
+</ol>
+</li>
+<li>摸牌阶段：若你｢手牌+明牌｣不足14张，从牌山摸1张牌。</li>
+<li>摊牌阶段：若满足条件，你可以从下列动作选择一项执行。
+<ol>
+<li>和：若你的｢手牌+明牌｣能组成和牌型，可以消耗1个鱼饵，将所有手牌亮明，宣布和牌。</li>
+<li>杠：若你的｢手牌+明牌｣里有4张相同的牌，可以把它们亮明，然后将其中1张换成牌河里的另1张牌。</li>
+<li>扔(打窝)：若你手牌中有1副面子，可以把它们亮明，鱼饵+1。</li>
+<li>捞(摸鱼)：若你有鱼饵，可以消耗1个，从牌河中任选1张牌摸进手牌。</li>
+</ol>
+</li>
+<li>切牌阶段：若｢手牌+明牌｣多于13张，将1张手牌打出到牌河(这张牌称为鱼牌)；然后询问其他玩家要不要钓这张牌，有玩家宣布钓牌则进入他的钓牌阶段，否则开始下家的回合。</li>
+</ol>
+</li>
+<li>分数计算：游戏结束后，统计每位玩家的明牌来计算分数(分数=底分×倍数)，以分数决定胜负与顺位。
+<ul>
+<li>底分：初始分数为0分，同时满足多个番种的，将其分数加总计算。
+<ol>
+<li>捞牌和牌计1分；钓牌和牌计2分。</li>
+<li>每副顺子计1分；每副数牌刻子计2分；每副字牌刻子计3分。</li>
+<li>数字相似的顺子(含步高、连环、龙顺)每组计1分；数字相同的顺子(般高)每组计2分。</li>
+<li>相同的刻子每组计2分；相同的字牌刻子每组计3分。</li>
+<li>若和牌，数牌雀头计2分，字牌雀头计3分。</li>
+<li>对对和(指七对子)计6分；十三幺计8分。</li>
+</ol>
+</li>
+<li>倍数：初始倍数为1倍，同时满足多个番种的，将其倍数加总计算。
+<ol>
+<li>清一色：所有数牌都是同种花色，多1倍。</li>
+<li>镜二色：面子分别属于两种花色且数量相等，多1倍。</li>
+<li>聚同顺：所有数牌序数都在3个相连数字范围内，多1倍。</li>
+<li>九纹龙：明牌中包含1～9的所有数字，多1倍。</li>
+<li>无字碑：所有明牌都是数牌，多1倍。</li>
+<li>三元齐：明牌中包含三种箭牌，多1倍。</li>
+<li>四喜毕：明牌中包含四种风牌，多2倍。</li>
+<li>千字文：所有明牌都是字牌，多2倍。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>(六月十六)尝试加入跑胡子｢用副露和牌｣的特点。为什么要这样做？⸺速度已经很快，我不能继续加强钓牌了，但我希望玩家去打窝、去摸鱼，否则我设计出来何用？同时，为了更适应明牌算分的体系，我梳理了番种表，并做了大幅的简化。</p>
+<blockquote>
+<ol>
+<li>
+<p>只有明牌(副露)组成了四副一对才能和牌。</p>
+</li>
+<li>
+<p>吃、碰、打窝(把手牌里一副面子或对子亮出来)会产生鱼饵(能量点)，消耗1个可以从牌河里捞牌。</p>
+</li>
+<li>
+<p>杠牌增加一次捞牌机会。</p>
+</li>
+<li>
+<p>和牌结束，但是不独赢，根据明牌算分。</p>
+</li>
+<li>
+<p>算分类似古典麻将，底分×倍数；番种都能累计。</p>
+</li>
+</ol>
+</blockquote>
+<ul>
+<li>基本玩法：4人决定好次序，摸牌至13张手牌，然后依次进行回合，直到有1位玩家和牌，游戏结束。</li>
+<li>概念说明(略去了未加更改的概念)：
+<ul>
+<li>鱼饵：鱼饵是钓牌、扔(打窝)这些行动所产生的能量点数，可以用它来从牌河里捞牌；建议把明牌横置来表示鱼饵，鱼饵消耗掉之后把它摆正即可。</li>
+<li>空军：如果你放铳了，你在本局游戏中获得｢空军｣称号。</li>
+<li>和牌：吃、碰、扔、钓后，若你的明牌组成了和牌型，可以宣布和牌。</li>
+</ul>
+</li>
+<li>回合构成：钓牌阶段→摸牌阶段→摊牌阶段→切牌阶段
+<ol>
+<li>钓牌阶段：若宣布钓牌，拿取鱼牌(上位玩家打出或摸到的那张牌)，然后执行所选的行动。
+<ol>
+<li>对：若这张牌能和你手牌中的任意1张组成1副对子，可以亮明这2张牌，鱼饵-1。</li>
+<li>碰：若这张牌能和你手牌中的任意2张组成1副刻子，可以亮明这3张牌，鱼饵+1。</li>
+<li>吃：若这张牌能和你手牌中的任意2张组成1副顺子，可以亮明这3张牌，鱼饵+1；只能吃上家。</li>
+</ol>
+</li>
+<li>摸牌阶段：若你｢手牌+明牌｣不足14张，从牌山摸1张牌。</li>
+<li>摊牌阶段：若满足条件，你可以从下列动作选择一项执行。
+<ol>
+<li>杠：若你的｢手牌+明牌｣里有4张相同的牌，可以把它们亮明，然后将其中1张换成牌河里的另1张牌。</li>
+<li>扔(打窝)：若你手牌中有1副面子，可以把它们亮明，鱼饵+1；若你手牌中有1副对子，也可以亮明，鱼饵-1。</li>
+<li>捞(摸鱼)：从牌河中任选1张牌摸进手牌，鱼饵-1。</li>
+</ol>
+</li>
+<li>切牌阶段：若｢手牌+明牌｣多于13张，将1张手牌打出到牌河(这张牌称为鱼牌)；然后询问其他玩家要不要钓这张牌，有玩家宣布钓牌则进入他的钓牌阶段，否则开始下家的回合。</li>
+</ol>
+</li>
+<li>分数计算：游戏结束后，统计每位玩家的明牌来计算分数，以分数决定胜负与顺位。未和牌也能计分。
+<ul>
+<li>底分：初始分数为0分，同时满足多个番种的，将其分数加总计算。
+<ol>
+<li>每副顺子计1分；每副数牌刻子计2分；每副字牌刻子计3分。</li>
+<li>数字相似的顺子(含步高、连环、龙顺)每组计1分；数字相同的顺子(般高)每组计2分。</li>
+<li>花色相同的顺子每组计1分；花色相同的刻子每组计2分；花色相同的字牌刻子每组计3分。</li>
+<li>鱼饵每个计1分。</li>
+</ol>
+</li>
+<li>倍数：初始倍数为1倍，同时满足多个番种的，将其倍数加总计算。
+<ol>
+<li>清一色：所有数牌都是同种花色，多1倍。</li>
+<li>镜二色：面子分别属于两种花色且数量相等，多1倍。</li>
+<li>聚同顺：所有数牌序数都在3个相连数字范围内，多1倍。</li>
+<li>九纹龙：明牌中包含1～9的所有数字，多1倍。</li>
+<li>三元齐：明牌中包含三种箭牌，多1倍。</li>
+<li>四喜毕：明牌中包含四种风牌，多2倍。</li>
+<li>千字文：所有明牌都是字牌，多2倍。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>(六月二十)简化了番种表，以保持一个最简的番种架构，让玩家将注意力放在钓鱼上。重要改动：和牌型改为四副两对。我希望这能够增加字牌的地位，并提高刻子在复合型中的策略性，同时适当降速。</p>
+<blockquote>
+<ol>
+<li>
+<p>只有明牌(副露)组成了四副二对才能和牌。</p>
+</li>
+<li>
+<p>吃、碰、打窝(把手牌里一副面子或对子亮出来)会产生鱼饵(能量点)，消耗1个可以从牌河里捞牌。</p>
+</li>
+<li>
+<p>杠牌增加一次捞牌机会。</p>
+</li>
+<li>
+<p>和牌结束，但是不独赢，根据明牌算分。</p>
+</li>
+<li>
+<p>算分类似古典麻将，底分×倍数；番种都能累计。</p>
+</li>
+</ol>
+</blockquote>
+<ul>
+<li>基本玩法：4人决定好次序，摸牌至13张手牌，然后依次进行回合，直到有1位玩家和牌，游戏结束。</li>
+<li>概念说明(略去了未加更改的概念)：
+<ul>
+<li>鱼饵：鱼饵是钓牌、扔(打窝)这些行动所产生的能量点数，可以用它来从牌河里捞牌；建议把明牌横置来表示鱼饵，鱼饵消耗掉之后把它摆正即可。</li>
+<li>空军：如果你放铳了，你在本局游戏中获得｢空军｣称号。</li>
+<li>和牌：吃、碰、扔、钓后，若你的明牌组成了｢4面子+2对子｣的和牌型，可以宣布和牌。</li>
+</ul>
+</li>
+<li>回合构成：钓牌阶段→摸牌阶段→摊牌阶段→切牌阶段
+<ol>
+<li>钓牌阶段：若宣布钓牌，拿取鱼牌(上位玩家打出或摸到的那张牌)，然后执行所选的行动。
+<ol>
+<li>对：若这张牌能和你手牌中的任意1张组成1副对子，可以亮明这2张牌，鱼饵-1。</li>
+<li>碰：若这张牌能和你手牌中的任意2张组成1副刻子，可以亮明这3张牌，鱼饵+1。</li>
+<li>吃：若这张牌能和你手牌中的任意2张组成1副顺子，可以亮明这3张牌，鱼饵+1；只能吃上家。</li>
+</ol>
+</li>
+<li>摸牌阶段：若你｢手牌+明牌｣不足14张，从牌山摸1张牌。</li>
+<li>摊牌阶段：若满足条件，你可以从下列动作选择一项执行。
+<ol>
+<li>杠：若你的｢手牌+明牌｣里有4张相同的牌，可以把它们亮明，然后将其中1张换成牌河里的另1张牌。</li>
+<li>扔(打窝)：若你手牌中有1副面子，可以把它们亮明，鱼饵+1；若你手牌中有1副对子，也可以亮明，鱼饵-1。</li>
+<li>捞(摸鱼)：从牌河中任选1张牌摸进手牌，鱼饵-1。</li>
+</ol>
+</li>
+<li>切牌阶段：若｢手牌+明牌｣多于13张，将1张手牌打出到牌河(这张牌称为鱼牌)；然后询问其他玩家要不要钓这张牌，有玩家宣布钓牌则进入他的钓牌阶段，否则开始下家的回合。</li>
+</ol>
+</li>
+<li>分数计算：游戏结束后，统计每位玩家的明牌来计算分数，以分数决定胜负与顺位。未和牌也能计分。
+<ol>
+<li>每副顺子计1分；每副数牌刻子计2分；每副字牌刻子计3分。</li>
+<li>数字相似的顺子(含步高、连环、龙顺)每组计1分；数字相同的顺子(般高)每组计2分。</li>
+<li>花色相同的顺子每组计1分；花色相同的数牌刻子每组计2分；花色相同的字牌刻子每组计3分。</li>
+<li>鱼饵每个计1分。</li>
+</ol>
+</li>
+<li>番种：满足以下番种的，分数翻倍计算；满足多个番种的，将倍数加和计算。
+<ol>
+<li>和牌：成功和牌，分数翻倍。</li>
+<li>碰碰：所有明牌都是对子、刻子、杠子，分数翻倍。</li>
+<li>一色：所有明牌都是同一种花色，分数翻倍。</li>
+<li>花猪：明牌中包含至少4种不同花色，分数翻倍。</li>
+<li>聚数：所有明牌的序数都是三个连续数字之一，分数翻倍。</li>
+<li>清龙：明牌中包含1～9的所有数字，分数翻倍。</li>
+</ol>
+</li>
+</ul>
+<p>(七月十七)进一步简化了算分。去除了容易复合爆炸的番，改善了碰碰的表述，现在应该没有严重倒挂了。</p>
+<blockquote>
+<ol>
+<li>
+<p>只有明牌(副露)组成了四副二对才能和牌。</p>
+</li>
+<li>
+<p>吃、碰、打窝(把手牌里一副面子或对子亮出来)会产生鱼饵(能量点)，消耗1个可以从牌河里捞牌。</p>
+</li>
+<li>
+<p>杠牌增加一次捞牌机会。</p>
+</li>
+<li>
+<p>和牌结束，但是不独赢，根据明牌算分。</p>
+</li>
+<li>
+<p>算分类似古典麻将，底分×倍数；番种都能累计。</p>
+</li>
+</ol>
+</blockquote>
+<ul>
+<li>基本玩法：4人决定好次序，摸牌至13张手牌，然后依次进行回合，直到有1位玩家和牌，游戏结束。</li>
+<li>概念说明(略去了未加更改的概念)：
+<ul>
+<li>鱼饵：鱼饵是钓牌、扔(打窝)这些行动所产生的能量点数，可以用它来从牌河里捞牌；建议把明牌横置来表示鱼饵，鱼饵消耗掉之后把它摆正即可。</li>
+<li>空军：如果你放铳了，你在本局游戏中获得｢空军｣称号。</li>
+<li>和牌：吃、碰、扔、钓后，若你的明牌组成了｢4面子+2对子｣的和牌型，可以宣布和牌。</li>
+</ul>
+</li>
+<li>回合构成：钓牌阶段→摸牌阶段→摊牌阶段→切牌阶段
+<ol>
+<li>钓牌阶段：若宣布钓牌，拿取鱼牌(上位玩家打出或摸到的那张牌)，然后执行所选的行动。
+<ol>
+<li>对(单钓)：若这张牌能和你手牌中的任意1张组成1副对子，可以亮明这2张牌，鱼饵-1。</li>
+<li>碰：若这张牌能和你手牌中的任意2张组成1副刻子，可以亮明这3张牌，鱼饵+1。</li>
+<li>吃：若这张牌能和你手牌中的任意2张组成1副顺子，可以亮明这3张牌，鱼饵+1；只能吃上家。</li>
+</ol>
+</li>
+<li>摸牌阶段：若你｢手牌+明牌｣不足14张，从牌山摸1张牌。</li>
+<li>摊牌阶段：若满足条件，你可以从下列动作选择一项执行。
+<ol>
+<li>杠：若你的｢手牌+明牌｣里有4张相同的牌，可以把它们亮明，然后将其中1张换成牌河里的另1张牌。</li>
+<li>扔(打窝)：若你手牌中有1副面子，可以把它们亮明，鱼饵+1；若你手牌中有1副对子，也可以亮明，鱼饵-1。</li>
+<li>捞(摸鱼)：从牌河中任选1张牌摸进手牌，鱼饵-1。</li>
+</ol>
+</li>
+<li>切牌阶段：若｢手牌+明牌｣多于13张，将1张手牌打出到牌河(这张牌称为鱼牌)；然后询问其他玩家要不要钓这张牌，有玩家宣布钓牌则进入他的钓牌阶段，否则开始下家的回合。</li>
+</ol>
+</li>
+<li>分数计算：游戏结束后，统计每位玩家的明牌来计算分数，以分数决定胜负与顺位。未和牌也能计分。
+<ol>
+<li>每张亮明的手牌计1分。</li>
+<li>相同的牌每张额外计1分(如顺子3副、刻子6副、杠子8副、一般高9副、七对子21副、全不靠14副、十三幺15副)</li>
+<li>鱼饵每个计5分。</li>
+</ol>
+</li>
+<li>番种：满足以下番种的，分数翻倍计算；满足多个番种的，将倍数加和计算。
+<ol>
+<li>和牌：成功和牌，分数翻倍。</li>
+<li>碰碰：所有明牌都是对子、刻子(无对子不计碰碰)，分数翻倍。</li>
+<li>幺九：所有明牌面子都带有幺九牌/字牌，分数翻倍。</li>
+<li>镜同：所有明牌可以分为序数相同、花色不同的两组，分数翻倍。</li>
+<li>一色：所有明牌都是同一种花色，分数翻倍。</li>
+<li>花猪：明牌中包含至少3种花色，分数翻倍。</li>
+<li>聚数：所有明牌的序数都是三个连续数字之一，分数翻倍。</li>
+<li>清龙：明牌中包含1～9的所有数字，分数翻倍。</li>
+</ol>
+</li>
+</ul>
+<h1 id="2024-04-30-12-23-46">2024-04-30 12:23:46</h1>
+<h2 id="康庄麻将极简版">康庄麻将极简版</h2>
+<blockquote>
+<p>来自a8的<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/li-mou-38-6/pins">文章</a>。该规则类似一般的地方麻将，但更造牌，更接近古典麻将。</p>
+</blockquote>
+<ul>
+<li>偶然番(需要和牌才计)
+<ul>
+<li>杠上开花，1分</li>
+<li>抢杠和，1分</li>
+<li>海底捞月，1分</li>
+<li>天和，8分</li>
+</ul>
+</li>
+<li>部分类(可重复计，无需和牌)
+<ul>
+<li>杠/四归一，1分(既然分值一样，我倾向于算成同一个番)</li>
+<li>字刻，1分(字牌的刻/杠)</li>
+</ul>
+</li>
+<li>全体类(无需和牌)
+<ul>
+<li>二色，1分(手牌里只有2种花色，花色共有万筒索字4种)</li>
+<li>碰碰，1分(手牌有4副刻/杠)</li>
+<li>聚四数，2分(手牌无字牌且序数都在3个相连数字范围内)</li>
+<li>一条龙，2分</li>
+<li>一色，4分</li>
+<li>聚三数，4分</li>
+</ul>
+</li>
+</ul>
+<p>无授受加分制，不分庄闲，没有铳责，和牌结束，数和尾。</p>
+<h2 id="美国麻将">美国麻将</h2>
+<p>说来，如果和牌型扩充一下会怎样？扩充原则是大面子优先。另外这样杠子就得算4张牌了吧。</p>
+<p>会多出这几种：</p>
+<ul>
+<li>4₃2₁(3杠子1对子，杠子算4张)</li>
+<li>4₂3₂</li>
+<li>4₂2₃</li>
+<li>4₁3₂2₂</li>
+<li>3₄2₁(正常的4面子1对子)</li>
+<li>3₂2₄</li>
+<li>2₇</li>
+<li>2₁1₁₃(13幺)</li>
+</ul>
+<p>美国麻将好像就是这样的，他们还有Quint(五张的面子)、Sixtet(六张的面子)，因为有百搭的Joker(王牌，用花牌来充当)，所以Quint、Sixtet除了大顺子还有大刻子。而且，美国麻将杠子确实算4张牌，英雄所见略同。</p>
+<p>这么说还有这几种和牌型：</p>
+<ul>
+<li>6₂2₁</li>
+<li>6₁5₁3₁</li>
+<li>6₁4₂</li>
+<li>6₁3₂2₁</li>
+<li>6₁2₄</li>
+<li>5₂4₁</li>
+<li>5₂2₂</li>
+<li>5₁3₃</li>
+<li>5₁3₁2₃</li>
+</ul>
+<p>再大胆一点呢？</p>
+<ul>
+<li>9₁5₁</li>
+<li>9₁3₁2₁</li>
+<li>8₁6₁</li>
+<li>8₁3₂</li>
+<li>8₁2₃</li>
+<li>7₂</li>
+<li>7₁4₁3₁</li>
+<li>7₁3₁2₂</li>
+<li>⋯⋯</li>
+<li>1₁₄</li>
+</ul>
+<blockquote>
+<p>美国麻将把“白”叫做White Dragon，“中”叫做Red Dragon，“发”叫做Green Dragon。有的麻将直接把“中”印成红色的龙，“发”印成绿色的龙。</p>
+<p>万和红中同色，索和发财同色，筒子和白板同色。当作数字0使用的白板可以视作任何颜色。</p>
+</blockquote>
+<p>⸺这不是我早上的想法吗？</p>
+<p>再看看前面。坏了，我好像重新发明了美国麻将。不过，这种麻将似乎并不好玩。</p>
+<blockquote>
+<p>基本和牌型也是非常神奇的发明，比指定和种简单得多，有难度的前提下方便记忆和传播，甚至还能变化丰富，简直是妙手。</p>
+</blockquote>
+<p>和牌型多了，基本上只能匹配类似古典麻将的计分法，完全只计副。比如一副n张牌的对子计2ⁿ⁻²分，顺子计2ⁿ⁻³分。这样4₃2₁的类三杠子(国标32番)是13分；9₁3₁2₁的类清龙(国标16番)是66分，9₁5₁的加强版清龙(算五连顺吧，分应该比9₁3₁2₁更高)则是68分；2₇的小七对(国标12番，略高)是7分。太离谱了，大顺子极大高估。</p>
+<p>如果顺子的计分公式指数改成n/3呢？那么刻子指数应该是n-1(保证刻子比顺子值钱)。如此一来，4₃2₁是26分、9₁3₁2₁是12分、9₁5₁是11.1748分、2₇是14分。这怎么小数都出来了，原来是有5的顺子。</p>
+<p>或者指数不变，用乘法算。那么4₃2₁是64分、9₁3₁2₁是64分、9₁5₁是256分、2₇是7分。要是指数都加一，4₃2₁是10752分、9₁3₁2₁是512分、9₁5₁是1024分、2₇是128分。太离谱了sir。</p>
+<p>改为简单加法吧，对子计(n-1)²分，顺子计(n-2)²分：4₃2₁是28分、9₁3₁2₁是51分、9₁5₁是58分、2₇是7分。还是那个问题，大顺子高了。</p>
+<p>如果对子立方，三杠子是82，这个比较合理，只是七对子还是偏低。</p>
+<p>如果对子(n+1)²分，顺子(n-1)²分：4₃2₁是84分、9₁3₁2₁是77分、9₁5₁是80分、2₇是63分。嗯⋯⋯小七对高了。</p>
+<p>设对子n³分，顺子n²分得了。这种情况下，4₃2₁是200分、9₁3₁2₁是98分、9₁5₁是106分、2₇是56分。结果最直接的算分法才是最合理的：对子(8分)和顺子(9分)差不多，9₁5₁比9₁3₁2₁分高，刻子(27分)比顺子(9分)值钱得多。就是平和4₃2₁(国标2番)44分略高有些遗憾。</p>
+<p>另外以上算法都算不了十三幺和全不靠，分数低得离谱。</p>
+<h1 id="2024-05-01-09-37-03">2024-05-01 09:37:03</h1>
+<h2 id="美式古典麻将-想定美国规则">美式古典麻将(想定美国规则)</h2>
+<blockquote>
+<p><em>美式古典麻将</em>是Dr.Fang所设计的一种骨牌组合游戏，发表于<em>想定美国规则(2224)</em>。他声称，这是古美国流行的Mahjong游戏(一说发轫流行于古中国)的一个较早期版本。</p>
+</blockquote>
+<ul>
+<li>基本玩法：使用136张麻将牌进行游戏。4人决定好次序，摸牌至13张手牌，然后依次进行回合。当3位玩家退出游戏，游戏结束。</li>
+<li>概念说明(略去了未加更改的概念)：
+<ul>
+<li>面子：若干张序数相连的同色牌或完全相同的牌，包括对子(Pair)、刻子(Pung)、杠子(Kong，注意杠子算4张牌)、五对刻(Quint，5张相同的牌)、六对刻(Sixtet，6张相同的牌)⋯⋯以及顺子(Chow)、四连顺(4张序数相连的同色牌)、五连顺(5张序数相连的同色牌)、六连顺(6张序数相连的同色牌)⋯⋯</li>
+<li>花色：麻将牌的花色共有4种：万子(Craks，包含🀇🀈🀉🀊🀋🀌🀍🀎🀏🀄，🀄算任意一张万子牌)，索子(Bams，包含🀐🀑🀒🀓🀔🀕🀖🀗🀘🀅，🀅算任意一张索子牌)，筒子(Dots，包含🀙🀚🀛🀜🀝🀞🀟🀠🀡🀆，🀆算任意一张筒子牌)，风子(Winds，包含🀀🀁🀂🀃)。
+<blockquote>
+<p>据Dr.Fang考证，古中国将🀀🀁🀂🀃🀄🀅🀆统称为字牌(Characters，其中🀄🀅🀆被称为Dragons或Joker)</p>
+</blockquote>
+</li>
+<li>明牌：鸣牌后组成的面子；明牌应向其他玩家亮明，且不能拆分、打出。</li>
+<li>和牌型：由若干组面子组成的14张牌，记作<em>Aₙ…</em>(A表示一副面子有几张牌，n表示这种面子有几副)。可能的和牌型有：9₁5₁、9₁3₁2₁、8₁6₁、8₁3₂、8₁2₃、7₂、7₁4₁3₁、7₁3₁2₂、6₂2₁、6₁5₁3₁、6₁4₂、6₁3₂2₁、6₁2₄、5₂4₁、5₂2₂、5₁3₃、5₁3₁2₃、4₃2₁、4₂3₂、4₂2₃、4₁3₂2₂、4₁2₅、3₄2₁(一般和牌型)、3₂2₄、2₇(小七对)。
+<blockquote>
+<p>据Dr.Fang考证，古中国还有十三幺、全不靠两种和牌型，分别记作2₁1₁₂(200分)、1₁₄(50分)。十三幺是13张互不相同的幺九牌，外加其中任意1张。全不靠是14张两两之间互不成对子、搭子的单张。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>回合构成：轮询阶段→鸣牌阶段→摸牌阶段→摊牌阶段→切牌阶段
+<ol>
+<li>轮询阶段：上位玩家结束回合后，询问其他玩家是否鸣牌，无人鸣牌则进入下家的回合。询问次序是：同时询问其他玩家是否荣和，然后询问碰，然后询问吃(和＞碰＞吃)。如果有多位玩家鸣同一种牌，面子更长的玩家优先(比如：若打出的是🀇，下家拿🀈🀉吃，对家拿🀇🀇碰，上家拿🀇🀇🀇碰，则上家成功鸣牌)。</li>
+<li>鸣牌阶段：若选择鸣牌，拿取牌河里的最后1张牌(称为<em>扣牌</em>)，然后执行所选的鸣牌。
+<ol>
+<li>荣和：将所有手牌亮明，与扣牌组成和牌型。</li>
+<li>碰：将手牌中的n张牌亮明，与扣牌组成1副n+1对刻。</li>
+<li>吃：将手牌中的n张牌亮明，与扣牌组成1副n+1连顺；扣牌必须是上家打出的牌。</li>
+</ol>
+</li>
+<li>摸牌阶段：若｢手牌+明牌｣不足n+1张，从牌山摸1张牌。</li>
+<li>摊牌阶段：若满足摊牌条件，你可以执行一次下列动作。
+<ol>
+<li>自摸：若你的手牌形成了和牌型，此时可以将所有手牌亮明，宣布和牌。</li>
+<li>吹风：将手牌中的n张相同的风牌打出，从牌山摸n张牌。</li>
+</ol>
+</li>
+<li>切牌阶段：若｢手牌+明牌｣达到n+1张，向牌河打1张牌；无法打出手牌的玩家将退出游戏。</li>
+</ol>
+</li>
+<li>分数计算：游戏结束后，统计每位玩家的明牌来计算分数，玩家的总分=底分+附加分。
+<ul>
+<li>底分：1副n张牌的顺子分数为n²，1副n张牌的刻子分数为n³，将所有面子的分数相加得到底分。比如：🀇🀈🀉🀊🀋🀌🀍🀑🀅🀑🀑🀝🀝🀝是7₁4₁3₁牌型，底分=7²+4³+3²=122分</li>
+<li>附加分：岭上开花(吹风后摸牌和牌)10分，海底捞月(用最后一张打出的牌和牌，或摸牌山最后一张牌和牌)50分，天地人和(首次摸牌就和牌，或者别人打出第一张牌就和牌)200分。</li>
+</ul>
+</li>
+</ul>
+<h1 id="2024-05-07-09-46-43">2024-05-07 09:46:43</h1>
+<h2 id="番种表">番种表</h2>
+<p>本来想总结一下国标、自然、四海、康庄麻将的番种类型，并按我在钓鱼麻将中采用的体系来赋分的，可是看了一下他们混乱的系统，又不太想搞了，先总结一下主线吧。</p>
+<p>康庄麻将的主线有：混一色、碰碰和、全带幺、三色同顺、一条龙、聚四数、镜同。说是主线，但并不是七个系列，只是七个番种而已，以后称<em>主线番种</em>，以免混淆。他的康庄极简规则里主线倒是很清楚：偶然番(岭上开花1分、金鸡夺食1分、海底捞月1分、妙手回春1分、天地和8分)、部分类(杠/四归一1分、字刻1分)、全体类(二色1分、碰碰1分、聚数2-4分、一条龙2分、一色4分)。我设计钓鱼麻将的分数体系时，并没有看到他这个规则，但设计出来的结果也差不多。</p>
+<p>区别在哪儿呢？⑴我的全体类基本只奖励大牌，因此把二色升级成了<em>镜二色</em>、取消了碰碰、聚数只留聚顺；另一方面，为了兼容一些传统番种，添加了字牌相关的几个番。</p>
+<p>⑵部分类，我的数量更多。这是因为我也奖励最普通的顺子和雀头，以便兼容和牌结束与否两类规则⸺实际上，可以把康庄的部分番看成这个减上几分。</p>
+<p>⑶偶然番，我排除了一些不会出现的番。如果尝试扩展一个更通用的框架，我会这样写：</p>
+<ul>
+<li>底分：初始分数为0分，同时满足多个番种的，将其分数加总计算；放铳的玩家底分固定为0分。
+<ul>
+<li>部分类
+<ul>
+<li>顺子：3张序数相连、花色相同的牌组成的面子，每副计1分。</li>
+<li>刻子：3张相同的牌组成的面子，每副计2分。</li>
+<li>字面：由字牌组成的面子，每副额外计1分。</li>
+<li>连顺：序数相似的顺子(含步高、连环、龙顺)，每组计1分。</li>
+<li>同面：序数相同的顺子或刻子，每组计2分。</li>
+</ul>
+</li>
+<li>偶然类
+<ul>
+<li>岭上开花：开杠后摸牌和牌，计1分。</li>
+<li>金鸡夺食：用补杠时打出的牌和牌，计1分。</li>
+<li>海底捞月：用最后一张打出的牌和牌，计1分。</li>
+<li>妙手回春：摸牌山最后一张牌和牌，计1分。</li>
+<li>天地人和：第一次摸牌和牌或用别人打出的第一张牌和牌，计16分。</li>
+</ul>
+</li>
+<li>和牌型(只能选择一种和牌型)
+<ul>
+<li>平和型：一般和牌型，计1分。</li>
+<li>对对和：7个不同的对子组成的和牌型，计3分。</li>
+<li>十三幺：包含🀇🀏🀐🀘🀙🀡🀀🀁🀂🀃🀄🀅🀆13张，外加其中任何1张组成的和牌型，计8分。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>倍数：初始倍数为1倍，同时满足多个番种的，将其倍数加总计算。
+<ul>
+<li>数牌类
+<ul>
+<li>清一色：所有数牌都是同种花色，多1倍。</li>
+<li>镜二色：面子分别属于两种花色且数量相等，多1倍。注意像🀇🀇🀉🀉🀊🀊🀔🀔🀖🀖🀘🀘🀙🀙这样的七对子也属于镜二色。</li>
+<li>聚同顺：所有数牌的序数都在3个相连数字范围内，多1倍。</li>
+<li>九纹龙：明牌中包含1～9的所有数字，多1倍。</li>
+</ul>
+</li>
+<li>字牌类
+<ul>
+<li>三元齐：明牌中包含三种箭牌，多1倍。</li>
+<li>四喜毕：明牌中包含四种风牌，多2倍。</li>
+<li>千字文：所有明牌都是字牌，多2倍。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>(五月九日补)加上了杠子系番种。</p>
+<ul>
+<li>底分：初始分数为0分，同时满足多个番种的，将其分数加总计算；放铳的玩家底分固定为0分。
+<ul>
+<li>部分类
+<ul>
+<li>顺子：3张序数相连、花色相同的牌组成的面子，每副计1分。</li>
+<li>刻子：3张相同的牌组成的面子，每副计2分。</li>
+<li>字面：由字牌组成的面子，每副额外计1分。</li>
+<li>杠子：手牌或明牌有4张相同的牌，每副额外计2分。</li>
+<li>连顺：序数相似的顺子(含步高、连环、龙顺)，每组计1分。</li>
+<li>同面：序数相同的顺子或刻子，每组计2分。</li>
+</ul>
+</li>
+<li>偶然类
+<ul>
+<li>岭上开花：开杠后摸牌和牌，计1分。</li>
+<li>金鸡夺食：用补杠时打出的牌和牌，计1分。</li>
+<li>海底捞月：用最后一张打出的牌和牌，计1分。</li>
+<li>妙手回春：摸牌山最后一张牌和牌，计1分。</li>
+<li>天地人和：第一巡内和牌，即第二次摸牌前和牌，计16分。</li>
+</ul>
+</li>
+<li>和牌型(只能选择一种和牌型)
+<ul>
+<li>平和型：一般和牌型，计1分。</li>
+<li>七对子：7个不同的对子组成的和牌型，计3分。</li>
+<li>十三幺：包含🀇🀏🀐🀘🀙🀡🀀🀁🀂🀃🀄🀅🀆13张，外加其中任何1张组成的和牌型，计8分。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>倍数：初始倍数为1倍，同时满足多个番种的，将其倍数加总计算。
+<ul>
+<li>数牌类
+<ul>
+<li>清一色：所有数牌都是同种花色，多1倍。</li>
+<li>镜二色：面子分别属于两种花色且数量相等，多1倍。注意像🀇🀇🀉🀉🀊🀊🀔🀔🀖🀖🀘🀘🀙🀙这样的七对子也属于镜二色。</li>
+<li>聚同顺：所有数牌的序数都在3个相连数字范围内，多1倍。</li>
+<li>九纹龙：明牌中包含1～9的所有数字，多1倍。</li>
+<li>无字碑：所有明牌都是数牌，多一倍。</li>
+</ul>
+</li>
+<li>字牌类
+<ul>
+<li>三元齐：明牌中包含三种箭牌，多1倍。</li>
+<li>四喜毕：明牌中包含四种风牌，多2倍。</li>
+<li>千字文：所有明牌都是字牌，多2倍。</li>
+</ul>
+</li>
+<li>鸣牌类
+<ul>
+<li>对对和：所有明牌都是对子、刻子或杠子，多1倍。</li>
+<li>四杠子：明牌中有4副杠子，多1倍。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>(六月六日补)“所有明牌”这个表述似乎有问题，似乎鸣牌越少越容易吃到收益，形成了显著的倒挂。还有一个严重问题：数牌类番太多，容易复合上天⸺考虑把｢无字碑｣这个番删除。此外，一些名称选择回归传统形式，因为这是给｢麻将基本规则｣用的番种表，不是天马行空的时候。</p>
+<ul>
+<li>底分：初始分数为0分，同时满足多个番种的，将其分数加总计算；放铳的玩家底分固定为0分。
+<ul>
+<li>部分类
+<ul>
+<li>顺子：3张序数相连、花色相同的牌组成的面子，每副计1分。</li>
+<li>刻子：3张相同的牌组成的面子，每副计2分。</li>
+<li>杠子：4张相同的牌，每副额外计2分。</li>
+<li>幺九：仅由幺九牌组成的面子，每副额外计1分。</li>
+<li>聚数：序数相同或相似的顺子(含般高、步高、连环、龙顺)，以及完全相同的刻子，每组计1分。如🀇🀈🀉🀊🀋🀌🀍🀎🀏计3分。</li>
+<li>同色：花色相同的面子，每组计1分。如🀀🀀🀀🀁🀁🀁🀂🀂🀂🀄🀄🀄计4分。</li>
+</ul>
+</li>
+<li>偶然类
+<ul>
+<li>岭上开花：开杠后摸牌和牌，计1分。</li>
+<li>金鸡夺食：用补杠时打出的牌和牌，计1分。</li>
+<li>海底捞月：用最后一张打出的牌和牌，计1分。</li>
+<li>妙手回春：摸牌山最后一张牌和牌，计1分。</li>
+<li>天和：第一次摸牌和牌，计16分。</li>
+<li>地和：用别人打出的第一张牌和牌，计16分。</li>
+</ul>
+</li>
+<li>和牌型(只能选择一种和牌型)
+<ul>
+<li>平和型：一般和牌型，计2分。</li>
+<li>七对子：由7副对子组成的和牌型，计3分。</li>
+<li>全不靠：由14张两两之间互不成对子、搭子的单张组成的和牌型，计5分。</li>
+<li>十三幺：包含13张互不相同的幺九牌(即🀇🀏🀐🀘🀙🀡🀀🀁🀂🀃🀄🀅🀆)，外加其中任何1张组成的和牌型，计8分。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>倍数：初始倍数为1倍，同时满足多个番种的，将其倍数加总计算。
+<ul>
+<li>数牌类
+<ul>
+<li>九数全：明牌中包含1～9的所有数字，多1倍。</li>
+<li>清一色：所有手牌都是数牌，且都是同种花色，多2倍。</li>
+<li>聚三数：所有手牌都是数牌，且其序数都在3个不同数字的范围内，多2倍。</li>
+</ul>
+</li>
+<li>字牌类
+<ul>
+<li>五门齐：明牌包含所有五种花色，多1倍。</li>
+<li>三元汇：明牌中包含三种箭牌，多1倍。</li>
+<li>四喜毕：明牌中包含四种风牌，多2倍。</li>
+<li>字一色：所有手牌都是字牌，多2倍。</li>
+</ul>
+</li>
+<li>鸣牌类
+<ul>
+<li>对对和：所有手牌都是对子、刻子或杠子，多1倍。</li>
+<li>四杠子：明牌中有4副杠子，多1倍。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>(六月廿日补)调整分值，提高了偶然番的底分，反正加的不是番数，不会爆炸的——何况大番本来怎么定都无所谓。增加不求人、纯九连，这样大伙熟悉的番种都有了，也形成了对称。另外考虑还是用明牌算番吧，这样不用考虑混一色之类的情况，倒挂的问题可以用调大初始倍率等办法解决。</p>
+<ul>
+<li>底分：初始分数为0分，同时满足多个番种的，将其分数加总计算；放铳的玩家底分固定为0分。
+<ul>
+<li>部分类
+<ul>
+<li>面子：3张序数相连、花色相同的牌或3张相同的牌，每副计1分。</li>
+<li>刻子：3张相同的牌组成的面子，每副额外计1分。</li>
+<li>杠子：4张相同的牌，每副额外计1分。</li>
+<li>字面：仅由字牌组成的面子，每副额外计1分。</li>
+<li>聚数：序数相同的面子，每多1组计1分。如🀇🀈🀉🀇🀈🀉计1分。</li>
+<li>连顺：花色相同、序数相似的顺子(含步高、连环、龙顺)，每多1组计1分。如🀇🀈🀉🀊🀋🀌🀍🀎🀏计2分。</li>
+<li>同色：花色相同的面子，每多1组计1分。如🀀🀀🀀🀁🀁🀁🀂🀂🀂🀄🀄🀄计3分。</li>
+</ul>
+</li>
+<li>偶然类
+<ul>
+<li>岭上开花：开杠后摸牌和牌，计2分。</li>
+<li>金鸡夺食：用补杠时打出的牌和牌，计2分。</li>
+<li>海底捞月：用最后一张打出的牌和牌，计2分。</li>
+<li>妙手回春：摸牌山最后一张牌和牌，计2分。</li>
+<li>天和：第一次摸牌和牌，计16分。</li>
+<li>地和：用别人打出的第一张牌和牌，计16分。</li>
+</ul>
+</li>
+<li>和牌型(只能选择一种和牌型)
+<ul>
+<li>平和型：一般和牌型，计2分。</li>
+<li>七对子：由7副对子组成的和牌型，计3分。</li>
+<li>全不靠：由14张两两之间互不成对子、搭子的单张组成的和牌型，计5分。</li>
+<li>十三幺：包含13张互不相同的幺九牌(即🀇🀏🀐🀘🀙🀡🀀🀁🀂🀃🀄🀅🀆)，外加其中任何1张组成的和牌型，计8分。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>倍数：初始倍数为1倍，同时满足多个番种的，将其倍数加总计算。
+<ul>
+<li>数牌类
+<ul>
+<li>九数齐：明牌中包含1～9的所有数字，多1倍。</li>
+<li>镜同和：所有明牌面子可以分为序数相同、花色不同的两组，多1倍。</li>
+<li>清老头：所有明牌都是</li>
+<li>聚三数：所有明牌都是数牌，且其序数都在3个连续数字的范围内，多2倍。</li>
+</ul>
+</li>
+<li>字牌类
+<ul>
+<li>五门齐：明牌包含所有五种花色，多1倍。</li>
+<li>三元会：明牌中包含三种箭牌，多1倍。</li>
+<li>四喜会：明牌中包含四种风牌，多2倍。</li>
+<li>清一色：所有明牌都是同种花色(含字一色)，多2倍。</li>
+</ul>
+</li>
+<li>鸣牌类
+<ul>
+<li>不求人：没有吃碰杠且自摸和牌，多1倍。</li>
+<li>碰碰和：所有明牌都是对子、刻子、杠子，多1倍。</li>
+<li>四杠子：明牌中有4副杠子，多2倍。</li>
+<li>纯九连：听9张牌和牌，多2倍。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>注释：对于明牌算分可能造成的能和不和问题，在底分-倍数体系下，对于一般小牌(6～8分左右的平和)，原本的倍数要达到2～3倍，和牌才能抵得上倍数少一倍的损失；少两倍则需要4～6倍。如果底分更高，要求也会更高。</p>
+<hr>
+<p>(七月十六日补)参考新版康庄众娱的表述，改善了连续的表述；部分类计算方式改为组合数，倍数加入类似副底的机制(可以解决倒挂问题)；补充了多色同面的情况；加入了幺九；加入了暗刻。</p>
+<ul>
+<li>底分：初始分数为0分。同一番种满足多次的，分数按次数套算；同时满足多个番种的，将其分数加总计算。
+<ul>
+<li>部分类
+<ul>
+<li>刻子：3张相同的牌组成的面子，每组计1分。</li>
+<li>杠子：4张相同的牌(含四归一)，每组计1分。</li>
+<li>字面：仅由字牌组成的面子，每组计1分。</li>
+<li>幺九：带有序数为1或9的面子(含幺九刻、杠)，每组计1分。</li>
+<li>暗牌：和牌时才亮明的面子，每组计1分。</li>
+<li>聚数：序数相同的面子，每组计1分。</li>
+<li>连环：花色相同、序数相似的面子(含步高、连环、龙顺刻)，每组计1分。</li>
+<li>同色：花色相同的面子，每组计1分。</li>
+</ul>
+</li>
+<li>偶然类
+<ul>
+<li>岭上开花：开杠后摸牌和牌，计4分。</li>
+<li>金鸡夺食：用补杠时打出的牌和牌，计4分。</li>
+<li>海底捞月：用最后一张打出的牌和牌，计4分。</li>
+<li>妙手回春：摸牌山最后一张牌和牌，计4分。</li>
+<li>天和：第一次摸牌和牌，计16分。</li>
+<li>地和：用别人打出的第一张牌和牌，计16分。</li>
+</ul>
+</li>
+<li>和牌型(只能选择一种和牌型)
+<ul>
+<li>平和型：由4副面子、1副对子组成的一般和牌型，计2分。</li>
+<li>七对子：由7副对子组成的和牌型(4张相同的牌算2个对子)，计3分。</li>
+<li>全不靠：由14张两两之间互不成对子、搭子的单张组成的和牌型，计5分。</li>
+<li>十三幺：包含13张互不相同的幺九牌(即🀇🀏🀐🀘🀙🀡🀀🀁🀂🀃🀄🀅🀆)，外加其中任何1张组成的和牌型，计8分。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>倍数：初始倍数为0倍，每亮明一副面子加1倍(比如和牌算4倍)。同时满足下列多个番种的，将其倍数加总计算。
+<ul>
+<li>数牌类
+<ul>
+<li>九数齐：明牌中包含1～9的所有数字，加1倍。</li>
+<li>镜同和：所有面子可以分为序数相同、花色不同的两组，加1倍。</li>
+<li>清幺九：所有面子､对子都带有幺九数牌(含幺九刻、杠)，加2倍。</li>
+<li>聚三数：所有明牌都是数牌，且其序数都在3个连续数字的范围内，加2倍。</li>
+</ul>
+</li>
+<li>字牌类
+<ul>
+<li>五门齐：明牌包含所有五种花色，加1倍。</li>
+<li>三元会：明牌中包含三种箭牌，加1倍。</li>
+<li>四喜会：明牌中包含四种风牌，加2倍。</li>
+<li>清一色：所有手牌都是同种花色(含字一色)，加2倍。</li>
+</ul>
+</li>
+<li>鸣牌类
+<ul>
+<li>不求人：没有吃碰杠且自摸和牌，加1倍。</li>
+<li>碰碰和：所有明牌都是对子、刻子、杠子，加1倍。</li>
+<li>四杠子：所有面子都是杠子，加2倍。</li>
+<li>纯九连：听9张牌和牌，加2倍。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="2024-06-01-16-20-23">2024-06-01 16:20:23</h1>
+<h2 id="方城规则">方城规则</h2>
+<blockquote>
+<p>方城规则是鹫巢麻将(或称瓦西子麻将、透明麻将)的一种类似实现，通过几条简单的规则，提高了游戏的对抗性与竞技性，且可以外挂到各类麻将规则上。</p>
+</blockquote>
+<ol>
+<li>组队：4名玩家按位置分为东南西北家。其中东西家称庄家，南北家称闲家；东南家为一队，西北家为另一队。整场游戏结束后，庄家分数更高且庄闲均存活的一队取得胜利，庄家或闲家被击飞的队伍判负。</li>
+<li>明牌：牌局中所有玩家可见的牌称为明牌。手牌中的明牌，要么在牌山上就已经是明牌，要么是鸣牌所产生的副露；和一般的副露不同，明牌与手牌一视同仁，可以被打出，也可以自由地参与｢和牌型｣的组合。比如明牌🀇可以和手牌里的🀈🀉组成面子。</li>
+<li>牌山：和一般的牌山不同，所有牌正面朝上放置，因此有一半的牌是明牌；另外，牌山头部即将被摸的那张牌也一定是明牌。</li>
+<li>鸣牌：玩家切牌后、摸牌前均需询问其他玩家是否鸣牌，切牌后鸣牌响应的是｢牌河尾部刚刚被打出的那张牌｣，摸牌前鸣牌响应的是｢牌山头部即将被摸的那张牌｣。</li>
+</ol>
+<p>注释：</p>
+<ol>
+<li>原则上，在牌山上就是明牌状态的牌，摸进手牌后仍应保持明牌状态，展示给所有玩家。</li>
+<li>由于发牌用的是正面向上的牌山，因此起手牌有一半是明牌。</li>
+<li>可选的规则：⑴截和/头跳：一炮多响时，只有离放铳者右边最近的人和牌才有效；⑵高牌山：像某些北方麻将那样，一幢牌摞三层而非两层；⑶小宝牌：牌画带有红色的🀇～🀏、🀐🀔🀖🀘、🀙🀛🀝🀞🀟🀡、🀄在和牌时将提供额外的2符。</li>
+</ol>
+<p>(六月六日补)和a8、库老板他们聊番种表的时候，里头的铳责内容被质问了，然后聊着聊着，忽然库提出了一个绝妙的想法：荣和时，放铳者也有奖励，比如和牌家+3、铳家+1、另两家各-2⸺真正有颠覆性的｢铳赏｣规则，妙就妙在读铳等技术性一点没有损失。我想这个东西放在方城规则里比较合适。</p>
+<blockquote>
+<p>方城规则是鹫巢麻将(或称瓦西子麻将、透明麻将)的一种类似实现，通过几条简单的规则，极大提升了麻将的对抗性与竞技性，且可以外挂到各类麻将规则上。</p>
+</blockquote>
+<ol>
+<li>两两组队：4名玩家按位置分为东南西北家。其中东西家称庄家，南北家称闲家；东南家为一队，西北家为另一队。整场游戏结束后，庄家分数更高且庄闲均存活的一队取得胜利，庄家或闲家被击飞的队伍判负。</li>
+<li>明牌自由：牌局中所有玩家可见的牌称为明牌。手牌中的明牌，要么在牌山上就已经是明牌，要么是鸣牌所产生的副露；和一般的副露不同，明牌与手牌一视同仁，可以被打出，也可以自由地参与｢和牌型｣的组合。比如明牌🀇可以和手牌里的🀈🀉组成面子。</li>
+<li>牌山翻面：和一般的牌山不同，所有牌正面朝上放置，因此有一半的牌是明牌；另外，牌山头部即将被摸的那张牌也一定是明牌。</li>
+<li>鸣牌夹击：玩家切牌后、摸牌前均需询问其他玩家是否鸣牌，切牌后鸣牌响应的是｢牌河尾部刚刚被打出的那张牌｣，摸牌前鸣牌响应的是｢牌山头部即将被摸的那张牌｣。</li>
+</ol>
+<p>可选的规则：</p>
+<ol>
+<li>铳赏：荣和时，放铳者不仅没有损失，反而有奖励⸺和牌家收取3份分数，放铳家收取1份分数，而另两家各支出2份分数。</li>
+<li>高牌山：像某些北方麻将那样，一幢牌摞三层而非两层。</li>
+</ol>
+<p>注释：</p>
+<ol>
+<li>原则上，在牌山上就是明牌状态的牌，摸进手牌后仍应保持明牌状态，展示给所有玩家。</li>
+<li>由于发牌用的是正面向上的牌山，因此起手牌有一半是明牌。</li>
+</ol>
+<p>关于宝牌的那些想法适用性不广，就不展开了。总的来说，我认为宝牌需要在终局前确定(里宝牌不好)、需要范围更广(比如所有五筒都是红五筒)、需要削弱影响(比如计副数而非计番数)、要制造不对称。</p>
+<h1 id="2024-07-17-11-21-47">2024-07-17 11:21:47</h1>
+<h2 id="扑克麻将">扑克麻将</h2>
+<blockquote>
+<p>迄今为止许多人尝试过用扑克牌打麻将，最简单的办法是准备四副扑克牌，然后去掉一部分牌。不过，这样只是一种劣化的麻将纸牌，没有依托扑克牌本身的特点。B站陶小宁设计过一种<em>陶扑麻将</em>，很有意思，不过玩法更接近跑胡子而非麻将。如何用扑克牌这副牌具还原麻将的凑牌风味，是一个亟待解决的问题。</p>
+</blockquote>
+<ul>
+<li>基本玩法：4人决定好次序，摸13张手牌，然后依次摸牌、切牌，满足条件可以吃、碰、杠，直到有1个玩家组成4副1对和牌或摸空牌堆，游戏结束。</li>
+<li>概念说明(略去了未加更改的概念)：
+<ul>
+<li>牌具：游戏使用两副(108张)扑克牌进行游戏，A～10称为数牌、AJQK称为字牌(A既是数牌又是字牌)、Joker称为宝牌。</li>
+<li>宝牌：在手牌中时，Joker视为该颜色的任一张牌；打出时，Joker相当于花牌，计1番且可以再摸一张牌。</li>
+<li>花色：同种颜色视为同一门，故有红黑两门；花色相同的面子更为珍贵，称为纯面子。</li>
+<li>字牌特殊规定：同种颜色的JQK视为顺子，同种颜色的JQKA视为杠子。</li>
+<li>风：｢红桃、方块、草花、黑桃｣相当于｢东、南、西、北｣，场风、自风替换为场花、自花，等等。</li>
+</ul>
+</li>
+<li>副底：刻子、杠子分别计1、2副；纯面子、对子加1副。数字相同的面子，每组计1副。</li>
+<li>役种：和牌才算分，无役不能荣和只能自摸。总分=副数×2^番数
+<ul>
+<li>偶然：天和、地和6番，其他偶然役1番。</li>
+<li>役牌：类似日麻，指带有自花/场花的字牌面子，1番。</li>
+<li>宝牌：需要打出Joker，1番。</li>
+<li>门清：没有吃碰杠和牌，1番。</li>
+<li>混～：排除字牌后才满足下列番种的减1番。</li>
+<li>一气：拥有所有种类的数牌(A～10)，1番。</li>
+<li>全带：所有面子、对子都带有某个数字，2番。</li>
+<li>碰碰：所有牌都是对子、刻子、杠子，2番。</li>
+<li>染手：所有牌都是红色/黑色，2番。</li>
+<li>无双：拥有所有种类的牌(A～K+Joker)，2番。</li>
+<li>同顺：所有牌的序数都在3个连续数字范围内，3番。</li>
+<li>清花：所有牌都是同种花色，3番。</li>
+<li>老头：所有牌都是字牌，3番。</li>
+</ul>
+</li>
+<li>授受制：自摸和牌方收3份，另三家分别付1份；点炮和牌方收3份，点炮方收1份，另两家各付2份。</li>
+</ul>
+<h2 id="番种表·古典">番种表·古典</h2>
+<blockquote>
+<p>古典麻将采取番副制，先对手牌里每副面子计个副数，再根据整副牌的美感翻上几番，这套框架简单优美、交互性强，很有开发潜力。只是，古典麻将缺少之后涌现的丰富和种，像三色同顺、一般高、一条龙、四连环、步步高这些部分类番种都是既不算番、也不算副。此番种表改革了计副方式，精选扩充了一些有代表性的番种，并严格控制滥赏、复合、倒挂等偏僻，可以搭载在各种地方麻将上使用。</p>
+</blockquote>
+<p>总分=副数×2^番数+偶然分</p>
+<ul>
+<li>偶然
+<ul>
+<li>岭上开花：开杠后摸牌和牌，计10分。</li>
+<li>金鸡夺食：用补杠时打出的牌和牌，计10分。</li>
+<li>海底捞月：用最后一张打出的牌和牌，计10分。</li>
+<li>妙手回春：摸牌山最后一张牌和牌，计10分。</li>
+<li>天和：第一次摸牌和牌，计100分。</li>
+<li>地和：用别人打出的第一张牌和牌，计100分。</li>
+</ul>
+</li>
+<li>副数：每张亮明的手牌计1副，相同的牌每张额外计1副(如顺子3副、刻子6副、杠子8副、一般高9副、七对子21副、全不靠14副、十三幺15副)</li>
+<li>番数：同时满足下列多个番种的，将其番数加总计算。
+<ul>
+<li>数牌类
+<ul>
+<li>一条龙：明牌中包含某门花色的所有数牌，翻1番。</li>
+<li>镜同和：所有面子可以分为序数相同、花色不同的两组，翻1番。</li>
+<li>带幺九：所有面子､对子都带有幺九数牌，翻2番。</li>
+<li>聚三数：所有明牌都是数牌，且其序数都在3个连续数字的范围内，翻2番。</li>
+</ul>
+</li>
+<li>字牌类
+<ul>
+<li>五门齐：明牌包含所有五种花色，翻1番。</li>
+<li>三元会：明牌中包含三种箭牌，翻1番。</li>
+<li>四喜会：明牌中包含四种风牌，翻2番。</li>
+<li>清一色：所有手牌都是同种花色，翻2番。</li>
+</ul>
+</li>
+<li>鸣牌类
+<ul>
+<li>不求人：没有吃碰杠且自摸和牌，翻1番。</li>
+<li>碰碰和：所有明牌都是对子、刻子、杠子，翻1番。</li>
+<li>四杠子：所有面子都是杠子，翻2番。</li>
+<li>纯九连：听9张牌和牌，翻2番。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://1284685832.github.io">啪栏杆</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://1284685832.github.io/%E6%96%B0%E6%A3%8B%E8%A7%84%E5%88%99/">https://1284685832.github.io/%E6%96%B0%E6%A3%8B%E8%A7%84%E5%88%99/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://1284685832.github.io" target="_blank">莫名</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1/">游戏设计</a></div><div class="post_share"><div class="social-share" data-image="/img/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">啪栏杆</div><div class="author-info__description">所有文章都会于此处留档，欢迎订阅</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/1284685832"><i class="fab fa-github"></i><span>Github主页</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:fhbuyr@foxmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a><a class="social-icon" href="https://www.zhihu.com/people/pai-lan-gan" target="_blank" title="Zhihu"><i class="fa fa-solid fa-pen-nib"></i></a><a class="social-icon" href="https://nga.178.com/nuke.php?func=ucp&amp;uid=60180548" target="_blank" title="NGA"><i class="fa fa-pen"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#22-36-2021-4-1"><span class="toc-text">22:36 2021&#x2F;4&#x2F;1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%83%8F%E6%A3%8B1-0"><span class="toc-text">像棋1.0</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#22-54-2021-4-5"><span class="toc-text">22:54 2021&#x2F;4&#x2F;5</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%83%8F%E6%A3%8B2-0"><span class="toc-text">像棋2.0</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#22-32-2021-4-8"><span class="toc-text">22:32 2021&#x2F;4&#x2F;8</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%83%8F%E6%A3%8B3-0"><span class="toc-text">像棋3.0</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#21-07-2021-4-9"><span class="toc-text">21:07 2021&#x2F;4&#x2F;9</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#21-07-2021-4-9-2"><span class="toc-text">21:07 2021&#x2F;4&#x2F;9</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%83%8F%E6%A3%8B3-1"><span class="toc-text">像棋3.1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2023-09-02-08-30-43"><span class="toc-text">2023-09-02 08:30:43</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%83%8F%E6%A3%8B4-0"><span class="toc-text">像棋4.0</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#16-37-2021-5-13"><span class="toc-text">16:37 2021&#x2F;5&#x2F;13</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B1%AB%E6%A3%8B1-0"><span class="toc-text">豫棋1.0</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#20-37-2021-5-21"><span class="toc-text">20:37 2021&#x2F;5&#x2F;21</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-07-2021-5-22"><span class="toc-text">10:07 2021&#x2F;5&#x2F;22</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B1%AB%E6%A3%8B1-1"><span class="toc-text">豫棋1.1</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-07-2021-5-23"><span class="toc-text">9:07 2021&#x2F;5&#x2F;23</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#14-07-2021-5-25"><span class="toc-text">14:07 2021&#x2F;5&#x2F;25</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2023-08-21-23-27-17"><span class="toc-text">2023-08-21 23:27:17</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%B8%83%E5%B1%80%E8%AE%BE%E8%AE%A1"><span class="toc-text">初始布局设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%93%E5%85%A5%E8%A7%84%E5%88%99%E6%94%B9%E5%86%99"><span class="toc-text">打入规则改写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%93%E6%A3%8B1-0"><span class="toc-text">易棋1.0</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#19-52-2021-3-31"><span class="toc-text">19:52 2021&#x2F;3&#x2F;31</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-19-2021-4-1"><span class="toc-text">8:19 2021&#x2F;4&#x2F;1</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#22-35-2021-4-1"><span class="toc-text">22:35 2021&#x2F;4&#x2F;1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%93%E6%A3%8B2-0"><span class="toc-text">易棋2.0</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-33-2021-4-2"><span class="toc-text">8:33 2021&#x2F;4&#x2F;2</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#16-53-2021-4-3"><span class="toc-text">16:53 2021&#x2F;4&#x2F;3</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#21-54-2021-4-8"><span class="toc-text">21:54 2021&#x2F;4&#x2F;8</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%93%E6%A3%8B2-1"><span class="toc-text">易棋2.1</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-28-2021-4-14"><span class="toc-text">9:28 2021&#x2F;4&#x2F;14</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2024-10-17-21-57-59"><span class="toc-text">2024-10-17 21:57:59</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#23-56-2021-4-1"><span class="toc-text">23:56 2021&#x2F;4&#x2F;1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E6%A3%8B1-0"><span class="toc-text">循棋1.0</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#20-28-2021-4-2"><span class="toc-text">20:28 2021&#x2F;4&#x2F;2</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-30-2021-4-4"><span class="toc-text">10:30 2021&#x2F;4&#x2F;4</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#21-52-2021-4-8"><span class="toc-text">21:52 2021&#x2F;4&#x2F;8</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E6%A3%8B1-1"><span class="toc-text">循棋1.1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E6%A3%8B2-0"><span class="toc-text">循棋2.0</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%A5%E6%A3%8B1-0"><span class="toc-text">剥棋1.0</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#19-21-2021-4-2"><span class="toc-text">19:21 2021&#x2F;4&#x2F;2</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#20-04-2021-4-2"><span class="toc-text">20:04 2021&#x2F;4&#x2F;2</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#14-44-2021-4-3"><span class="toc-text">14:44 2021&#x2F;4&#x2F;3</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#14-29-2021-4-4"><span class="toc-text">14:29 2021&#x2F;4&#x2F;4</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#21-44-2021-4-8"><span class="toc-text">21:44 2021&#x2F;4&#x2F;8</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%A5%E6%A3%8B1-1"><span class="toc-text">剥棋1.1</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#21-51-2021-4-8"><span class="toc-text">21:51 2021&#x2F;4&#x2F;8</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#23-38-2021-4-13"><span class="toc-text">23:38 2021&#x2F;4&#x2F;13</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%AD%E7%89%8C1-2"><span class="toc-text">揭牌1.2</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#15-44-2021-4-3"><span class="toc-text">15:44 2021&#x2F;4&#x2F;3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%A6%E6%A3%8B1-0"><span class="toc-text">卦棋1.0</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#19-51-2021-4-3"><span class="toc-text">19:51 2021&#x2F;4&#x2F;3</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#21-08-2021-4-3"><span class="toc-text">21:08 2021&#x2F;4&#x2F;3</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-30-2021-4-4"><span class="toc-text">8:30 2021&#x2F;4&#x2F;4</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%A6%E6%A3%8B2"><span class="toc-text">卦棋2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%A6%E6%A3%8B2-1"><span class="toc-text">卦棋2.1</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#22-40-2021-4-5"><span class="toc-text">22:40 2021&#x2F;4&#x2F;5</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#21-37-2021-4-8"><span class="toc-text">21:37 2021&#x2F;4&#x2F;8</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%A6%E6%A3%8B2-1-2"><span class="toc-text">卦棋2.1</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#23-21-2021-4-5"><span class="toc-text">23:21 2021&#x2F;4&#x2F;5</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%90%BD%E6%A3%8B1-0"><span class="toc-text">落棋1.0</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#23-30-2021-4-5"><span class="toc-text">23:30 2021&#x2F;4&#x2F;5</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#23-38-2021-4-5"><span class="toc-text">23:38 2021&#x2F;4&#x2F;5</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#21-30-2021-4-8"><span class="toc-text">21:30 2021&#x2F;4&#x2F;8</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%90%BD%E6%A3%8B1-1"><span class="toc-text">落棋1.1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%B0%E4%BB%A3%E5%9B%B4%E6%A3%8B"><span class="toc-text">现代围棋</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9C%BC%E6%A3%8B"><span class="toc-text">眼棋</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%A4%E5%9B%B4%E6%A3%8B-%E5%90%83%E5%AD%90%E6%A3%8B"><span class="toc-text">古围棋(吃子棋)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%A2%E6%A3%8B1-0"><span class="toc-text">溢棋1.0</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2023-05-10-19-10-40"><span class="toc-text">2023-05-10 19:10:40</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%A4%E5%9B%B4%E6%A3%8B2-0"><span class="toc-text">古围棋2.0</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2023-06-15-13-01-03"><span class="toc-text">2023-06-15 13:01:03</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2023-08-11-09-36-16"><span class="toc-text">2023-08-11 09:36:16</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%A4%E5%9B%B4%E6%A3%8B3-0"><span class="toc-text">古围棋3.0</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2023-08-11-19-53-37"><span class="toc-text">2023-08-11 19:53:37</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%A4%E5%9B%B4%E6%A3%8B4-0"><span class="toc-text">古围棋4.0</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#23-29-2021-4-15"><span class="toc-text">23:29 2021&#x2F;4&#x2F;15</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#13-38-2021-5-1"><span class="toc-text">13:38 2021&#x2F;5&#x2F;1</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2023-08-16-17-14-30"><span class="toc-text">2023-08-16 17:14:30</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%A4%E5%9B%B4%E6%A3%8B5-0"><span class="toc-text">古围棋5.0</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2024-05-10-16-01-46"><span class="toc-text">2024-05-10 16:01:46</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#14-12-2021-5-4"><span class="toc-text">14:12 2021&#x2F;5&#x2F;4</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E6%A3%8B1-0"><span class="toc-text">推棋1.0</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#14-42-2021-5-4"><span class="toc-text">14:42 2021&#x2F;5&#x2F;4</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2024-03-29-11-42-41"><span class="toc-text">2024-03-29 11:42:41</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BA%BB%E5%B0%86%E8%A7%84%E5%88%99%E7%9B%B8%E5%85%B3"><span class="toc-text">麻将规则相关</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2024-03-31-19-27-26"><span class="toc-text">2024-03-31 19:27:26</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2024-04-01-08-52-45"><span class="toc-text">2024-04-01 08:52:45</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2024-04-02-10-12-03"><span class="toc-text">2024-04-02 10:12:03</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BA%BB%E5%B0%86%E8%A7%84%E5%88%99%E8%AE%BE%E8%AE%A1%E7%9A%84%E4%B8%89%E4%B8%AA%E7%9B%AE%E6%A0%87"><span class="toc-text">麻将规则设计的三个目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%8C%E6%B2%B3%E9%BA%BB%E5%B0%86%E8%A7%84%E5%88%99"><span class="toc-text">牌河麻将规则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B4%E6%98%8E"><span class="toc-text">说明</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2024-04-03-10-34-32"><span class="toc-text">2024-04-03 10:34:32</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%8C%E6%B2%B3%E9%BA%BB%E5%B0%86%E8%A7%84%E5%88%99%C2%B7%E6%94%B9"><span class="toc-text">牌河麻将规则·改</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2024-04-04-22-20-48"><span class="toc-text">2024-04-04 22:20:48</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BA%BB%E5%B0%86%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99-%E6%8E%A8%E5%80%92%E5%92%8C"><span class="toc-text">麻将基本规则(推倒和)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A0%B4%E9%97%A8%E9%BA%BB%E5%B0%86"><span class="toc-text">破门麻将</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-text">注释</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2024-04-10-21-26-31"><span class="toc-text">2024-04-10 21:26:31</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2024-04-11-17-34-41"><span class="toc-text">2024-04-11 17:34:41</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A9%AC%E6%88%8F%E6%98%9F%E6%8E%A2"><span class="toc-text">马戏星探</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%82%B9%E9%BA%BB%E5%B0%86"><span class="toc-text">原点麻将</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E5%9F%8E%E9%BA%BB%E5%B0%86-%E9%92%93%E9%B1%BC%E9%BA%BB%E5%B0%86"><span class="toc-text">方城麻将(钓鱼麻将)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2024-04-12-10-26-26"><span class="toc-text">2024-04-12 10:26:26</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2024-04-29-14-02-56"><span class="toc-text">2024-04-29 14:02:56</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%92%93%E9%B1%BC%E9%BA%BB%E5%B0%86%E8%A7%84%E5%88%99%C2%B7%E4%BA%BA%E8%AF%9D%E7%89%88"><span class="toc-text">钓鱼麻将规则·人话版</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2024-04-30-12-23-46"><span class="toc-text">2024-04-30 12:23:46</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%B7%E5%BA%84%E9%BA%BB%E5%B0%86%E6%9E%81%E7%AE%80%E7%89%88"><span class="toc-text">康庄麻将极简版</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BE%8E%E5%9B%BD%E9%BA%BB%E5%B0%86"><span class="toc-text">美国麻将</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2024-05-01-09-37-03"><span class="toc-text">2024-05-01 09:37:03</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BE%8E%E5%BC%8F%E5%8F%A4%E5%85%B8%E9%BA%BB%E5%B0%86-%E6%83%B3%E5%AE%9A%E7%BE%8E%E5%9B%BD%E8%A7%84%E5%88%99"><span class="toc-text">美式古典麻将(想定美国规则)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2024-05-07-09-46-43"><span class="toc-text">2024-05-07 09:46:43</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%95%AA%E7%A7%8D%E8%A1%A8"><span class="toc-text">番种表</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2024-06-01-16-20-23"><span class="toc-text">2024-06-01 16:20:23</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E5%9F%8E%E8%A7%84%E5%88%99"><span class="toc-text">方城规则</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2024-07-17-11-21-47"><span class="toc-text">2024-07-17 11:21:47</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%91%E5%85%8B%E9%BA%BB%E5%B0%86"><span class="toc-text">扑克麻将</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%95%AA%E7%A7%8D%E8%A1%A8%C2%B7%E5%8F%A4%E5%85%B8"><span class="toc-text">番种表·古典</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2025 By 啪栏杆</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">姑妄言之姑听之 豆棚瓜架雨如丝 料应厌作人间语 爱听秋坟鬼唱诗</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

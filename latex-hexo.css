@@ -1,0 +1,530 @@
+/* 引入字体，尽管在html中可能没用 */
+
+/* LM Roman */
+
+@font-face {
+    font-family: 'LM Roman 10';
+    font-style: normal;
+    font-weight: normal;
+    src: url("./latex/lmroman10-regular.otf");
+}
+
+@font-face {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: normal;
+    src: url("./latex/Georgia.ttf");
+}
+
+@font-face {
+    font-family: 'LM Roman 10';
+    font-style: italic;
+    font-weight: normal;
+    src: url("./latex/lmroman10-italic.otf");
+}
+
+@font-face {
+    font-family: 'LM Roman 10';
+    font-style: normal;
+    font-weight: bold;
+    src: url("./latex/lmroman10-bold.otf");
+}
+
+@font-face {
+    font-family: 'LM Roman 10';
+    font-style: italic;
+    font-weight: bold;
+    src: url("./latex/lmroman10-bolditalic.otf");
+}
+
+/* LM Mono */
+
+@font-face {
+    font-family: 'LM Mono 10';
+    font-style: normal;
+    font-weight: normal;
+    src: url("./latex/lmmono10-regular.otf");
+}
+
+@font-face {
+    font-family: 'LM Mono 10';
+    font-style: italic;
+    font-weight: normal;
+    src: url("./latex/lmmono10-italic.otf");
+}
+
+
+@font-face {
+    font-family: 'Source Han Serif';
+    font-style: normal;
+    font-weight: normal;
+    src: url("./latex/SourceHanSerifSC-Regular.otf");
+}
+
+@font-face {
+    font-family: 'Source Han Serif';
+    font-style: normal;
+    font-weight: bold;
+    src: url("./latex/SourceHanSerifSC-Bold.otf");
+}
+
+/* 中文正文字体 */
+@font-face {
+    font-family: 'simsun';
+    src: url("./latex/simsun.ttc");
+}
+
+@font-face {
+    font-family: 'Iosevka';
+    font-style: normal;
+    font-weight: normal;
+    src: url("./latex/Iosevka-Regular.ttc");
+}
+
+@font-face {
+    font-family: '仿宋';
+    font-style: italic;
+    font-weight: normal;
+    src: url("./latex/simfang.ttf");
+}
+
+@font-face {
+    font-family: '楷体';
+    font-style: normal;
+    font-weight: normal;
+    src: url("./latex/simkai.ttf");
+}
+
+@font-face {
+    font-family: '方正新书宋_GBK';
+    font-style: normal;
+    font-weight: normal;
+    src: url("./latex/FZXSSK.TTF");
+}
+
+@font-face {
+    font-family: '方正悠宋 GBK 508R';
+    font-style: normal;
+    font-weight: normal;
+    src: url("./latex/FZYouSK_508R.TTF");
+}
+
+@font-face {
+    font-family: 'FZYouSongS 509R';
+    font-style: normal;
+    font-weight: bold;
+    src: url("./latex/方正悠宋 简 509R.TTF");
+}
+
+@font-face {
+    font-family: '方正清刻本悦宋 简繁';
+    font-style: italic;
+    font-weight: normal;
+    src: url("./latex/FZQINGKBYSJF.TTF");
+}
+
+@font-face {
+    font-family: 'I.Mahjong-CAN';
+    font-style: normal;
+    font-weight: normal;
+    src: url("./latex/I.MahjongCAN.TTF");
+}
+
+/*初始化格式*/
+/* 注意嵌套关系为body>markdown_preview */
+
+body {
+    font-synthesis: none;
+}
+
+body p {
+    line-height: 1.37rem;
+    /*行距*/
+    font-family: 'Latin Modern Roman 10', 'LM Roman 10', 'Times New Roman', '方正新书宋_GBK',
+        'Source Han Serif SC', 'I.Mahjong-CAN',
+        serif;
+    font-size: 12pt;
+}
+
+/* 仅在浏览时使用（打印时无效） */
+@media screen {
+    .markdown-preview {
+        box-shadow: 0 0 30px 18px #333;
+    }
+}
+
+/* 仅在打印时使用，可能无效*/
+@media print {
+    @page {
+        size: letter;
+        margin: 0 !important;
+        /* 按次序为 上 右 下 左 的页边距 */
+    }
+}
+
+
+/* 内嵌于body的预览块主体 */
+.markdown-preview {
+    margin: auto !important;
+    right: 0 !important;
+    left: 0 !important;
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+    width: 100% !important;
+    max-width: 21cm;
+}
+
+/* 侧边栏收起时处理页面宽度 */
+[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview {
+    left: 50% !important;
+    transform: translateX(-50%);
+}
+
+/* 侧边栏打开时处理页面宽度 */
+[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+    left: calc(50% + 150px) !important;
+    transform: translateX(-50%);
+}
+
+
+/* 自用note注释块 */
+div.note {
+    font-family: '方正新书宋_GBK', 'Latin Modern Roman 10', 'LM Roman 10', 'Times New Roman', 'Source Han Serif SC', 'I.Mahjong-CAN', serif;
+    font-size: 11pt;
+    float: right;
+    clear: both;
+    text-align: left;
+    /* border-radius: 3px 3px 3px 3px ;  */
+    border-left: 2px solid #333;
+    padding: 1px 10px 1px 10px;
+    width: 5cm;
+    margin-left: 24px;
+}
+
+/* 一级标题 */
+body h1 {
+    margin-top: 42pt;
+    margin-bottom: 24pt;
+    max-width: 21cm;
+    page-break-after: avoid !important;
+    text-align: center;
+    font-size: 18pt;
+    font-family: 'Latin Modern Mono 10', 'LM Mono 10', 'Times New Roman', 'FZYouSongS 509R', '方正悠宋 GBK 508R', Sarasa Mono SC, 'I.Mahjong-CAN', sans-serif;
+    font-weight: bold;
+}
+
+/* 二级标题 */
+body h2 {
+    page-break-after: avoid !important;
+    font-size: 16pt;
+    font-family: 'Latin Modern Mono 10', 'LM Mono 10', 'Times New Roman', 'FZYouSongS 509R', '方正悠宋 GBK 508R', Sarasa Mono SC, 'I.Mahjong-CAN', sans-serif;
+    font-weight: bold;
+}
+
+
+/* 三级标题 */
+h3 {
+    page-break-after: avoid !important;
+    font-size: 14pt;
+    font-family: 'Latin Modern Mono 10', 'LM Mono 10', 'Times New Roman', 'FZYouSongS 509R', '方正悠宋 GBK 508R', Sarasa Mono SC, 'I.Mahjong-CAN', sans-serif;
+    font-weight: bold;
+}
+
+/* 四级标题 */
+h4 {
+    page-break-after: avoid !important;
+    font-size: 13pt;
+    font-family: 'Latin Modern Mono 10', 'LM Mono 10', 'Times New Roman', 'FZYouSongS 509R', '方正悠宋 GBK 508R', Sarasa Mono SC, 'I.Mahjong-CAN', sans-serif;
+    font-weight: bold;
+}
+
+/* 五级标题 */
+h5 {
+    page-break-after: avoid !important;
+    font-size: 13pt;
+    font-family: 'Latin Modern Mono 10', 'LM Mono 10', 'Times New Roman', 'FZYouSongS 509R', '方正悠宋 GBK 508R', Sarasa Mono SC,
+        'I.Mahjong-CAN', sans-serif;
+}
+
+/* 列表内容*/
+li {
+    position: outside;
+    font-size: 12pt;
+    /*列表字号*/
+    margin: 1em;
+}
+
+/* 斜体(专有名词) */
+em {
+    margin-left: .20em;
+    margin-right: .25em;
+    font-style: italic;
+    font-weight: lighter;
+    font-family: 'Latin Modern Roman 10',
+        'LM Roman 10',
+        'Times New Roman',
+        '仿宋',
+        'I.Mahjong-CAN', serif;
+}
+
+/* 粗体(强调) */
+body strong {
+    font-weight: bold;
+    font-family: '方正悠宋 GBK 508R', 'Sarasa Mono SC', 'I.Mahjong-CAN', sans-serif;
+}
+
+/* 行内代码 */
+body code,
+p code,
+li code {
+    font-family: 'Sarasa Mono SC', monospace, 'I.Mahjong-CAN', sans-serif;
+    box-sizing: border-box;
+    border-right: 0px;
+    margin: 0 2px 0 2px;
+    padding: 0 2px 0 2px;
+    border-radius: 2px 2px 2px 2px;
+}
+
+/* 引用块 */
+blockquote {
+    background-color: inherit;
+    margin: 10px 30px 10px 0px;
+    border-radius: 3px 3px 3px 3px;
+}
+
+/* 引用文字 */
+blockquote p {
+    padding: 1px 20px 1px 20px;
+    font-style: normal;
+    font-family: Georgia, 'Latin Modern Roman 10', 'LM Roman 10', 'Times New Roman', '楷体', '方正新书宋_GBK', 'Source Han Serif SC', '方正清刻本悦宋 简繁', 'I.Mahjong-CAN', serif;
+    font-size: 12pt;
+}
+
+/* 链接 */
+a {
+    text-decoration: none;
+}
+
+/* 高亮文字 */
+mark {
+    /* box-sizing: border-box;
+    border-right: 0px;*/
+    margin: 0 2px 0 2px;
+    padding: 0 2px 0 2px;
+    border-radius: 2px 2px 2px 2px;
+    /*box-shadow: 0 0 1px 1px darkorange; */
+}
+
+/* 分割线 */
+hr {
+    height: 2px;
+    border: none;
+}
+
+/* 折叠文字 */
+details {
+    font-size: 12pt;
+    font-family: 'Latin Modern Roman 10', 'LM Roman 10', 'Times New Roman', '方正新书宋_GBK', 'Source Han Serif SC', 'I.Mahjong-CAN', serif;
+    box-sizing: border-box;
+    margin: 12px;
+    padding-left: 24px;
+    padding-right: 18px;
+    /* border-radius: 2px 2px 2px 2px ;  */
+    /* box-shadow: 0 0 2px 2px #d4d4d4; */
+}
+
+/* 居中文字 */
+center {
+    font-family: 'Latin Modern Roman 10', 'LM Roman 10', 'Times New Roman', 'KaiTi', '方正新书宋_GBK', 'Source Han Serif SC', 'I.Mahjong-CAN', serif;
+}
+
+
+/* katex渲染的数学公式 */
+.katex {
+    font-size: 1rem;
+    text-indent: 0;
+    text-rendering: auto;
+}
+
+/* mathjax渲染的数学公式 */
+.MathJax_Display {
+    font-size: 0.8rem;
+}
+
+/* 公式块的边距 */
+span.base {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+
+/* 三线表 */
+table {
+    border-top: 1.2pt solid;
+    border-bottom: 1.2pt solid;
+    background: none;
+    font-family: 'Latin Modern Roman 10', 'LM Roman 10', "Times New Roman", "Source Han Serif SC", 'I.Mahjong-CAN', serif;
+    text-align: center;
+    page-break-inside: avoid;
+    width: 100%;
+    overflow: auto;
+    border-spacing: 6px;
+    /*单元格横向间距*/
+    border-collapse: collapse;
+    /* 取消表格边框 */
+    white-space: nowrap;
+    /* 不换行 */
+}
+
+table td {
+    padding: 6px;
+    text-align: center;
+    font-family: 'Latin Modern Roman 10', 'LM Roman 10', "Times New Roman", "Source Han Serif SC", 'I.Mahjong-CAN', serif;
+    border: 0px;
+    font-size: 11pt;
+}
+
+table th {
+    padding: 6px;
+    text-align: center;
+    background: none;
+    border-bottom: 0.5pt solid;
+    font-family: 'Latin Modern Roman 10', 'LM Roman 10', "Times New Roman", "Source Han Serif SC", 'I.Mahjong-CAN', serif;
+    font-size: 11pt;
+    border-collapse: collapse;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+
+body ul,
+body ol {
+    margin: 0;
+    font-family: 'Latin Modern Roman 10', 'LM Roman 10', 'Times New Roman', '方正新书宋_GBK', 'Source Han Serif SC', 'I.Mahjong-CAN', serif;
+    font-size: initial;
+    text-decoration: none
+}
+
+/**** 多级列表样式 ****/
+ol {
+    /* 有序列表第一级：数字 */
+    list-style: decimal;
+}
+
+ol ol {
+    counter-reset: liist;
+    list-style: none;
+}
+
+ol ol li {
+    counter-increment: liist;
+    position: relative;
+}
+
+ol ol li::before {
+    /* 有序列表第二级：括号加小写字母 */
+    content: "(" counter(liist, lower-alpha) ")　　";
+    position: absolute;
+    margin-right: 2rem;
+    left: -2.4rem;
+}
+
+ol ol ol {
+    counter-reset: liiist;
+    list-style: none;
+    margin: 0;
+}
+
+ol ol ol li {
+    counter-increment: liiist;
+    position: relative;
+}
+
+ol ol ol li::before {
+    /* 有序列表第三级：小写罗马数字 */
+    content: counter(liiist, lower-roman) ".　　";
+    align-self: flex-end;
+    position: absolute;
+    left: -3rem;
+    /* -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;*/
+    /* 为了让项目编号是重新用句点对齐而不是左对齐 */
+    width: 4.2rem;
+    text-align: right;
+}
+
+/***** 注意bug:有序列表后的无序列表将编号 *****/
+
+/* 标题自动编号 */
+/* 复位计数器 */
+body {
+    counter-reset: h2 0 h3 0 h4 0 h5 0 h6 0
+}
+
+h1 {
+    counter-reset: h2
+}
+
+h2 {
+    counter-reset: h3
+}
+
+h3 {
+    counter-reset: h4
+}
+
+h4 {
+    counter-reset: h5
+}
+
+h5 {
+    counter-reset: h6
+}
+
+/* 输出编号 */
+
+h2:before {
+    counter-increment: h2;
+    content: counter(h2);
+    margin-right: 1rem;
+}
+
+h3:before,
+h3.md-focus.md-heading:before {
+    counter-increment: h3;
+    content: counter(h2) "." counter(h3);
+    margin-right: 1rem;
+}
+
+h4:before,
+h4.md-focus.md-heading:before {
+    counter-increment: h4;
+    content: counter(h2) "." counter(h3) "." counter(h4);
+    margin-right: 1rem;
+}
+
+h5:before,
+h5.md-focus.md-heading:before {
+    counter-increment: h5;
+    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5);
+    margin-right: 1rem;
+}
+
+/* 任务列表样式 */
+
+body li.task-list-item {
+    list-style: none
+        /* 取消任务列表前的列表样式 */
+}
+
+body .task-list-item-checkbox {
+    filter: invert(88.2%) grayscale(100%);
+    /* dark滤镜 */
+    margin: 0 .2em .25em -1.8em;
+    vertical-align: middle
+}
+
+body .task-list-item-checkbox:hover {
+    cursor: pointer
+}
