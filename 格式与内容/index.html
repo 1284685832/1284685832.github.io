@@ -172,7 +172,7 @@
         }
       }
       detectApple()
-    })(window)</script><link rel="stylesheet" href="/latex-hexo.css"><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="莫名" type="application/atom+xml">
+    })(window)</script><link rel="stylesheet" href="/latex-hexo.css"><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="莫名" type="application/atom+xml">
 </head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="莫名"><span class="site-name">莫名</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">关于格式与内容</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon fas fa-history"></i><span class="post-meta-label">更新于</span><time datetime="2023-07-14T14:26:00.000Z" title="更新于 2023-07-14 22:26:00">2023-07-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">13.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>38分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="关于格式与内容"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="格式与排版">格式与排版</h1>
 <p>好了，正式归纳一下之前关于排版的想法。</p>
 <p>首先，排版要解决什么问题？让内容满足形式的要求，在此基础上尽可能美观。</p>
@@ -470,27 +470,7 @@
 <p>至于<em>缩进</em>，可以绑定在<em>空格键</em>上，此时冒号仍可以作为<em>缩进提示符</em>存在。另一种想法是，将<em>冒号键</em>作为<em>换行</em>与<em>缩进</em>的组合。</p>
 <h4 id="分割线">分割线</h4>
 <p>对分割线，如果能实现<em>缩进</em>，分割线将是不必要的，我们可以设置一个空的层级来实现分割线的功能，也可以给该层级命名或编号。比如上面这段文本，如果想正确地并列，可以改成：</p>
-<pre class="line-numbers language-none"><code class="language-none">*点号*：
-    ((甲是甲)(乙是乙))
-*圆括号*：
-    (甲(古称閼逢)为天干之首)
-*缩进*：
-    适用于文段的结构安排。
-*冒号*：
-    (天干包括(甲)(乙)…(癸))
-*分割线*：
-    适用于大文段的结构安排。
-：
-    对于各种*点号*，我在长期实践后认为统一成*句号* *逗号*两个就足够使用了，更多种类没有益处，徒增烦恼，只会提高误用的风险。
-        *逗号* *句号*写成什么形式各地并不一致，我喜欢日本的方案(*、**。*)，比较传统。
-        出于美观，我习惯书写成*.* *..*(横排是*:*)。
-        另，那些“一逗到底”的糟糕例子往往是该断句的地方用了逗号，如果正确断句，可读性并不会受影响。
-：
-    对于*圆括号*，我认为一般情况下没必要使用，表示注释与补充说明时宜用注释格式。表示插入语时用两个逗号即可，提示插入语的*破折号*同理。
-：
-    至于*缩进*，可以绑定在*空格键*上，此时冒号仍可以作为*缩进提示符*存在。另一种想法是，将*冒号键*作为*换行*与*缩进*的组合。
-：
-    对分割线，如果能实现*缩进*，内容上分割线将是不必要的，仅具有格式上的意义。不过，我们也可以设置一个空的层级来实现此功能，也可以给该层级命名或编号。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">*点号*：</span><br><span class="line">    ((甲是甲)(乙是乙))</span><br><span class="line">*圆括号*：</span><br><span class="line">    (甲(古称閼逢)为天干之首)</span><br><span class="line">*缩进*：</span><br><span class="line">    适用于文段的结构安排。</span><br><span class="line">*冒号*：</span><br><span class="line">    (天干包括(甲)(乙)…(癸))</span><br><span class="line">*分割线*：</span><br><span class="line">    适用于大文段的结构安排。</span><br><span class="line">：</span><br><span class="line">    对于各种*点号*，我在长期实践后认为统一成*句号* *逗号*两个就足够使用了，更多种类没有益处，徒增烦恼，只会提高误用的风险。</span><br><span class="line">        *逗号* *句号*写成什么形式各地并不一致，我喜欢日本的方案<span class="comment">(*、**。*)</span>，比较传统。</span><br><span class="line">        出于美观，我习惯书写成*.* *..*(横排是*:*)。</span><br><span class="line">        另，那些“一逗到底”的糟糕例子往往是该断句的地方用了逗号，如果正确断句，可读性并不会受影响。</span><br><span class="line">：</span><br><span class="line">    对于*圆括号*，我认为一般情况下没必要使用，表示注释与补充说明时宜用注释格式。表示插入语时用两个逗号即可，提示插入语的*破折号*同理。</span><br><span class="line">：</span><br><span class="line">    至于*缩进*，可以绑定在*空格键*上，此时冒号仍可以作为*缩进提示符*存在。另一种想法是，将*冒号键*作为*换行*与*缩进*的组合。</span><br><span class="line">：</span><br><span class="line">    对分割线，如果能实现*缩进*，内容上分割线将是不必要的，仅具有格式上的意义。不过，我们也可以设置一个空的层级来实现此功能，也可以给该层级命名或编号。</span><br></pre></td></tr></table></figure>
 <p>不难发现，需要引入<code>:</code>的直接原因是，将层次结构表示为缩进时，换行会导致歧义。写代码时，程序员每写一句就换一次行，缩进相同的语句都是并列关系，但写文章的人划分自然段可不是按照这个规矩。在自然段中，<em>换行</em>和<em>句号</em> <em>逗号</em>一样，有两方面的作用：</p>
 <ul>
 <li>一是表示语言中比句号更大的停顿。</li>
