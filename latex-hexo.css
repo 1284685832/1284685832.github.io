@@ -423,9 +423,8 @@ ol ol li {
 
 ol ol li::before {
     /* 有序列表第二级：括号加小写字母 */
-    content: "(" counter(liist, lower-alpha) ")　　";
+    content: "(" counter(liist, lower-alpha) ")";
     position: absolute;
-    margin-right: 2rem;
     left: -2.4rem;
 }
 
@@ -442,15 +441,15 @@ ol ol ol li {
 
 ol ol ol li::before {
     /* 有序列表第三级：小写罗马数字 */
-    content: counter(liiist, lower-roman) ".　　";
+    content: counter(liiist, lower-roman) ".";
     align-self: flex-end;
     position: absolute;
-    left: -3rem;
+    left: -4.5rem;
     /* -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
       box-sizing: border-box;*/
     /* 为了让项目编号是重新用句点对齐而不是左对齐 */
-    width: 4.2rem;
+    width: 4rem;
     text-align: right;
 }
 
@@ -483,31 +482,36 @@ h5 {
 }
 
 /* 输出编号 */
-
 h2:before {
     counter-increment: h2;
-    content: counter(h2);
     margin-right: 1rem;
 }
 
 h3:before,
 h3.md-focus.md-heading:before {
     counter-increment: h3;
-    content: counter(h2) "." counter(h3);
+    content: counter(h3);
     margin-right: 1rem;
 }
 
 h4:before,
 h4.md-focus.md-heading:before {
     counter-increment: h4;
-    content: counter(h2) "." counter(h3) "." counter(h4);
+    content: counter(h3) "." counter(h4);
     margin-right: 1rem;
 }
 
 h5:before,
 h5.md-focus.md-heading:before {
     counter-increment: h5;
-    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5);
+    content: counter(h3) "." counter(h4) "." counter(h5);
+    margin-right: 1rem;
+}
+
+h6:before,
+h6.md-focus.md-heading:before {
+    counter-increment: h5;
+    content: counter(h3) "." counter(h4) "." counter(h5) "." counter(h6);
     margin-right: 1rem;
 }
 
